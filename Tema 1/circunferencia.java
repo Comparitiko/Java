@@ -14,7 +14,7 @@ class circunferencia {
  
     longitud = Math.PI * 2 * radio;
 
-    // Imprimir resultados
+    // Imprimir resultados en consola
     System.out.println("La longitud de la circunferencia es: " + longitud);
     System.out.println("El area de la circunferencia es: " + area);
   }
