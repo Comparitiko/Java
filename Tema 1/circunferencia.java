@@ -1,5 +1,5 @@
 // Calcular longitud y area dado el radio de la circunferencia
-class circunferencia {
+class Circunferencia {
   public static void main(String[] args) {
     // Declarar variables y asignar un numero a radio
     double radio, longitud, area;
