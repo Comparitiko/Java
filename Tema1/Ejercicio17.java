@@ -23,8 +23,6 @@ public class Ejercicio17 {
   }
 
   public static void main(String[] args) {
-
-    // int[] fNums = {5, 7, 33, 125, 77};
     
     // a. Crear un número entero positivo aleatorio entre 1 y 49.
     int a = (int) Math.ceil(Math.random() * ((49 - 1) + 1));
@@ -46,7 +44,10 @@ public class Ejercicio17 {
     // e. Crear un número entero entre -100 y 100.
 
     // f. Generar un número aleatorio que sea uno de los siguientes: 5, 7, 33, 125 o 77
-
+    int[] fNums = {5, 7, 33, 125, 77};
+    int f = (int) Math.ceil(Math.random() * 5 - 1);
+    System.out.println("El mes del año generado aleatoriamente es: " + (fNums[f]));
+  
     // g. Crea un generador aleatorio de uno de los meses del año
     String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
     int g = (int) Math.ceil(Math.random() * 12 - 1);
