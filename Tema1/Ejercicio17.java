@@ -14,11 +14,10 @@
 public class Ejercicio17 {
   
   public static void pruebas () {
-    String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
-    int g = 2;
-    while (g != 0) {
-      g = (int) Math.ceil(Math.random() * 12 - 1); 
-      System.out.println("El mes del año generado aleatoriamente es: " + (meses[g]) + g);
+    int e = 2;
+    while (e != (-100)) {
+      e = (int) Math.ceil((Math.random() * 200) - 100);
+    System.out.println("El numero generado aleatoriamente entre -100 y 100 es: " + e);
     }
   }
 
@@ -40,8 +39,12 @@ public class Ejercicio17 {
     System.out.println("El numero generado aleatoriamente entre 1 y 10 es: " + c);
 
     // d. Crear un número entero negativo entre -50 y -150.
+    double d = (int) Math.ceil((Math.random() * 100) - 150);
+    System.out.println("El numero generado aleatoriamente entre -50 y -150 es: " + d);
 
     // e. Crear un número entero entre -100 y 100.
+    double e = (int) Math.ceil((Math.random() * 200) - 100);
+    System.out.println("El numero generado aleatoriamente entre -100 y 100 es: " + e);
 
     // f. Generar un número aleatorio que sea uno de los siguientes: 5, 7, 33, 125 o 77
     int[] fNums = {5, 7, 33, 125, 77};
@@ -52,6 +55,7 @@ public class Ejercicio17 {
     String[] meses = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
     int g = (int) Math.ceil(Math.random() * 12 - 1);
     System.out.println("El mes del año generado aleatoriamente es: " + (meses[g]));
-  }
 
+    pruebas();
+  }
 }
