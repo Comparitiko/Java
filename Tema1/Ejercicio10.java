@@ -5,5 +5,5 @@
     System.out.println(num); =>  7
     num = 4;
     num %= 7 * num % 3 * 5;
-    System.out.println(num); => 
+    System.out.println(num); => 4
  */
