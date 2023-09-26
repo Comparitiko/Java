@@ -28,5 +28,7 @@ public class Ejercicio18 {
     e = ++a - b;
     y = (float)a / b;
 
+
+    System.out.println(x + y + e + d);
   }
 }

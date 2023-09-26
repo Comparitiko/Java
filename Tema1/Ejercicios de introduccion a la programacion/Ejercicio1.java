@@ -13,8 +13,10 @@ class Ejercicio1 {
 
     System.out.println("¿Como es tu nombre?");
 
+    // Pedir que se inserte un valor, en este caso un string que se le asigna a la variable nombre
     String nombre = sc.nextLine();
 
+    // Imprimir por terminal el saludo
     System.out.println("Hola " + nombre);
 
     sc.close();
