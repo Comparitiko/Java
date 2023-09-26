@@ -13,14 +13,6 @@
 
 public class Ejercicio17 {
   
-  public static void pruebas () {
-    int e = 2;
-    while (e != (-100)) {
-      e = (int) Math.ceil((Math.random() * 200) - 100);
-    System.out.println("El numero generado aleatoriamente entre -100 y 100 es: " + e);
-    }
-  }
-
   public static void main(String[] args) {
     
     // a. Crear un número entero positivo aleatorio entre 1 y 49.
@@ -39,11 +31,11 @@ public class Ejercicio17 {
     System.out.println("El numero generado aleatoriamente entre 1 y 10 es: " + c);
 
     // d. Crear un número entero negativo entre -50 y -150.
-    double d = (int) Math.ceil((Math.random() * 100) - 150);
+    double d = (int) Math.ceil((Math.random() * 101) - 151);
     System.out.println("El numero generado aleatoriamente entre -50 y -150 es: " + d);
 
     // e. Crear un número entero entre -100 y 100.
-    double e = (int) Math.ceil((Math.random() * 200) - 100);
+    double e = (int) Math.ceil((Math.random() * 201) - 101);
     System.out.println("El numero generado aleatoriamente entre -100 y 100 es: " + e);
 
     // f. Generar un número aleatorio que sea uno de los siguientes: 5, 7, 33, 125 o 77
@@ -56,6 +48,5 @@ public class Ejercicio17 {
     int g = (int) Math.ceil(Math.random() * 12 - 1);
     System.out.println("El mes del año generado aleatoriamente es: " + (meses[g]));
 
-    pruebas();
   }
 }
