@@ -13,7 +13,7 @@ public class Ejercicio14 {
     numRan = Math.ceil(numRan);
 
     // Imprimimos en terminal la variable numRan
-    System.out.println(numRan);
+    System.out.println((int)numRan);
   }
 
 }

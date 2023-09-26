@@ -15,8 +15,8 @@ public class Ejercicio11 {
     perimetro = Math.PI * 2 * radio;
 
     // Devolver resultados en la terminal
-    System.out.println("El area del circulo con radio " + radio + " es: " + area);
-    System.out.println("El perimetro del circulo con radio " + radio + " es: " + perimetro);
+    System.out.println("El area del circulo con radio " + radio + " m es: " + area + " m2");
+    System.out.println("El perimetro del circulo con radio " + radio + " m es: " + perimetro + " m");
   }
 
 }
