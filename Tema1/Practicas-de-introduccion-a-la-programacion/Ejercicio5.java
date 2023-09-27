@@ -4,15 +4,15 @@
   En caso negativo, explica por qué no funciona.
 
   ---------------------------------------------
-  int a=’a’;
+  int a='a';
   System.out.println(a);
   
-  No funciona => Se le esta asignando un caracter a una variable que es un entero
+  Funciona => Devuelve el codigo ASCII del caracter 'a'
   ---------------------------------------------
   int PI=3.14;
   System.out.println(PI);
 
-  No funciona => Se le esta asignando un numero con decimales a una variable que es un entero
+  Funciona => Mostrara por pantalla un 3 porque  al ser tipo int no coge los decimales
   ---------------------------------------------
   double PI=3,14;
   System.out.println(PI);
@@ -24,14 +24,14 @@
 
   Funciona => mostrara por pantalla un false porque 1 no es igual a 4
   ---------------------------------------------
-  boolean adivina=(97==’a’==97);
+  boolean adivina=(97=='a'==97);
   System.out.println(adivina);
 
-  No funciona => No se pueden comparar un numero con un string
+  No funciona => No se pueden comparar un numero con un caracter con un numero a la vez sin poner un AND
   ---------------------------------------------
-  boolean adivina=(97==’a’==true);
+  boolean adivina=(97=='a'==true);
   System.out.println(adivina);
 
-  No funciona => No se pueden comparar un numero con un string
+  Funciona => Mostrara por pantalla true
   ---------------------------------------------
  */
