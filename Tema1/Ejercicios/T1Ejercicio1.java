@@ -5,7 +5,7 @@
 
 import java.util.Scanner;
 
-class Ejercicio1 {
+class T1Ejercicio1 {
 
   public static void main(String[] args) {
    
