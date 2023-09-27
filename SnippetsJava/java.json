@@ -20,7 +20,7 @@
 		"description": "Import Scanner and create class and main and close scanner"
 	},
   "Class & Main": {
-		"prefix": "classM",
+		"prefix": "clM",
 		"body": [
 			"public class ${TM_FILENAME_BASE} {",
 			"  ",
