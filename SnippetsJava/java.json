@@ -1,0 +1,22 @@
+{
+	"Scanner Import": {
+		"prefix": "Scan",
+		"body": [
+			"import java.util.Scanner;",
+			"",
+			"public class ${TM_FILENAME_BASE} {",
+			"  ",
+			"  public static void main(String[] args) {",
+			"    ",
+			"    Scanner sc = new Scanner(System.in);",
+			"",
+			"    $0",
+			"",
+			"    sc.close();",
+			"  }",
+			"",
+			"}"
+		],
+		"description": "Import Scanner and create class and main and close scanner"
+	}
+}
