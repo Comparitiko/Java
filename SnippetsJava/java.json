@@ -18,5 +18,20 @@
 			"}"
 		],
 		"description": "Import Scanner and create class and main and close scanner"
+	},
+  "Class & Main": {
+		"prefix": "classM",
+		"body": [
+			"public class ${TM_FILENAME_BASE} {",
+			"  ",
+			"  public static void main(String[] args) {",
+			"",
+			"    $0",
+			"",
+			"  }",
+			"",
+			"}"
+		],
+		"description": "Create class and main func"
 	}
 }
