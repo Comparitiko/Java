@@ -10,23 +10,36 @@
 			"    ",
 			"    Scanner sc = new Scanner(System.in);",
 			"",
+			"    // Declaracion de variables",
 			"    $0",
 			"",
+		  "    // Pedir datos por terminal",
+			"    System.out.println();",
+			"",
+			"    // Imprimir datos por terminal",
+			"    System.out.println();",
+			"",
 			"    sc.close();",
+			"",
 			"  }",
 			"",
 			"}"
 		],
 		"description": "Import Scanner and create class and main and close scanner"
 	},
-  "Class & Main": {
+
+	"Class & Main": {
 		"prefix": "clM",
 		"body": [
 			"public class ${TM_FILENAME_BASE} {",
 			"  ",
 			"  public static void main(String[] args) {",
 			"",
+			"    // Declaracion de variables",
 			"    $0",
+			"",
+			"    // Imprimir datos por terminal",
+			"    System.out.println();",
 			"",
 			"  }",
 			"",
