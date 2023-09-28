@@ -27,7 +27,8 @@ public class T1Ejercicio13 {
     int rBlanco = sc.nextInt();
 
     // Calculo de nota final
-    notaFinal = ((rCorrectas * 5) + (rIncorrectas * (-1)) + (rBlanco * 0)) / (rCorrectas + rIncorrectas + rBlanco);
+    double totalPuntos = (rBlanco + rCorrectas + rIncorrectas) * 5;
+    notaFinal = (((rCorrectas * 5) + (rIncorrectas * (-1)) + (rBlanco * 0)) / totalPuntos) * 10;
 
     // Imprimir datos por terminal
     System.out.println("La nota final es: " + notaFinal);
