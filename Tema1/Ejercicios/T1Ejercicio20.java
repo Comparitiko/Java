@@ -15,6 +15,9 @@ public class T1Ejercicio20 {
   
   public static void main(String[] args) {
     
+    // Declaracion de variables
+    double pTurnoDia, pMins;
+
     Scanner sc = new Scanner(System.in);
 
     // Pedir datos por terminal
@@ -31,52 +34,112 @@ public class T1Ejercicio20 {
     if (dia == "domingo" || dia == "Domingo" ) {
       if (turno == "Tarde" || turno == "tarde") {
         if (mins <= 5) {
-          
+          pMins = 1;
+          pTurnoDia = pMins * 0.03;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno de domingo es: " + pTurnoDia);
+        
         } else if (mins <= 8) {
-          
+          pMins = 1 + 0.80;
+          pTurnoDia = pMins * 0.03;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno de domingo es: " + pTurnoDia);
+
         } else if (mins <= 10) {
+          pMins = 1 + 0.80 + 0.70;
+          pTurnoDia = pMins * 0.03;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno de domingo es: " + pTurnoDia);
 
         } else {
+          pMins = 1 + 0.80 + 0.70 + 0.50;
+          pTurnoDia = pMins * 0.03;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno de domingo es: " + pTurnoDia);
 
         }
       } else {
         if (mins <= 5) {
-
+          pMins = 1;
+          pTurnoDia = pMins * 0.03;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno de domingo es: " + pTurnoDia);
+        
         } else if (mins <= 8) {
-          
+          pMins = 1 + 0.80;
+          pTurnoDia = pMins * 0.03;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno de domingo es: " + pTurnoDia);
+
         } else if (mins <= 10) {
+          pMins = 1 + 0.80 + 0.70;
+          pTurnoDia = pMins * 0.03;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno de domingo es: " + pTurnoDia);
 
         } else {
+          pMins = 1 + 0.80 + 0.70 + 0.50;
+          pTurnoDia = pMins * 0.03;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno de domingo es: " + pTurnoDia);
 
         }
       }
-
     } else {
       if (turno == "Tarde" || turno == "tarde") {
         if (mins <= 5) {
+          pMins = 1;
+          pTurnoDia = pMins * 0.10;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno del dia " + dia + " por la tarde es: " + pTurnoDia);
 
         } else if (mins <= 8) {
-          
+          pMins = 1 * 0.80;
+          pTurnoDia = pMins * 0.10;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno del dia " + dia + " por la tarde es: " + pTurnoDia);
+
         } else if (mins <= 10) {
+          pMins = 1 * 0.80 * 0.70;
+          pTurnoDia = pMins * 0.10;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno del dia " + dia + " por la tarde es: " + pTurnoDia);
 
         } else {
+          pMins = 1 * 0.80 * 0.70 * 0.50;
+          pTurnoDia = pMins * 0.10;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno del dia " + dia + " por la tarde es: " + pTurnoDia);
 
         }
       } else {
         if (mins <= 5) {
+          pMins = 1;
+          pTurnoDia = pMins * 0.15;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno del dia " + dia + " por la mañana es: " + pTurnoDia);
 
         } else if (mins <= 8) {
+          pMins = 1 * 0.80;
+          pTurnoDia = pMins * 0.15;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno del dia " + dia + " por la mañana es: " + pTurnoDia);
           
         } else if (mins <= 10) {
+          pMins = 1 * 0.80 * 0.70;
+          pTurnoDia = pMins * 0.15;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno del dia " + dia + " por la mañana es: " + pTurnoDia);
 
         } else {
+          pMins = 1 * 0.80 * 0.70 * 0.50;
+          pTurnoDia = pMins * 0.15;
+          System.out.println("El precio de los minutos es: " + pMins);
+          System.out.println("El precio del turno del dia " + dia + " por la mañana es: " + pTurnoDia);
 
         }
       }
     }
-
-    // Imprimir datos por terminal
-    System.out.println();
 
     sc.close();
 
