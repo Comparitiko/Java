@@ -12,15 +12,18 @@ public class T1Ejercicio26 {
     
     Scanner sc = new Scanner(System.in);
     
+    // Declaracion de variables
     char caracter = 'a';
     String esVocal;
 
+    // Bucle while que mira si el carcter introducido no es un espacio
     while (caracter != ' ') {
       System.out.println("Ingrese un caracter");
       String entrada = sc.nextLine();
 
       caracter = (char) entrada.charAt(0);
 
+      // Switch para saber si es vocal o no
       switch (caracter) {
         case 'a':
           esVocal = "VOCAL";
@@ -42,6 +45,7 @@ public class T1Ejercicio26 {
           break;
       }
 
+      // Imprimir por terminal el caracter si no es un espacio
       if (caracter != ' ') System.out.println("El caracter " + caracter + " es: " + esVocal);
 
     }
