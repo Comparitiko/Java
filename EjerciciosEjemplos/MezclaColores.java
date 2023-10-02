@@ -16,18 +16,12 @@ public class MezclaColores {
 
       if (color2.equals("rojo") || color2.equals("verde") || color2.equals("azul")) {
 
-        if (color1.equals("rojo") && color2.equals("verde")) {
+        if (color1.equals("rojo") && color2.equals("verde") || color1.equals("verde") && color2.equals("rojo")) {
           System.out.println("La mezcla de los colores " + color1 + " y " + color2 + " es amarillo");
-        } else if (color1.equals("azul") && color2.equals("verde")) {
+        } else if (color1.equals("azul") && color2.equals("verde") || color1.equals("verde") && color2.equals("azul")) {
           System.out.println("La mezcla de los colores " + color1 + " y " + color2 + " es cyan");
-        } else if (color1.equals("verde") && color2.equals("rojo")) {
-          System.out.println("La mezcla de los colores " + color1 + " y " + color2 + " es amarillo");
-        } else if (color1.equals("azul") && color2.equals("rojo")) {
+        } else if (color1.equals("azul") && color2.equals("rojo") || color1.equals("rojo") && color2.equals("azul")) {
           System.out.println("La mezcla de los colores " + color1 + " y " + color2 + " es magenta");
-        } else if (color1.equals("rojo") && color2.equals("azul")) {
-          System.out.println("La mezcla de los colores " + color1 + " y " + color2 + " es magenta");
-        } else if (color1.equals("verde") && color2.equals("azul")) {
-          System.out.println("La mezcla de los colores " + color1 + " y " + color2 + " es cyan");
         } else {
           System.out.println("La mezcla de dos colores iguales es el mismo color por lo tanto es: " + color1);
         }
