@@ -13,29 +13,27 @@ public class T1Ejercicio32 {
     Scanner sc = new Scanner(System.in);
 
     // Declaracion de variables
-    String menu = "";
+    int menu = 0;
     
-    while (menu != "Salir")  {
-      System.out.println("1. Ingrese 'Opcion A' para ir a la opcion A");
-      System.out.println("2. Ingrese 'Opcion B' para ir a la opcion B");
-      System.out.println("3. Ingrese 'Salir' para salir");
-      menu = sc.nextLine();
+    while (menu != 3)  {
 
-      switch(menu) {
-        case "Opcion A":
-          System.out.println("Has seleccionado la opcion A");
-          break;
-        case "Opcion B":
-          System.out.println("Has seleccionado la opcion B");
-          break;
-        case "Salir":
-          System.out.println("Saliendo...");
-          break;
-        default:
-          System.out.println("Error, Ingrese una opcion valida, recuerde poner las mayusculas tal como estan en las opciones.");
-          break;
+      System.out.println("1. Ingrese '1' para ir a la opcion A");
+      System.out.println("2. Ingrese '2' para ir a la opcion B");
+      System.out.println("3. Ingrese '3' para salir");
+      menu = sc.nextInt();
+
+      if (menu == 1) {
+        System.out.println("Has seleccionado la opcion A");
+      } else if (menu == 2) {
+        System.out.println("Has seleccionado la opcion B");
+      } else if (menu == 3) {
+        System.out.println("Saliendo...");
+      } else {
+        System.out.println("Error, Ingrese una opcion valida, recuerde poner las mayusculas tal como estan en las opciones.");
       }
+
       System.out.println(menu);
+
     }
 
     sc.close();
