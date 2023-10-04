@@ -16,6 +16,18 @@ public class T1Ejercicio38 {
     System.out.println("Ingrese una cadena de texto:");
     String cadena = sc.nextLine();
 
+    // Declaracion de variables
+    String[] caracteres = cadena.split("");
+
+    // Bucle que vean si son mayus o minus
+    for (int i = 0; i != cadena.length(); i++) {
+      if (caracteres[i] == caracteres[i].toUpperCase()) {
+        System.out.print(caracteres[i].toLowerCase());
+      } else {
+        System.out.print(caracteres[i].toUpperCase());
+      }
+    }
+
     sc.close();
 
   }
