@@ -30,6 +30,12 @@ public class T1Ejercicio37 {
       if (car2.length() != 1) System.out.println("Error: Ingrese un solo caracter por favor.");
     }
 
+    // Buscar y remplazar caracteres
+    String cadenaMod = cadena.replace(car1, car2);
+
+    // Mostrar por teminal resultados
+    System.out.println("La cadena modificada de " + cadena + " cambiandole " + car1 + " por " + car2 + " es: " + cadenaMod);
+
     sc.close();
 
   }
