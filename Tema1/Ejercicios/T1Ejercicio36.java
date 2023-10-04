@@ -16,6 +16,7 @@ public class T1Ejercicio36 {
     System.out.println("Ingrese una frase:");
     String frase = sc.nextLine();
 
+    // Separar la frase por cada espacio y contar cuantas palabras hay en el Array
     int numPalabras = frase.split(" ").length;
 
     // Imprimir por pantalla el numero de palabras
