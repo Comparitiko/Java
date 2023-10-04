@@ -12,17 +12,11 @@ public class T1Ejercicio36 {
     
     Scanner sc = new Scanner(System.in);
 
-    // Declaracion de variables
-    int numPalabras = 0;
-
     // Pedir valores por terminal
     System.out.println("Ingrese una frase:");
     String frase = sc.nextLine();
 
-    for (int i = 0; i < frase.length(); i++) {
-      char fraseChar = frase.charAt(i);
-      if (fraseChar == ' ') numPalabras ++;
-    }
+    int numPalabras = frase.split(" ").length;
 
     // Imprimir por pantalla el numero de palabras
     System.out.println("El numero de palabras de la frase introducida es: " + numPalabras + " palabras");
