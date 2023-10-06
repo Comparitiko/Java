@@ -16,7 +16,7 @@ public class ViajeEstudios {
     } else if (numAlumnos >= 30 && numAlumnos <= 49) {
       System.out.println("El precio por cada alumno para " + numAlumnos + " alumnos el coste del viaje es " + (numAlumnos * 95) + " euros");
     } else {
-      System.out.println("El precio por cada alumno para " + numAlumnos + " alumnos el coste del viaje es 4000 euros");
+      System.out.println("El precio por cada alumno para " + numAlumnos + " alumnos el coste del viaje es 4000 euros y el costo por alumno es " + (4000 / numAlumnos) + " euros");
     }
     sc.close();
 
