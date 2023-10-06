@@ -15,21 +15,21 @@ public class MesDia {
 
     switch (mes) {
       case 1, 3, 5, 7, 8, 10, 12:
-        if (dia <= 31){
+        if (dia <= 31 && dia >= 1){
           System.out.println("Fecha correcta");
         } else {
           System.out.println("Fecha incorrecta");
         }
         break;
       case 4, 6, 9, 11:
-        if (dia <= 30){
+        if (dia <= 30 && dia >= 1){
           System.out.println("Fecha correcta");
         } else {
           System.out.println("Fecha incorrecta");
         }
         break;
       case 2:
-        if (dia <= 29){
+        if (dia <= 28 && dia >= 1){
           System.out.println("Fecha correcta");
         } else {
           System.out.println("Fecha incorrecta");
