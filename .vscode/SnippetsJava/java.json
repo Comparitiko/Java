@@ -39,5 +39,12 @@
 			"}"
 		],
 		"description": "Create class and main func"
+	},
+	"Import": {
+		"prefix": "imp",
+		"body": [
+			"import java.util.$0"
+		],
+		"description": "Import something"
 	}
 }
