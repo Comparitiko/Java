@@ -1,6 +1,7 @@
+package Tema2.Ejemplos;
 import java.util.Scanner;
 
-public class ViajeEstudios {
+public class T2ViajeEstudios {
   
   public static void main(String[] args) {
     

@@ -1,3 +1,4 @@
+package Tema2.Ejemplos;
 public class T2MultiplosCinco {
   
   public static void main(String[] args) {
