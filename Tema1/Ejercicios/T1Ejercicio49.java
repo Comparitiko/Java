@@ -9,9 +9,20 @@ import java.util.Scanner;
 
 public class T1Ejercicio49 {
   
-  public static String EscribirCentrado (String args) {
-    String textoCentrado = "-------------------------------------------------- " + args + " --------------------------------------------------";
-    return textoCentrado;
+  public static void EscribirCentrado (String args) {
+    System.out.println("Este es el texto centrado:");
+    System.out.println("-------------------------------------------------- " + args + " --------------------------------------------------");
+
+    for (int i = 0; i  != 102; i++) {
+      if (102 / 2 == i) {
+        for (int j = 0; j != args.length(); j++) {
+          System.out.print("=");
+        }
+      } else {
+        System.out.print("-");
+      }
+      
+    }
   }
 
   public static void main(String[] args) {
@@ -19,10 +30,7 @@ public class T1Ejercicio49 {
     Scanner sc = new Scanner(System.in);
 
     System.out.println("Ingrese un texto y lo devolvere centrado:");
-    String texto = EscribirCentrado(sc.nextLine());
-
-    System.out.println("Este es el texto centrado:");
-    System.out.println(texto);
+    EscribirCentrado(sc.nextLine());
 
     sc.close();
 

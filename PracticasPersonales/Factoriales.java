@@ -4,7 +4,7 @@ class Factoriales {
     // Declaracion de variable numero y darle el numero 1
     int numero = 1;
     long resultado = 1;
-    int repeticiones = 8;
+    int repeticiones = 5;
     // Bucle para sacar el factorial de 8
     while (numero <= repeticiones) {
       resultado = numero * resultado;
