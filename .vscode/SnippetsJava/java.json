@@ -42,5 +42,15 @@
 			"import java.util.$0"
 		],
 		"description": "Import something"
+	},
+
+	"Functions": {
+		"prefix": "fnc",
+		"body": [
+			"public static ${1:returned-type} ${2:name} (${3:args}) {",
+			"  $0",
+			"}"
+		],
+		"description": "Create a function"
 	}
 }

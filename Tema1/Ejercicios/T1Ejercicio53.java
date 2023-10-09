@@ -26,3 +26,56 @@
   Dividir dos fracciones: En esta opción se piden dos fracciones y se muestra el cociente.
   Salir
 */
+
+import java.util.Scanner;
+
+public class T1Ejercicio53 {
+  
+  public static void leerFraccion () {
+
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Ingrese el numerador de la fraccion:");
+    int numerador = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion:");
+    int denominador = sc.nextInt();
+
+    escribirFraccion(numerador, denominador);
+    calcularMcd(numerador, denominador);
+
+    sc.close();
+    
+  }
+
+  public static void escribirFraccion (int numerador, int denominador) {
+    if (denominador == 1) {
+      System.out.println(numerador);
+    } else {
+      System.out.println(numerador);
+      System.out.println("-");
+      System.out.println(denominador);
+    }
+  }
+
+  public static int calcularMcd (int numerador, int denominador) {
+    
+    int mcd = numerador;
+
+    while (denominador != 0) {
+      int temp = denominador;
+      denominador = numerador % denominador;
+      numerador = temp;
+      mcd = numerador;
+    }
+  
+    return mcd;
+  }
+
+  public static void main(String[] args) {
+
+    leerFraccion();
+
+  }
+
+}
