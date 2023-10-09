@@ -13,7 +13,7 @@
   Sumar_fracciones: Función que recibe dos funciones n1/d1 y n2/d2, y calcula la suma de las
   dos fracciones. La suma de dos fracciones es otra fracción cuyo numerador=n1*d2+d1*n2 y
   denominador=d1*d2. Se debe simplificar la fracción resultado.
-  Restar_fracciones: Función que resta dos fracciones: numerador=n1*d2-d1*n2 y
+  ===Restar_fracciones: Función que resta dos fracciones: numerador=n1*d2-d1*n2 y
   denominador=d1*d2. Se debe simplificar la fracción resultado.
   Multiplicar_fracciones: Función que recibe dos fracciones y calcula el producto, para ello
   numerador=n1*n2 y denominador=d1*d2. Se debe simplificar la fracción resultado.
@@ -42,7 +42,9 @@ public class T1Ejercicio53 {
     int denominador = sc.nextInt();
 
     escribirFraccion(numerador, denominador);
-    calcularMcd(numerador, denominador);
+    int mcd = calcularMcd(numerador, denominador);
+    simplificarFraccion(mcd, numerador, denominador);
+
 
     sc.close();
     
@@ -70,6 +72,45 @@ public class T1Ejercicio53 {
     }
   
     return mcd;
+  }
+
+  public static void simplificarFraccion (int mcd, int numerador, int denominador) {
+    int newNumerador = numerador / mcd;
+    int newDenominador = denominador / mcd;
+    System.out.println("La fraccion simplificada es:");
+    System.out.println(newNumerador);
+    System.out.println("-");
+    System.out.println(newDenominador);
+  }
+
+  public static void sumarFracciones () {
+    
+    Scanner sc = new Scanner(System.in);
+    
+    int sumaNum = 0;
+    int sumaDen = 0;
+
+    System.out.println("Ingrese el numerador de la fraccion 1:");
+    int num1 = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion 1:");
+    int den1 = sc.nextInt();
+
+    System.out.println("Ingrese el numerador de la fraccion 2:");
+    int num2 = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion 2:");
+    int den2 = sc.nextInt();
+
+    if (den1 == den2) {
+      sumaNum = num1 + num2;
+      sumaDen = den1;
+    } else {
+      sumaNum = num1 * den2 + num2 * den1;
+      sumaDen = den1 * den2;
+    }
+
+    sc.close();
   }
 
   public static void main(String[] args) {
