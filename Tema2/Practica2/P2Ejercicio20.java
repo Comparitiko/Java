@@ -36,12 +36,15 @@ public class P2Ejercicio20 {
 
       }
 
-      sc.close();
-
     } catch (IllegalArgumentException err) {
       System.out.println("Error: " + err.getMessage());
+
     } catch (InputMismatchException err) {
       System.out.println("Error: El numero introducido no es un numero entero");
+
+    } finally {
+      sc.close();
+      
     }
 
 
