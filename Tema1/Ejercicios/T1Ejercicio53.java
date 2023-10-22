@@ -31,6 +31,7 @@ import java.util.Scanner;
 
 public class T1Ejercicio53 {
   
+  // Leer una fraccion por terminal
   public static void leerFraccion () {
 
     Scanner sc = new Scanner(System.in);
@@ -50,6 +51,7 @@ public class T1Ejercicio53 {
     
   }
 
+  // Mostrar por pantalla la fraccion
   public static void escribirFraccion (int numerador, int denominador) {
     if (denominador == 1) {
       System.out.println(numerador);
@@ -60,6 +62,7 @@ public class T1Ejercicio53 {
     }
   }
 
+  // Funcion que calcula el mcd del numerador y el denominador
   public static int calcularMcd (int numerador, int denominador) {
     
     int mcd = numerador;
@@ -74,6 +77,7 @@ public class T1Ejercicio53 {
     return mcd;
   }
 
+  // Simplificar la funcion
   public static void simplificarFraccion (int mcd, int numerador, int denominador) {
     int newNumerador = numerador / mcd;
     int newDenominador = denominador / mcd;
@@ -83,6 +87,7 @@ public class T1Ejercicio53 {
     System.out.println(newDenominador);
   }
 
+  // Sumar fracciones
   public static void sumarFracciones () {
     
     Scanner sc = new Scanner(System.in);
@@ -110,12 +115,120 @@ public class T1Ejercicio53 {
       sumaDen = den1 * den2;
     }
 
+    System.out.println(sumaNum);
+    System.out.println("-");
+    System.out.println(sumaDen);
+
     sc.close();
+  }
+
+  // Restar fracciones
+  public static void restarFracciones () {
+
+    Scanner sc = new Scanner(System.in);
+    
+    int restaNum = 0;
+    int restaDen = 0;
+
+    System.out.println("Ingrese el numerador de la fraccion 1:");
+    int num1 = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion 1:");
+    int den1 = sc.nextInt();
+
+    System.out.println("Ingrese el numerador de la fraccion 2:");
+    int num2 = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion 2:");
+    int den2 = sc.nextInt();
+
+    restaNum = num1 * den2 - den1 * num2;
+    restaDen = den1 * den2;
+
+    System.out.println(restaNum);
+    System.out.println("-");
+    System.out.println(restaDen);
+
+    int mcd = calcularMcd(restaNum, restaDen);
+
+    simplificarFraccion(mcd, restaNum, restaDen);
+
+    sc.close();
+
+  }
+
+  public static void multiplicarFracciones () {
+
+    Scanner sc = new Scanner(System.in);
+
+    int mulNum = 0;
+    int mulDen = 0;
+
+    System.out.println("Ingrese el numerador de la fraccion 1:");
+    int num1 = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion 1:");
+    int den1 = sc.nextInt();
+
+    System.out.println("Ingrese el numerador de la fraccion 2:");
+    int num2 = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion 2:");
+    int den2 = sc.nextInt();
+
+    mulNum = num1 * num2;
+    mulDen = den1 * den2;
+
+    int mcd = calcularMcd(mulNum, mulDen);
+
+    simplificarFraccion(mcd, mulNum, mulDen);
+
+    sc.close();
+
+  }
+
+  public static void dividirFracciones () {
+
+    Scanner sc = new Scanner(System.in);
+
+    int divNum = 0;
+    int divDen = 0;
+
+    System.out.println("Ingrese el numerador de la fraccion 1:");
+    int num1 = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion 1:");
+    int den1 = sc.nextInt();
+
+    System.out.println("Ingrese el numerador de la fraccion 2:");
+    int num2 = sc.nextInt();
+
+    System.out.println("Ingrese el denominador de la fraccion 2:");
+    int den2 = sc.nextInt();
+
+    divNum = num1 * den2;
+    divDen = den1 * num2;
+
+
+    int mcd = calcularMcd(divNum, divDen);
+
+    simplificarFraccion(mcd, divNum, divDen);
+
+    sc.close();
+
   }
 
   public static void main(String[] args) {
 
-    leerFraccion();
+    Scanner sc = new Scanner(System.in);
+
+    int opcionMenu;
+
+    do {
+      opcionMenu = sc.nextInt();
+    } while (opcionMenu != 4);
+
+    sc.close();
 
   }
 
