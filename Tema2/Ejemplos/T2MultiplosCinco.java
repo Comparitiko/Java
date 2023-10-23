@@ -5,7 +5,6 @@ public class T2MultiplosCinco {
     for (int i = 500; i >= 100; i -= 5 ) {
       System.out.println(i);
     }
-
   }
 
 }
