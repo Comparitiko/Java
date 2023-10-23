@@ -1,4 +1,3 @@
-package Tema2.Ejemplos;
 import java.util.Scanner;
 
 public class T2Decenas {
