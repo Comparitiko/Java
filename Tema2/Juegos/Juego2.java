@@ -6,7 +6,7 @@ public class Juego2 {
     
     Scanner sc = new Scanner(System.in);
 
-    
+    asd
 
     sc.close();
 
