@@ -8,7 +8,7 @@ public class Potencia2 {
    * @param exponente
    * @return base elevado a exponente
    */
-  public static double potencia (double base, double exponente) {
+  public static double potencia (double base, int exponente) {
 
     double res = 1;
     
@@ -31,7 +31,7 @@ public class Potencia2 {
       double base = Double.parseDouble(sc.nextLine());
 
       System.out.println("Ingrese el exponente de la potencia:");
-      double exponente = Double.parseDouble(sc.nextLine()); 
+      int exponente = Integer.parseInt(sc.nextLine()); 
 
       // Llamar a la funcion potencia para que la calcule
       double res = potencia(base, exponente);
