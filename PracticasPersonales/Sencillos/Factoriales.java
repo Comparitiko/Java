@@ -8,9 +8,9 @@ class Factoriales {
     // Bucle para sacar el factorial de 8
     while (numero <= repeticiones) {
       resultado = numero * resultado;
-      numero ++;
+      numero++;
     }
-    
+
     // Imprimir por consola el resultado
     System.out.println(repeticiones + "! = " + resultado);
   }
