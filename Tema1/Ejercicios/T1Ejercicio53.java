@@ -31,23 +31,35 @@ import java.util.Scanner;
 
 public class T1Ejercicio53 {
   
-  // Leer una fraccion por terminal
-  public static void leerFraccion () {
+  // Leer una fraccion por terminal y devolver un array
+  public static int[] leerFraccion () {
 
     Scanner sc = new Scanner(System.in);
 
-    System.out.println("Ingrese el numerador de la fraccion:");
-    int numerador = sc.nextInt();
+    int numerador = 0, denominador = 0;
 
-    System.out.println("Ingrese el denominador de la fraccion:");
-    int denominador = sc.nextInt();
+    try {
 
-    escribirFraccion(numerador, denominador);
-    int mcd = calcularMcd(numerador, denominador);
-    simplificarFraccion(mcd, numerador, denominador);
+      System.out.println("Ingrese el numerador de la fraccion:");
+      numerador = Integer.parseInt(sc.nextLine());
 
+      System.out.println("Ingrese el denominador de la fraccion:");
+      denominador = Integer.parseInt(sc.nextLine());
 
-    sc.close();
+    } catch (Exception err) {
+
+      System.out.println("Error: " + err);
+
+    } finally {
+
+      sc.close();
+
+    }
+
+    int[] numDen = {numerador, denominador};
+      
+    return numDen;
+
     
   }
 
@@ -78,143 +90,102 @@ public class T1Ejercicio53 {
   }
 
   // Simplificar la funcion
-  public static void simplificarFraccion (int mcd, int numerador, int denominador) {
+  public static int[] simplificarFraccion (int mcd, int numerador, int denominador) {
     int newNumerador = numerador / mcd;
     int newDenominador = denominador / mcd;
-    System.out.println("La fraccion simplificada es:");
-    System.out.println(newNumerador);
-    System.out.println("-");
-    System.out.println(newDenominador);
+    
+    int[] numDenSimplificado = {newNumerador, newDenominador};
+
+    return numDenSimplificado;
   }
 
   // Sumar fracciones
   public static void sumarFracciones () {
     
-    Scanner sc = new Scanner(System.in);
-    
     int sumaNum = 0;
     int sumaDen = 0;
 
-    System.out.println("Ingrese el numerador de la fraccion 1:");
-    int num1 = sc.nextInt();
+    System.out.println("Ingresa la fraccion 1");
+    int[] fraccion1 = leerFraccion();
 
-    System.out.println("Ingrese el denominador de la fraccion 1:");
-    int den1 = sc.nextInt();
+    System.out.println("Ingresa la fraccion 2");
+    int[] fraccion2 = leerFraccion();
 
-    System.out.println("Ingrese el numerador de la fraccion 2:");
-    int num2 = sc.nextInt();
+    sumaNum = fraccion1[0] * fraccion2[1] + fraccion2[0] * fraccion1[1];
+    sumaDen = fraccion1[1] * fraccion2[1];
 
-    System.out.println("Ingrese el denominador de la fraccion 2:");
-    int den2 = sc.nextInt();
+    int mcd = calcularMcd(sumaNum, sumaDen);
 
-    if (den1 == den2) {
-      sumaNum = num1 + num2;
-      sumaDen = den1;
-    } else {
-      sumaNum = num1 * den2 + num2 * den1;
-      sumaDen = den1 * den2;
-    }
+    int[] fraccionSimplificada = simplificarFraccion(mcd, sumaNum, sumaDen);
 
-    System.out.println(sumaNum);
-    System.out.println("-");
-    System.out.println(sumaDen);
-
-    sc.close();
+    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
   }
 
   // Restar fracciones
   public static void restarFracciones () {
-
-    Scanner sc = new Scanner(System.in);
     
     int restaNum = 0;
     int restaDen = 0;
 
-    System.out.println("Ingrese el numerador de la fraccion 1:");
-    int num1 = sc.nextInt();
+    System.out.println("Ingresa la fraccion 1");
+    int[] fraccion1 = leerFraccion();
 
-    System.out.println("Ingrese el denominador de la fraccion 1:");
-    int den1 = sc.nextInt();
+    System.out.println("Ingresa la fraccion 2");
+    int[] fraccion2 = leerFraccion();
 
-    System.out.println("Ingrese el numerador de la fraccion 2:");
-    int num2 = sc.nextInt();
-
-    System.out.println("Ingrese el denominador de la fraccion 2:");
-    int den2 = sc.nextInt();
-
-    restaNum = num1 * den2 - den1 * num2;
-    restaDen = den1 * den2;
-
-    System.out.println(restaNum);
-    System.out.println("-");
-    System.out.println(restaDen);
+    restaNum = fraccion1[0] * fraccion2[1] - fraccion1[1] * fraccion2[0];
+    restaDen = fraccion1[1] * fraccion2[1];
 
     int mcd = calcularMcd(restaNum, restaDen);
 
-    simplificarFraccion(mcd, restaNum, restaDen);
+    int[] fraccionSimplificada = simplificarFraccion(mcd, restaNum, restaDen);
 
-    sc.close();
+    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
 
   }
 
   public static void multiplicarFracciones () {
 
-    Scanner sc = new Scanner(System.in);
-
     int mulNum = 0;
     int mulDen = 0;
 
-    System.out.println("Ingrese el numerador de la fraccion 1:");
-    int num1 = sc.nextInt();
+    System.out.println("Ingresa la fraccion 1");
+    int[] fraccion1 = leerFraccion();
 
-    System.out.println("Ingrese el denominador de la fraccion 1:");
-    int den1 = sc.nextInt();
+    System.out.println("Ingresa la fraccion 2");
+    int[] fraccion2 = leerFraccion();
 
-    System.out.println("Ingrese el numerador de la fraccion 2:");
-    int num2 = sc.nextInt();
-
-    System.out.println("Ingrese el denominador de la fraccion 2:");
-    int den2 = sc.nextInt();
-
-    mulNum = num1 * num2;
-    mulDen = den1 * den2;
+    mulNum = fraccion1[0] * fraccion2[0];
+    mulDen = fraccion1[1] * fraccion2[1];
 
     int mcd = calcularMcd(mulNum, mulDen);
 
-    simplificarFraccion(mcd, mulNum, mulDen);
+    int[] fraccionSimplificada = simplificarFraccion(mcd, mulNum, mulDen);
 
-    sc.close();
+    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
 
   }
 
   public static void dividirFracciones () {
 
-    Scanner sc = new Scanner(System.in);
-
     int divNum = 0;
     int divDen = 0;
 
-    System.out.println("Ingrese el numerador de la fraccion 1:");
-    int num1 = sc.nextInt();
+    System.out.println("Ingresa la fraccion 1");
+    int[] fraccion1 = leerFraccion();
 
-    System.out.println("Ingrese el denominador de la fraccion 1:");
-    int den1 = sc.nextInt();
+    System.out.println("Ingresa la fraccion 2");
+    int[] fraccion2 = leerFraccion();
 
-    System.out.println("Ingrese el numerador de la fraccion 2:");
-    int num2 = sc.nextInt();
-
-    System.out.println("Ingrese el denominador de la fraccion 2:");
-    int den2 = sc.nextInt();
-
-    divNum = num1 * den2;
-    divDen = den1 * num2;
+    divNum = fraccion1[0] * fraccion2[1];
+    divDen =fraccion1[1] * fraccion2[0];
 
 
     int mcd = calcularMcd(divNum, divDen);
 
-    simplificarFraccion(mcd, divNum, divDen);
+    int[] fraccionSimplificada = simplificarFraccion(mcd, divNum, divDen);
 
-    sc.close();
+    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
 
   }
 
@@ -222,11 +193,54 @@ public class T1Ejercicio53 {
 
     Scanner sc = new Scanner(System.in);
 
-    int opcionMenu;
+    int opcionMenu = 0;
 
+    // Menu que pida un numero
     do {
-      opcionMenu = sc.nextInt();
-    } while (opcionMenu != 4);
+
+      System.out.println("---- Menú ----");
+      System.out.println("1. Sumar dos fracciones");
+      System.out.println("2. Restar dos fracciones");
+      System.out.println("3. Multiplicar dos fracciones");
+      System.out.println("4. Dividir dos fracciones");
+      System.out.println("5. Salir");
+      try {
+        
+        opcionMenu = Integer.parseInt(sc.nextLine());
+
+        switch (opcionMenu) {
+        case 1:
+          System.out.println("Opcion de sumar fracciones seleccionada...");
+          sumarFracciones();
+          break;
+        case 2:
+        System.out.println("Opcion de restar fracciones seleccionada...");
+          restarFracciones();
+          break;
+        case 3:
+        System.out.println("Opcion de multiplicar fracciones seleccionada...");
+          multiplicarFracciones();
+          break;
+        case 4:
+        System.out.println("Opcion de dividir fracciones seleccionada...");
+          dividirFracciones();
+          break;
+        case 5:
+          System.out.println("Saliendo...");
+          break;
+    
+        default:
+          System.out.println("Numero incorrecto por favor ingrese uno de los valores mostrados");
+         
+    }
+
+      } catch (Exception e) {
+        
+        System.out.println(e);
+
+      }
+
+    } while (opcionMenu != 5);
 
     sc.close();
 
