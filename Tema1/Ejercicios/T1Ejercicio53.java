@@ -27,51 +27,44 @@
   Salir
 */
 
-import java.util.Scanner;
-
 public class T1Ejercicio53 {
   
   // Leer una fraccion por terminal y devolver un array
   public static int[] leerFraccion () {
-
-    Scanner sc = new Scanner(System.in);
 
     int numerador = 0, denominador = 0;
 
     try {
 
       System.out.println("Ingrese el numerador de la fraccion:");
-      numerador = Integer.parseInt(sc.nextLine());
+      numerador = Integer.parseInt(System.console().readLine());
 
       System.out.println("Ingrese el denominador de la fraccion:");
-      denominador = Integer.parseInt(sc.nextLine());
+      denominador = Integer.parseInt(System.console().readLine());
 
     } catch (Exception err) {
 
       System.out.println("Error: " + err);
 
-    } finally {
-
-      sc.close();
-
     }
 
-    int[] numDen = {numerador, denominador};
+    int mcd = calcularMcd(numerador, denominador);
+
+    int[] fraccionSimplificada = simplificarFraccion(mcd, numerador, denominador);
+
+    System.out.println("La fraccion simplicada es:");
+    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
       
-    return numDen;
+    return fraccionSimplificada;
 
     
   }
 
   // Mostrar por pantalla la fraccion
   public static void escribirFraccion (int numerador, int denominador) {
-    if (denominador == 1) {
-      System.out.println(numerador);
-    } else {
       System.out.println(numerador);
       System.out.println("-");
       System.out.println(denominador);
-    }
   }
 
   // Funcion que calcula el mcd del numerador y el denominador
@@ -114,11 +107,8 @@ public class T1Ejercicio53 {
     sumaNum = fraccion1[0] * fraccion2[1] + fraccion2[0] * fraccion1[1];
     sumaDen = fraccion1[1] * fraccion2[1];
 
-    int mcd = calcularMcd(sumaNum, sumaDen);
-
-    int[] fraccionSimplificada = simplificarFraccion(mcd, sumaNum, sumaDen);
-
-    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
+    System.out.println("La suma de las fracciones simplificadas es: ");
+    escribirFraccion(sumaNum, sumaDen);
   }
 
   // Restar fracciones
@@ -136,14 +126,12 @@ public class T1Ejercicio53 {
     restaNum = fraccion1[0] * fraccion2[1] - fraccion1[1] * fraccion2[0];
     restaDen = fraccion1[1] * fraccion2[1];
 
-    int mcd = calcularMcd(restaNum, restaDen);
-
-    int[] fraccionSimplificada = simplificarFraccion(mcd, restaNum, restaDen);
-
-    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
+    System.out.println("La resta de las fracciones simplificadas es: ");
+    escribirFraccion(restaNum, restaDen);
 
   }
 
+  // Funcion para dividir dos fracciones
   public static void multiplicarFracciones () {
 
     int mulNum = 0;
@@ -158,14 +146,12 @@ public class T1Ejercicio53 {
     mulNum = fraccion1[0] * fraccion2[0];
     mulDen = fraccion1[1] * fraccion2[1];
 
-    int mcd = calcularMcd(mulNum, mulDen);
-
-    int[] fraccionSimplificada = simplificarFraccion(mcd, mulNum, mulDen);
-
-    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
+    System.out.println("La multiplicacion de las fracciones simplificadas es: ");
+    escribirFraccion(mulNum, mulDen);
 
   }
 
+  // Funcion para dividir dos fracciones
   public static void dividirFracciones () {
 
     int divNum = 0;
@@ -179,19 +165,13 @@ public class T1Ejercicio53 {
 
     divNum = fraccion1[0] * fraccion2[1];
     divDen =fraccion1[1] * fraccion2[0];
-
-
-    int mcd = calcularMcd(divNum, divDen);
-
-    int[] fraccionSimplificada = simplificarFraccion(mcd, divNum, divDen);
-
-    escribirFraccion(fraccionSimplificada[0], fraccionSimplificada[1]);
+    
+    System.out.println("La division de las fracciones simplificadas es: ");
+    escribirFraccion(divNum, divDen);
 
   }
 
   public static void main(String[] args) {
-
-    Scanner sc = new Scanner(System.in);
 
     int opcionMenu = 0;
 
@@ -206,7 +186,7 @@ public class T1Ejercicio53 {
       System.out.println("5. Salir");
       try {
         
-        opcionMenu = Integer.parseInt(sc.nextLine());
+        opcionMenu = Integer.parseInt(System.console().readLine());
 
         switch (opcionMenu) {
         case 1:
@@ -236,13 +216,11 @@ public class T1Ejercicio53 {
 
       } catch (Exception e) {
         
-        System.out.println(e);
+        System.out.println("Error: " + e);
 
       }
 
     } while (opcionMenu != 5);
-
-    sc.close();
 
   }
 
