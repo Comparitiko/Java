@@ -15,7 +15,7 @@
   Utiliza esta función en un programa para comprobar que funciona correctamente.
 */
 
-public class T2P2Ej1 {
+public class T2P2Ej1Clase {
   
   public static void convierteEnPalotes (int n) {
 
