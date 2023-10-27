@@ -17,27 +17,31 @@
 
 public class T2P2Ej1Clase {
   
+  // Convertir los digitos en palotes y si es 0 poner un guion solo
   public static void convierteEnPalotes (int n) {
 
-    while (n % 10 == 0) {
+    for (int i = 0; i != n; i++) {
 
-      System.out.print("- ");
-      n /= 10;
+      System.out.print("| ");
 
     }
 
-    while (n != 0) {
+    System.out.print("- ");
+    
+  }
+  
+  // Sacar digitos del String pasado por consola y ir pasandolo a la funcion de convertir en palotes
+  public static void sacarDigito (String stringNum) {
 
-      for (int i = 0; i != n % 10; i++) {
+    String[] arrayString = stringNum.split("");
 
-        System.out.print("| ");
+    for (int i = 0; i != arrayString.length; i++) {
 
-      }
+      convierteEnPalotes(Integer.parseInt(arrayString[i]));
 
-      System.out.print("- ");
-      n /= 10;
     }
     
+
   }
 
   public static void main(String[] args) {
@@ -46,10 +50,11 @@ public class T2P2Ej1Clase {
     try {
 
       System.out.println("Ingrese el numero que quiere convertir en palotes:");
-      convierteEnPalotes(Integer.parseInt(System.console().readLine()));
+      sacarDigito(System.console().readLine());
+      
       
     } catch (Exception e) {
-      System.out.println("Error: " + e);
+      System.out.println("Error: " + e.getMessage());
     }
 
   }
