@@ -37,7 +37,7 @@ public class T2P2Ej1Clase {
 
       convierteEnPalotes(Integer.parseInt(arrayString[i]));
 
-      if (Integer.parseInt(arrayString[i]) == 0 || i < arrayString.length - 1) System.out.print("- ");
+      if (Integer.parseInt(arrayString[i]) == 0 || i != arrayString.length - 1) System.out.print("- ");
 
     }
     
