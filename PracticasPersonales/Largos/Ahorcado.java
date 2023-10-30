@@ -55,7 +55,7 @@ public class Ahorcado {
     System.out.println(" |   |");
     System.out.println(" o   |");
     System.out.println("-|-  |");
-    System.out.println("( )  |");
+    System.out.println("(    |");
     System.out.println(" -----");
 
   }

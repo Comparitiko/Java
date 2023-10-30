@@ -15,6 +15,7 @@ public class T2P1Ej2Clase {
     int quitarMax = 0, quitarMin = 7;
 
     for (int i = 0; i != 5; i++) {
+
       int dado = (int) Math.ceil(Math.random() * 6);
       sumaDados += dado;
       if (dado < quitarMin) quitarMin = dado;
@@ -44,13 +45,27 @@ public class T2P1Ej2Clase {
         System.out.println("Cubitus: " + cubitusTurno + " puntos.");
         System.out.println("Humerus: " + humerusTurno + " puntos.");
 
-        puntosCubitus += cubitusTurno;
-        puntosHumerus += humerusTurno;
+        if (cubitusTurno < humerusTurno) {
+
+          System.out.println("La partida " + (i + 1) + " la ha ganado Humerus");
+          puntosHumerus++;
+
+        } else if (cubitusTurno > humerusTurno) {
+          
+          System.out.println("La partida " + (i + 1) + " la ha ganado Cubitus");
+          puntosCubitus++;
+
+        } else {
+          System.out.println("La partida " + (i + 1) + " ha quedado empate");
+        }
+
+        
 
       }
 
-      if (puntosHumerus > puntosCubitus) System.out.println("El ganador del juego ha sido Humerus con " + puntosHumerus + " puntos");
-      else System.out.println("El ganador del juego ha sido Cubitus con " + puntosCubitus + " puntos");
+      if (puntosHumerus > puntosCubitus) System.out.println("El ganador del juego ha sido Humerus con " + puntosHumerus + " partidas ganadas frente a " + puntosCubitus + " puntos de Cubitus");
+      else if (puntosHumerus < puntosCubitus) System.out.println("El ganador del juego ha sido Cubitus con " + puntosCubitus + " partidas ganadas frente a " + puntosHumerus + " puntos de Cubitus");
+      else System.out.println("En el juego han empatado a " + puntosCubitus + " partidas ganadas cada uno");
 
     } catch (Exception e) {
       System.out.println("Error: " + e.getMessage());
