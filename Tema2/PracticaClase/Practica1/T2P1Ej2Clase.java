@@ -30,7 +30,7 @@ public class T2P1Ej2Clase {
   public static void main(String[] args) {
 
     // Declaracion de variables
-    int puntosCubitus = 0, puntosHumerus = 0, turnos;
+    int partidasCubitus = 0, partidasHumerus = 0, turnos;
 
     try {
       // Pedir turnos envuelto en un try catch
@@ -48,12 +48,12 @@ public class T2P1Ej2Clase {
         if (cubitusTurno < humerusTurno) {
 
           System.out.println("La partida " + (i + 1) + " la ha ganado Humerus");
-          puntosHumerus++;
+          partidasHumerus++;
 
         } else if (cubitusTurno > humerusTurno) {
           
           System.out.println("La partida " + (i + 1) + " la ha ganado Cubitus");
-          puntosCubitus++;
+          partidasCubitus++;
 
         } else {
           System.out.println("La partida " + (i + 1) + " ha quedado empate");
@@ -63,9 +63,9 @@ public class T2P1Ej2Clase {
 
       }
 
-      if (puntosHumerus > puntosCubitus) System.out.println("El ganador del juego ha sido Humerus con " + puntosHumerus + " partidas ganadas frente a " + puntosCubitus + " puntos de Cubitus");
-      else if (puntosHumerus < puntosCubitus) System.out.println("El ganador del juego ha sido Cubitus con " + puntosCubitus + " partidas ganadas frente a " + puntosHumerus + " puntos de Cubitus");
-      else System.out.println("En el juego han empatado a " + puntosCubitus + " partidas ganadas cada uno");
+      if (partidasHumerus > partidasCubitus) System.out.println("El ganador del juego ha sido Humerus con " + partidasHumerus + " partidas ganadas frente a " + partidasCubitus + " puntos de Cubitus");
+      else if (partidasHumerus < partidasCubitus) System.out.println("El ganador del juego ha sido Cubitus con " + partidasCubitus + " partidas ganadas frente a " + partidasHumerus + " puntos de Cubitus");
+      else System.out.println("En el juego han empatado a " + partidasCubitus + " partidas ganadas cada uno");
 
     } catch (Exception e) {
       System.out.println("Error: " + e.getMessage());
