@@ -60,7 +60,7 @@ public class T2P1Ej2Clase {
           System.out.println("La partida " + (i + 1) + " ha quedado empate");
         }
 
-        
+        System.out.println();
 
       }
 

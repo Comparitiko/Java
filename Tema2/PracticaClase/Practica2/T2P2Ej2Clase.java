@@ -9,17 +9,10 @@
 
 public class T2P2Ej2Clase {
   
-  // Funcion que devuelve los puntos que se ha obtenido al tirar los dados 5 veces sin contar los numeros impares
-  public static int tirarDados () {
-    int sumaDados = 0;
+  // Funcion que devuelve la tirada
+  public static int tirarDado () {
 
-    for (int i = 0; i != 5; i++) {
-      int dado = (int) Math.ceil(Math.random() * 6);
-      if (dado % 2 == 0 ) sumaDados += dado;
-      
-    }
-    
-    return sumaDados;
+    return (int) Math.ceil(Math.random() * 6);
 
   }
 
@@ -35,17 +28,47 @@ public class T2P2Ej2Clase {
 
       for (int i = 0; i != turnos; i++) {
 
-        int cubitusTurno = tirarDados(), humerusTurno = tirarDados();
+        int cubitusTurno = 0, humerusTurno = 0;
 
+        // Bucle que tire los dados del j1 y si es impar se suma
+        System.out.print("Cubitus: ");
+        for (int j = 0; j != 4; j++) {
+
+          int tiradaC = tirarDado();
+
+          if (tiradaC % 10 != 0) cubitusTurno += tiradaC;
+
+          System.out.print(tiradaC + ", ");
+
+        }
+
+        System.out.println();
+        
+        // Bucle que tire los dados del j2 y si es par se suma
+        System.out.print("Humerus: ");
+        for (int j = 0; j != 3; j++) {
+
+          int tiradaH = tirarDado();
+
+          if (tiradaH % 2 == 0) humerusTurno += tiradaH;
+
+          System.out.print(tiradaH + ", ");
+
+        }
+
+        System.out.println();
+        
+        // Pintar el resultado del turno
         System.out.println("En el turno " + (i + 1) + " han sacado:");
         System.out.println("Cubitus: " + cubitusTurno + " puntos.");
         System.out.println("Humerus: " + humerusTurno + " puntos.");
 
-        puntosCubitus += cubitusTurno;
-        puntosHumerus += humerusTurno;
+        if (humerusTurno > cubitusTurno) puntosHumerus++;
+        if (humerusTurno < cubitusTurno) puntosCubitus++;
 
       }
 
+      // Pintar resultado de la partida
       if (puntosHumerus > puntosCubitus) System.out.println("El ganador del juego ha sido Humerus con " + puntosHumerus + " puntos");
       else System.out.println("El ganador del juego ha sido Cubitus con " + puntosCubitus + " puntos");
 
