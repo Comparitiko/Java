@@ -1,5 +1,89 @@
 public class Ahorcado {
 
+  // Funcion que imprime el ahorcado  en fase 0
+  public static void fase0 () {
+
+    System.out.println(" -----");
+    System.out.println(" |   |");
+    System.out.println("     |");
+    System.out.println("     |");
+    System.out.println("     |");
+    System.out.println(" -----");
+
+  }
+
+  // Funcion que imprime el ahorcado  en fase 1
+  public static void fase1 () {
+
+    System.out.println(" -----");
+    System.out.println(" |   |");
+    System.out.println(" o   |");
+    System.out.println("     |");
+    System.out.println("     |");
+    System.out.println(" -----");
+
+  }
+
+  // Funcion que imprime el ahorcado  en fase 2
+  public static void fase2 () {
+
+    System.out.println(" -----");
+    System.out.println(" |   |");
+    System.out.println(" o   |");
+    System.out.println(" |   |");
+    System.out.println("     |");
+    System.out.println(" -----");
+
+  }
+
+  // Funcion que imprime el ahorcado  en fase 3
+  public static void fase3 () {
+
+    System.out.println(" -----");
+    System.out.println(" |   |");
+    System.out.println(" o   |");
+    System.out.println("-|-  |");
+    System.out.println("     |");
+    System.out.println(" -----");
+
+  }
+
+  // Funcion que imprime el ahorcado  en fase 4
+  public static void fase4 () {
+
+    System.out.println(" -----");
+    System.out.println(" |   |");
+    System.out.println(" o   |");
+    System.out.println("-|-  |");
+    System.out.println("( )  |");
+    System.out.println(" -----");
+
+  }
+    
+  // Funcion que imprime el ahorcado  en fase 5
+  public static void fase5 () {
+
+    System.out.println(" ----");
+    System.out.println(" |   |");
+    System.out.println(" o   |");
+    System.out.println("-|-  |");
+    System.out.println("( )  |");
+    System.out.println(" -----");
+
+  }
+
+  // Lanzar funciones fase segun el turno recibido
+  public static void turnos (int turno) {
+
+    if (turno == 0) fase0();
+    if (turno == 1) fase1();
+    if (turno == 2) fase2();
+    if (turno == 3) fase3();
+    if (turno == 4) fase4();
+    if (turno == 5) fase5();
+
+  }
+
   // Imprimir menu segun el turno de juego que sea
   public static int menu (int numPartida) {
     
@@ -28,11 +112,36 @@ public class Ahorcado {
     return palabras[(int) Math.ceil(Math.random() * palabras.length) - 1];
   }
 
-  public static void juego(String palabra) {
+  // Funcion que va imprimiendo el resultado dadas las letras escritas
+  public static void resultado (String letra, String[] palabra) {
+
+    String letraConAcento = letra;
+
+    if (letra.equals("a")) letraConAcento = "á";
+    if (letra.equals("e")) letraConAcento = "é";
+    if (letra.equals("i")) letraConAcento = "í";
+    if (letra.equals("o")) letraConAcento = "ó";
+    if (letra.equals("u")) letraConAcento = "ú";
+
+
+
+    for (int i = 0; i != palabra.length; i++) {
+
+      
+
+      if (letra.equals(palabra[i]) || letraConAcento.equals(palabra[i])) System.out.print(palabra[i]);
+      else System.out.print("_");
+
+    }
+
+  }
+
+  // Funcion que imprime el juego
+  public static void juego(String palabra) throws Exception {
+
+    int turno = 0;
 
     String[] palabraArray = palabra.split("");
-
-    System.out.println(palabra);
 
     // Bucle que pinta los _ para cada letra de la palabra
     for (int i = 0; i != palabra.length(); i++) {
@@ -41,6 +150,22 @@ public class Ahorcado {
 
     }
 
+    System.out.println();
+
+    while (turno != 6) {
+
+      turnos(turno);
+      if (turno == 5) break;
+
+      System.out.println("Ingrese una letra");
+      String letra = System.console().readLine();
+
+      if (letra.length() != 1) throw new Exception();
+
+      resultado(letra, palabraArray);
+
+    }  
+    
   }
 
   public static void main(String[] args) {
