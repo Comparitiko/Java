@@ -45,6 +45,7 @@ public class T2P1Ej2Clase {
         System.out.println("Cubitus: " + cubitusTurno + " puntos.");
         System.out.println("Humerus: " + humerusTurno + " puntos.");
 
+        //Mirar quien ha ganado la partida
         if (cubitusTurno < humerusTurno) {
 
           System.out.println("La partida " + (i + 1) + " la ha ganado Humerus");
@@ -63,6 +64,7 @@ public class T2P1Ej2Clase {
 
       }
 
+      // Imprimir por terminal resultados del juego
       if (partidasHumerus > partidasCubitus) System.out.println("El ganador del juego ha sido Humerus con " + partidasHumerus + " partidas ganadas frente a " + partidasCubitus + " puntos de Cubitus");
       else if (partidasHumerus < partidasCubitus) System.out.println("El ganador del juego ha sido Cubitus con " + partidasCubitus + " partidas ganadas frente a " + partidasHumerus + " puntos de Cubitus");
       else System.out.println("En el juego han empatado a " + partidasCubitus + " partidas ganadas cada uno");
