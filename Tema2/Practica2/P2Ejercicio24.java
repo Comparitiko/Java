@@ -22,7 +22,7 @@ public class P2Ejercicio24 {
     Scanner sc = new Scanner(System.in);
 
     // Declaracion de variables
-    int menor = 1, mayor = 100, num = generarNumero(menor, mayor), opcionMenu = 0, intentos = 0;
+    int menor = 1, mayor = 100, num = generarNumero(menor, mayor), opcionMenu = 0, intentos = 1;
 
     System.out.println("Piensa un numero del 1 al 100");
 
