@@ -26,7 +26,7 @@ public class P2Ejercicio21 {
     Scanner sc = new Scanner(System.in);
 
     // Declaracion de variables
-    int newNum = 0, multiplicador = 1;
+    int newNum = 0, multiplicador;
 
     try {
 
@@ -38,7 +38,7 @@ public class P2Ejercicio21 {
       // Calcular el primer multiplicador segun los digitos que tenga el numero
       multiplicador = ((int) Math.pow(10, digitos(num))) / 10;
 
-      // Bucle que vaya calculando el numero
+      // Bucle que vaya calculando el nuevo numero
       while (num > 0) {
         newNum += (num % 10) * multiplicador;
         multiplicador /= 10;
@@ -52,6 +52,7 @@ public class P2Ejercicio21 {
       System.out.println("Error: El numero introducido no es un numero entero");
 
     } finally {
+      
       sc.close();
       
     }
