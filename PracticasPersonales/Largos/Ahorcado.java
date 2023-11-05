@@ -151,22 +151,15 @@ public class Ahorcado {
 
     System.out.println();
 
-<<<<<<< HEAD
     return palabraNueva;
 
-=======
->>>>>>> 0dcb67a0edf16494143069dc2162f132a0e0caa2
   }
 
   // Funcion que imprime el juego
   public static void juego(String palabra) throws Exception {
 
-<<<<<<< HEAD
     int turno = 0, intentos = 0;
     System.out.println(palabra);
-=======
-    int intentos = 0;
->>>>>>> 0dcb67a0edf16494143069dc2162f132a0e0caa2
 
     String[] palabraArrayOriginal = palabra.split("");
     String[] palabraArrayConGuiones = new String[palabra.length()];
@@ -183,9 +176,7 @@ public class Ahorcado {
 
     while (intentos != 6) {
 
-<<<<<<< HEAD
       System.out.println("Ingrese una letra:");
-=======
       turnos(intentos);
       if (intentos == 5) {
         System.out.println();
@@ -195,7 +186,6 @@ public class Ahorcado {
         break;
       }
       System.out.println("Ingrese una letra");
->>>>>>> 0dcb67a0edf16494143069dc2162f132a0e0caa2
       String letra = System.console().readLine();
 
       if (letra.length() != 1) throw new Exception("Tienes que añadir solo un caracter");
