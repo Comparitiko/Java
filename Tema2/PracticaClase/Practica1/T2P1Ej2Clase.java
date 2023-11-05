@@ -15,6 +15,7 @@ public class T2P1Ej2Clase {
     int quitarMax = 0, quitarMin = 7;
 
     for (int i = 0; i != 5; i++) {
+
       int dado = (int) Math.ceil(Math.random() * 6);
       sumaDados += dado;
       if (dado < quitarMin) quitarMin = dado;
@@ -29,7 +30,7 @@ public class T2P1Ej2Clase {
   public static void main(String[] args) {
 
     // Declaracion de variables
-    int puntosCubitus = 0, puntosHumerus = 0, turnos;
+    int partidasCubitus = 0, partidasHumerus = 0, turnos;
 
     try {
       // Pedir turnos envuelto en un try catch
@@ -44,13 +45,29 @@ public class T2P1Ej2Clase {
         System.out.println("Cubitus: " + cubitusTurno + " puntos.");
         System.out.println("Humerus: " + humerusTurno + " puntos.");
 
-        puntosCubitus += cubitusTurno;
-        puntosHumerus += humerusTurno;
+        //Mirar quien ha ganado la partida
+        if (cubitusTurno < humerusTurno) {
+
+          System.out.println("La partida " + (i + 1) + " la ha ganado Humerus");
+          partidasHumerus++;
+
+        } else if (cubitusTurno > humerusTurno) {
+          
+          System.out.println("La partida " + (i + 1) + " la ha ganado Cubitus");
+          partidasCubitus++;
+
+        } else {
+          System.out.println("La partida " + (i + 1) + " ha quedado empate");
+        }
+
+        System.out.println();
 
       }
 
-      if (puntosHumerus > puntosCubitus) System.out.println("El ganador del juego ha sido Humerus con " + puntosHumerus + " puntos");
-      else System.out.println("El ganador del juego ha sido Cubitus con " + puntosCubitus + " puntos");
+      // Imprimir por terminal resultados del juego
+      if (partidasHumerus > partidasCubitus) System.out.println("El ganador del juego ha sido Humerus con " + partidasHumerus + " partidas ganadas frente a " + partidasCubitus + " puntos de Cubitus");
+      else if (partidasHumerus < partidasCubitus) System.out.println("El ganador del juego ha sido Cubitus con " + partidasCubitus + " partidas ganadas frente a " + partidasHumerus + " puntos de Cubitus");
+      else System.out.println("En el juego han empatado a " + partidasCubitus + " partidas ganadas cada uno");
 
     } catch (Exception e) {
       System.out.println("Error: " + e.getMessage());

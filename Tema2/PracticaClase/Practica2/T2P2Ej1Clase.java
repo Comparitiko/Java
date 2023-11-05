@@ -25,8 +25,6 @@ public class T2P2Ej1Clase {
       System.out.print("| ");
 
     }
-
-    System.out.print("- ");
     
   }
   
@@ -38,6 +36,8 @@ public class T2P2Ej1Clase {
     for (int i = 0; i != arrayString.length; i++) {
 
       convierteEnPalotes(Integer.parseInt(arrayString[i]));
+
+      if (Integer.parseInt(arrayString[i]) == 0 || i != arrayString.length - 1) System.out.print("- ");
 
     }
     

@@ -58,7 +58,7 @@ public class Ahorcado {
     System.out.println(" |   |");
     System.out.println(" o   |");
     System.out.println("-|-  |");
-    System.out.println("( )  |");
+    System.out.println("(    |");
     System.out.println(" -----");
 
   }
@@ -76,14 +76,14 @@ public class Ahorcado {
   }
 
   // Lanzar funciones fase segun el turno recibido
-  public static void turnos (int turno) {
+  public static void turnos (int intentos) {
 
-    if (turno == 0) fase0();
-    if (turno == 1) fase1();
-    if (turno == 2) fase2();
-    if (turno == 3) fase3();
-    if (turno == 4) fase4();
-    if (turno == 5) fase5();
+    if (intentos == 0) fase0();
+    if (intentos == 1) fase1();
+    if (intentos == 2) fase2();
+    if (intentos == 3) fase3();
+    if (intentos == 4) fase4();
+    if (intentos == 5) fase5();
 
   }
 
@@ -151,15 +151,22 @@ public class Ahorcado {
 
     System.out.println();
 
+<<<<<<< HEAD
     return palabraNueva;
 
+=======
+>>>>>>> 0dcb67a0edf16494143069dc2162f132a0e0caa2
   }
 
   // Funcion que imprime el juego
   public static void juego(String palabra) throws Exception {
 
+<<<<<<< HEAD
     int turno = 0, intentos = 0;
     System.out.println(palabra);
+=======
+    int intentos = 0;
+>>>>>>> 0dcb67a0edf16494143069dc2162f132a0e0caa2
 
     String[] palabraArrayOriginal = palabra.split("");
     String[] palabraArrayConGuiones = new String[palabra.length()];
@@ -174,12 +181,21 @@ public class Ahorcado {
 
     System.out.println();
 
-    while (turno != 6) {
+    while (intentos != 6) {
 
-      turnos(turno);
-      if (turno == 5) break;
-
+<<<<<<< HEAD
       System.out.println("Ingrese una letra:");
+=======
+      turnos(intentos);
+      if (intentos == 5) {
+        System.out.println();
+        System.out.println("Has perdido la partida.");
+        System.out.println("La palabra era: " + palabra);
+        System.out.println();
+        break;
+      }
+      System.out.println("Ingrese una letra");
+>>>>>>> 0dcb67a0edf16494143069dc2162f132a0e0caa2
       String letra = System.console().readLine();
 
       if (letra.length() != 1) throw new Exception("Tienes que añadir solo un caracter");
@@ -196,6 +212,8 @@ public class Ahorcado {
       if (palabraArrayConGuiones.equals(palabraArrayOriginal)) {
         System.out.println("Has acertado la palabra en " + intentos + " intentos");
       }
+
+      intentos++;
 
     }  
     

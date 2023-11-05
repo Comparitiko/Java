@@ -52,5 +52,14 @@
 			"}"
 		],
 		"description": "Create a function"
+	},
+
+	"System.console().readLine()": {
+		"prefix": "console",
+		"body": [
+			"System.console().readLine();",
+			"$0"
+		],
+		"description": "Request data from console"
 	}
-}
+}	
