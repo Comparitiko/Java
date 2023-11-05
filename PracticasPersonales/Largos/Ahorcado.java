@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Ahorcado {
 
   // Funcion que imprime el ahorcado  en fase 0
@@ -113,9 +116,11 @@ public class Ahorcado {
   }
 
   // Funcion que va imprimiendo el resultado dadas las letras escritas
-  public static void resultado (String letra, String[] palabra) {
-
+  public static String[] resultado (String letra, String[] palabraConGuiones, String[] palabra) {
+    String[] palabraNueva = new String[palabra.length];
     String letraConAcento = letra;
+    System.out.println(Arrays.toString(palabraConGuiones));
+    System.out.println(Arrays.toString(palabra));
 
     if (letra.equals("a")) letraConAcento = "á";
     if (letra.equals("e")) letraConAcento = "é";
@@ -127,26 +132,43 @@ public class Ahorcado {
 
     for (int i = 0; i != palabra.length; i++) {
 
-      
+      if (palabraConGuiones[i].equals("_")) {
+        if (i == 0 && letra.toUpperCase().equals(palabra[i])) {
+          palabraNueva[i] = palabra[i];
+          System.out.print(palabra[i]);
+        } else if (letra.equals(palabra[i]) || letraConAcento.equals(palabra[i])) {
+          palabraNueva[i] = palabra[i];
+          System.out.print(palabra[i]);
+        } else {
+          palabraNueva[i] = "_";
+          System.out.print("_");
+        }
+      }
 
-      if (letra.equals(palabra[i]) || letraConAcento.equals(palabra[i])) System.out.print(palabra[i]);
-      else System.out.print("_");
+      else palabraNueva[i] = palabra[i];
 
     }
+
+    System.out.println();
+
+    return palabraNueva;
 
   }
 
   // Funcion que imprime el juego
   public static void juego(String palabra) throws Exception {
 
-    int turno = 0;
+    int turno = 0, intentos = 0;
+    System.out.println(palabra);
 
-    String[] palabraArray = palabra.split("");
+    String[] palabraArrayOriginal = palabra.split("");
+    String[] palabraArrayConGuiones = new String[palabra.length()];
 
     // Bucle que pinta los _ para cada letra de la palabra
     for (int i = 0; i != palabra.length(); i++) {
 
       System.out.print("_");
+      palabraArrayConGuiones[i] = "_";
 
     }
 
@@ -157,12 +179,23 @@ public class Ahorcado {
       turnos(turno);
       if (turno == 5) break;
 
-      System.out.println("Ingrese una letra");
+      System.out.println("Ingrese una letra:");
       String letra = System.console().readLine();
 
-      if (letra.length() != 1) throw new Exception();
+      if (letra.length() != 1) throw new Exception("Tienes que añadir solo un caracter");
 
-      resultado(letra, palabraArray);
+      String[] palabraArrayAnterior = palabraArrayConGuiones;
+
+      palabraArrayConGuiones = resultado(letra, palabraArrayConGuiones, palabraArrayOriginal);
+
+      if (palabraArrayAnterior.equals(palabraArrayConGuiones)) {
+        turno++;
+        intentos++;
+        System.out.println(turno);
+      }
+      if (palabraArrayConGuiones.equals(palabraArrayOriginal)) {
+        System.out.println("Has acertado la palabra en " + intentos + " intentos");
+      }
 
     }  
     
