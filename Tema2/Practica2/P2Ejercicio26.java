@@ -10,7 +10,7 @@ public class P2Ejercicio26 {
   // Funcion para generar numero del 0 a la longitud del array - 1
   public static int generarNumero (int lenght) {
 
-    int numRan = (int) (Math.random() * (lenght + 1 - 0)) + 0;
+    int numRan = (int) (Math.random() * (lenght + 1));
 
     return numRan;
 
