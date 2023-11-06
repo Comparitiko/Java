@@ -19,7 +19,7 @@ public class T3Ejemplo1 {
       }
 
     }
-
+    
     // Mostrar el salario de cada trabajador
     for (int i = 0; i != salario.length; i++) {
 
