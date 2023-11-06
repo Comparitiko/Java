@@ -28,7 +28,7 @@ public class T3Ejemplo1 {
     } 
 
     // Mostrar la media del salario de los trabajadores
-    System.out.println("La media salarial de los trabajadores es de: " + (sumaSalarios / salario.length));
+    System.out.println("La media salarial de los trabajadores es de: " + (sumaSalarios / salario.length) + " Euros");
 
   }
 
