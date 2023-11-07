@@ -19,13 +19,13 @@ public class T1Ejercicio43 {
     String[] vectorInverso = new String[5];
 
     // Bucle para ingresar valores en el vector
-    for (int i = 0; i != 5; i++) {
+    for (int i = 0; i != vector.length; i++) {
       System.out.println("Ingrese el elemento numero " + (i + 1) + " del vector:");
       vector[i] = sc.nextLine();
     }
 
     // Bucle para cambiar el orden del vector
-    for (int i = 0; i != 5; i++) {
+    for (int i = 0; i != vectorInverso.length; i++) {
       vectorInverso[i] = vector[(vector.length - 1) - i];
     }
 
