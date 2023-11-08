@@ -7,7 +7,7 @@ public class T3ArrEjercicio1 {
 
   public static int genNum (int max, int min) {
 
-    return (int) Math.ceil(Math.random() * max + min) - min;
+    return (int) Math.random() * max + min - min;
 
   }
   
@@ -19,7 +19,7 @@ public class T3ArrEjercicio1 {
     for (int i = 0; i < nums.length; i++) {
 
       nums[i] = genNum(100, -100);
-      
+
       if (nums[i] > 0) numPositivos++;
       if (nums[i] < 0) numNegativos++;
 
