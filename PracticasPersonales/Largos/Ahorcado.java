@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Ahorcado {
@@ -133,7 +132,7 @@ public class Ahorcado {
     for (int i = 0; i != palabra.length; i++) {
 
       if (palabraConGuiones[i].equals("_")) {
-        if (i == 0 && letra.toUpperCase().equals(palabra[i])) {
+        if (i == 0 && letra.toUpperCase().equals(palabra[i]) || letraConAcento.toUpperCase().equals(palabra[i])) {
           palabraNueva[i] = palabra[i];
           System.out.print(palabra[i]);
         } else if (letra.equals(palabra[i]) || letraConAcento.equals(palabra[i])) {
@@ -194,16 +193,13 @@ public class Ahorcado {
 
       palabraArrayConGuiones = resultado(letra, palabraArrayConGuiones, palabraArrayOriginal);
 
-      if (palabraArrayAnterior.equals(palabraArrayConGuiones)) {
+      if (!Arrays.equals(palabraArrayAnterior, palabraArrayConGuiones)) {
         turno++;
         intentos++;
-        System.out.println(turno);
       }
       if (palabraArrayConGuiones.equals(palabraArrayOriginal)) {
         System.out.println("Has acertado la palabra en " + intentos + " intentos");
       }
-
-      intentos++;
 
     }  
     
