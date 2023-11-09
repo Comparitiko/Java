@@ -60,18 +60,25 @@ public class T3ArrEjercicio7 {
 
       System.out.println("El array sin modificar es: " + Arrays.toString(nums2));
 
-      int temp2 = nums2[nums2.length - 1];
-
       System.out.println("Ingrese el desplazamiento de cada numero hacia la derecha");
+      int desp = Integer.parseInt(System.console().readLine());
 
+      int[] copiaNums2 = Arrays.copyOfRange(nums2, 0, nums2.length);
+
+      System.out.println(Arrays.toString(copiaNums2));
       // Mover valores de un sitio a otro, habiendo antes guardado el valor del array en una variable temp2
-      for (int i = nums2.length - 1; i >= 0; i--) {
+      for (int i = 0; i < nums2.length; i++) {
         
-        if (i == 0) nums2[i] = temp2;
-        else nums2[i] = nums2[i - 1];
-
+        int i2 = i + desp;
+        if (i2 >= nums2.length) i2 %= nums2.length; System.out.println("calc " + i2 % nums2.length);
+        System.out.println((i + desp));
+        nums2[i] = copiaNums2[i2];
+        
       }
-    
+      
+      System.out.println("El array modificado es: " + Arrays.toString(nums2));
+      System.out.println();
+
     } catch (Exception e) {
     
         System.out.println("Error: " + e);
