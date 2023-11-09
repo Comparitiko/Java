@@ -6,6 +6,20 @@
 import java.util.Arrays;
 
 public class T3ArrEjercicio2 {
+
+  public static int[] cambiarArray (int[] nums) {
+    
+    int[] newNums = new int[nums.length];
+
+    for (int i = 0; i < nums.length; i++) { 
+      
+      if (i == 0) newNums[i] = nums[nums.length - 1];
+      else if (i == newNums.length - 1) newNums[i] = nums[0];
+      else newNums[i] = nums[i];
+
+    }
+    return newNums; 
+  }
   
   public static void main(String[] args) {
 
@@ -26,12 +40,9 @@ public class T3ArrEjercicio2 {
 
     }
 
-    // Intercambiar los valores de primera y ultima posicion
-    int temp = nums[0];
-    nums[0] = nums[nums.length - 1];
-    nums[nums.length - 1] = temp;
+    int[] nums2 = cambiarArray(nums);
 
-    System.out.println("El array despues de cambiar primer y ultimo valor es: " + Arrays.toString(nums));
+    System.out.println("El array despues de cambiar primer y ultimo valor es: " + Arrays.toString(nums2));
 
   }
 
