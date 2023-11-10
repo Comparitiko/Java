@@ -1,6 +1,6 @@
-package FuncionesUsables;
+package FuncionesGabriel;
 
-public class funciones {
+public class utils {
 
   // Funcion que genera un numero del 1 al 6
   public static int tirarDado6 () {
