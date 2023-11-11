@@ -43,7 +43,7 @@
   "settingsSync.ignoredExtensions": [
       "icrawl.discord-vscode"
   ],
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "terminal.integrated.env.windows": {},
   "console-ninja.featureSet": "Community",
 }

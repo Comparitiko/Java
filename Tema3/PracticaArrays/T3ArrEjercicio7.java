@@ -18,7 +18,7 @@ public class T3ArrEjercicio7 {
   public static void main(String[] args) {
 
     try {
-    
+      
       int[] nums1 = new int[5];
 
       System.out.println("Desplazar 1 direccion");
@@ -65,17 +65,18 @@ public class T3ArrEjercicio7 {
 
       int[] copiaNums2 = Arrays.copyOfRange(nums2, 0, nums2.length);
 
+      // Si el numero ingresado es mayor que 5 hace el modulo para ahorrar tiempo
+      desp %= nums2.length;
+
       System.out.println(Arrays.toString(copiaNums2));
       // Mover valores de un sitio a otro, habiendo antes guardado el valor del array en una variable temp2
       for (int i = 0; i < nums2.length; i++) {
         
-        int i2 = i + desp;
-        if (i2 >= nums2.length) i2 %= nums2.length; System.out.println("calc " + i2 % nums2.length);
-        System.out.println((i + desp));
-        nums2[i] = copiaNums2[i2];
+        nums2[(i + desp) % nums2.length] = copiaNums2[i];
         
       }
       
+      // Imprimir por terminal el array modificado
       System.out.println("El array modificado es: " + Arrays.toString(nums2));
       System.out.println();
 
