@@ -1,6 +1,10 @@
-import FuncionesGabriel.utils;
-
 public class EClaseEjercicio2 {
+
+  // Funcion que genera un numero del 1 al numero de caras que quieras
+  public static int tirarDado (int caras) throws Exception {
+    if (caras < 1) throw new Exception("El numero de caras tiene que ser mayor que 0");
+    return (int) Math.ceil(Math.random() * caras);
+  } 
 
   public static void main(String[] args) {
 
@@ -10,7 +14,17 @@ public class EClaseEjercicio2 {
 
     for (int i = 0; i < dadosPoker.length; i++) {
 
-      int dado = utils.tirarDado(6);
+      int dado = 0;
+
+      try {
+      
+        dado = tirarDado(6);
+      
+      } catch (Exception e) {
+        
+          System.out.println("Error: " + e);
+      
+      }
 
       switch (dado) {
         case 1:
