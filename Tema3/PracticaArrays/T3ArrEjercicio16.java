@@ -6,6 +6,21 @@ import java.util.Arrays;
 
 public class T3ArrEjercicio16 {
 
+  public static boolean estaEnArray (int[][] array, int num) {
+    for (int i = 0; i < array.length; i++) {
+      
+      for (int j = 0; j < array[i].length; j++) {
+        
+        if (array[i][j] == num) return true;
+
+      }
+
+    }
+
+    return false;
+
+  }
+
   public static int genNum () {
     return (int) Math.ceil(Math.random() * 1000);
   }
@@ -19,18 +34,12 @@ public class T3ArrEjercicio16 {
 
       for (int j = 0; j < matriz[i].length; j++) {
 
-        // Cada vez que se agrega un numero se ordena de nuevo
-        int numeroGen;
-        Arrays.sort(copiaMatriz);
-        
         while (true) {
-          numeroGen = genNum();
-          if (Arrays.binarySearch(copiaMatriz, numeroGen) <= -1) {
-            matriz[i][j] = numeroGen;
-            copiaMatriz[i][j] = numeroGen;
-            break;
-          }
+          
+          int numGen = genNum();
+
         }
+        
 
       }
       
