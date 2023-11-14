@@ -21,13 +21,14 @@ public class T3ArrEjercicio16 {
 
   }
 
+  // Funcion que genera un numero del 1 al 1000
   public static int genNum () {
     return (int) Math.ceil(Math.random() * 1000);
   }
   
   public static void main(String[] args) {
 
-    int[][] matriz = new int[3][6], copiaMatriz = matriz.clone();
+    int[][] matriz = new int[3][6];
 
     // Rellenar el array de numeros aleatorios
     for (int i = 0; i < matriz.length; i++) {
@@ -38,13 +39,18 @@ public class T3ArrEjercicio16 {
           
           int numGen = genNum();
 
-        }
-        
+          if (!estaEnArray(matriz, numGen)) {
+            matriz[i][j] = numGen;
+            break;
 
-      }
+          }
+        
+        }
       
+      }
+
     }
-    
+
     for (int i = 0; i < matriz.length; i++) {
       
       System.out.println(Arrays.toString(matriz[i]));

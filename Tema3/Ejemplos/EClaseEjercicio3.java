@@ -5,6 +5,7 @@ public class EClaseEjercicio3 {
   public static String traduccion (String[] palabrasEspaniol, String palabraEspaniol, String[] englishWords) {
 
     int pos = -1;
+                                                                                                                                               
     for (int i = 0; i < palabrasEspaniol.length; i++) {
       if (palabraEspaniol.equals(palabrasEspaniol[i])) {
         pos = i;
@@ -20,7 +21,7 @@ public class EClaseEjercicio3 {
     String[] palabrasEspaniol = {"Hola", "Adios", "Elefante", "Tigre", "Leon", "Animal", "Desayuno", "Tarde", "Buenos dias", "Buenas noches", "Ejemplo", "Ejercicio", "Siete", "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis"};
     String[] englishWords = {"Hello", "Bye", "Elephant", "Tiger", "Lion", "Animal", "Launch", "Afternoon", "Good morning", "Good afternoon", "Example", "Exercise", "Seven", "One", "Two", "Three", "Four", "Five", "Six"};
 
-    System.out.println("Ingrese una palabra de las siguientes que quieres traducir (Es importante escribirlas tal y como estan escritas):");
+    System.out.println("Ingrese una palabra de las siguientes que quieres traducir (Es importante escribirlas tal y como estan escritas en pantalla):");
     System.out.println(Arrays.toString(palabrasEspaniol));
     String palabraEspaniol = System.console().readLine(); 
 

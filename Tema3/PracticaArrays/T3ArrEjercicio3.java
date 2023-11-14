@@ -47,7 +47,7 @@ public class T3ArrEjercicio3 {
         if (nums[i] % 10 == digito) {
           numsConDigito[numsConDigitoContador] = nums[i];
           numsConDigitoContador++;
-          if (numsConDigitoContador == 5) break;
+          if (numsConDigitoContador == numsConDigito.length) break;
         }
       }
       
