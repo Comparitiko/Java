@@ -36,7 +36,7 @@ public class T3ArrEjercicio17 {
   }
 
   // Funcion para ordenar las columnas de la matriz
-  public static int[][] ordenarColumnas (int[][] nums) {
+  public static void ordenarColumnas (int[][] nums) {
 
     int[] ArrayColumnas = new int[nums.length];
     
