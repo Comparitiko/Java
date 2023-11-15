@@ -24,12 +24,11 @@ public class T3ArrEjercicio18 {
       
       for (int j = 0; j < nums[i].length; j++) {
 
-        if (j != nums[i].length - 2) {
+        if (j != nums[i].length - 1) {
 
           int numGenerado = genNum();
           sumaFilas += numGenerado;
           nums[i][j] = numGenerado;
-          System.out.println(sumaFilas);
 
         } else {
 
@@ -41,16 +40,15 @@ public class T3ArrEjercicio18 {
       }
 
     }
-    System.out.println();
+    
     // Bucle para sumar las columnas y poner el total
-    for (int i = 0; i < nums[i].length; i++) {
+    for (int i = 0; i < nums[0].length; i++) {
       
       for (int j = 0; j < nums.length; j++) {
         
         if (j != nums.length - 1) {
 
           sumaColumnas += nums[j][i];
-          System.out.println(sumaColumnas);
 
         } else {
 
@@ -66,7 +64,7 @@ public class T3ArrEjercicio18 {
     // Bucle para mostrar el array
     for (int i = 0; i < nums.length; i++) {
       
-      Arrays.toString(nums[i]);
+      System.out.println(Arrays.toString(nums[i]));
 
     }
 
