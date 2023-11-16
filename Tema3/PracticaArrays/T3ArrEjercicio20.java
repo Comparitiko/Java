@@ -12,10 +12,25 @@ import java.util.Arrays;
 
 public class T3ArrEjercicio20 {
 
-  // Funcion que me indica si esta marcada la casilla pasada
-  public static boolean estaMarcada (char[][] array, int i, int j) {
+  // Funcion para mostrar el tablero
+  public static void mostrarTablero (char[][] tablero) {
+
+    System.out.println();
     
-    if (array[i][j] != 'X' || array[i][j] != 'O') return false;
+    for (int i = 0; i < tablero.length; i++) {
+
+      System.out.println(Arrays.toString(tablero[i]));
+
+    }
+
+    System.out.println();
+
+  }
+
+  // Funcion que me indica si esta marcada la casilla pasada
+  public static boolean estaMarcada (char[][] array, int fila, int columna) {
+    
+    if (array[fila][columna] != 'X' || array[fila][columna] != 'O') return false;
     else return true;
 
   }
@@ -23,20 +38,106 @@ public class T3ArrEjercicio20 {
   // Funcion que comprueba despues de cada tirada si hay ganador
   public static boolean hayGanador (char[][] array) {
     
+    if (array[0][0] == 'X' || )
     return false;
 
   }
+
+  
 
   
   
   public static void main(String[] args) {
 
     char[][] tablero = new char[3][3];
+    String ganador = "";
 
+    // Rellenar array con -
     for (int i = 0; i < tablero.length; i++) {
-      System.out.println(Arrays.toString(tablero[i]));
+      
+      for (int j = 0; j < tablero[i].length; j++) {
+        
+        tablero[i][j] = '-';
+
+      }
+
     }
 
+    mostrarTablero(tablero);
+    
+    do {
+
+      int jug1fila = -1, jug1columna = -1, jug2fila = -1, jug2columna = -1;
+      
+      while (jug1fila < 0 || jug1fila > 2  || jug1columna < 0 || jug1columna > 2) {
+        
+        try {
+        
+          System.out.println("Ingresa la fila en la que el jugador 1 posicionara la X del 0 al 2:");
+          jug1fila = Integer.parseInt(System.console().readLine());
+
+          System.out.println("Ingresa la columna en la que el jugador 1 posicionara la X del 0 al 2:");
+          jug1columna = Integer.parseInt(System.console().readLine());
+
+          if (jug1fila < 0 || jug1fila > 2 || jug1columna < 0 || jug1columna > 2) throw new Exception("La fila o la columna no son correctas");
+
+          if (estaMarcada(tablero, jug1fila, jug1columna)) throw new Exception("La casilla puesta esta ocupada ya");
+          else tablero[jug1fila][jug1columna] = 'X';
+
+        } catch (Exception e) {
+        
+            System.out.println("Error: " + e);
+        
+        }
+
+      }
+
+      if (hayGanador(tablero)) {
+
+        ganador = "Jugador 1";
+        break;
+            
+      }
+
+      mostrarTablero(tablero);
+
+      while (jug2fila < 0 || jug2fila > 2  || jug2columna < 0 || jug2columna > 2) {
+        
+        try {
+        
+          System.out.println("Ingresa la fila en la que el jugador 2 posicionara la O del 0 al 2:");
+          jug2fila = Integer.parseInt(System.console().readLine());
+
+          System.out.println("Ingresa la columna en la que el jugador 2 posicionara la O del 0 al 2:");
+          jug2columna = Integer.parseInt(System.console().readLine());
+
+          if (jug2fila < 0 || jug2fila > 2  || jug2columna < 0 || jug2columna > 2) throw new Exception("La fila o la columna no son correctas");
+
+          if (estaMarcada(tablero, jug2fila, jug2columna)) throw new Exception("La casilla puesta esta ocupada ya");
+          else tablero[jug2fila][jug2columna] = 'O';
+        
+        } catch (Exception e) {
+        
+            System.out.println("Error: " + e);
+        
+        }
+
+      }
+
+      if (hayGanador(tablero)) {
+
+        ganador = "Jugador 2";
+        break;
+            
+      }
+
+      mostrarTablero(tablero);
+        
+    } while (true);
+
+    mostrarTablero(tablero);
+    
+    System.out.println("El ganador del 3 en raya ha sido el jugador: " + ganador);
 
   }
 

@@ -30,7 +30,7 @@ public class T3ArrEjercicio21 {
   
   public static void main(String[] args) {
 
-    int filas = 1, columnas = 1, contadorF = 0, contadorC = 0;
+    int filas = 1, columnas = 1;
     
     try {
       
@@ -58,10 +58,21 @@ public class T3ArrEjercicio21 {
 
       }
 
+      System.out.println("Tabla usuario:");
       imprimirArray(tablaUser);
-      imprimirArray(tablaTraspuesta);
 
-      
+      for (int i = 0; i < tablaUser[0].length; i++) {
+        
+        for (int j = 0; j < tablaUser.length; j++) {
+          
+          tablaTraspuesta[i][j] = tablaUser[j][i];
+
+        }
+
+      }
+
+      System.out.println("Tabla traspuesta:");
+      imprimirArray(tablaTraspuesta);
     
     } catch (Exception e) {
     
