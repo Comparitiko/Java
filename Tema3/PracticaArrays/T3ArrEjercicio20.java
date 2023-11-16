@@ -30,20 +30,47 @@ public class T3ArrEjercicio20 {
   // Funcion que me indica si esta marcada la casilla pasada
   public static boolean estaMarcada (char[][] array, int fila, int columna) {
     
-    if (array[fila][columna] != 'X' || array[fila][columna] != 'O') return false;
-    else return true;
+    if (array[fila][columna] == 'X' || array[fila][columna] == 'O') return true;
+    else return false;
 
   }
 
   // Funcion que comprueba despues de cada tirada si hay ganador
   public static boolean hayGanador (char[][] array) {
     
-    if (array[0][0] == 'X' || )
-    return false;
-
+    if (array[0][0] == 'X' && array[0][1] == 'X' && array[0][2] == 'X') return true;
+    else if (array[1][0] == 'X' && array[1][1] == 'X' && array[1][2] == 'X') return true;
+    else if (array[2][0] == 'X' && array[2][1] == 'X' && array[2][2] == 'X') return true;
+    else if (array[0][0] == 'X' && array[1][0] == 'X' && array[2][0] == 'X') return true;
+    else if (array[0][1] == 'X' && array[1][1] == 'X' && array[2][1] == 'X') return true;
+    else if (array[0][2] == 'X' && array[1][2] == 'X' && array[2][2] == 'X') return true;
+    else if (array[0][0] == 'X' && array[1][1] == 'X' && array[2][2] == 'X') return true;
+    else if (array[2][0] == 'X' && array[1][1] == 'X' && array[0][2] == 'X') return true;
+    else if (array[0][0] == 'O' && array[0][1] == 'O' && array[0][2] == 'O') return true;
+    else if (array[1][0] == 'O' && array[1][1] == 'O' && array[1][2] == 'O') return true;
+    else if (array[2][0] == 'O' && array[2][1] == 'O' && array[2][2] == 'O') return true;
+    else if (array[0][0] == 'O' && array[1][0] == 'O' && array[2][0] == 'O') return true;
+    else if (array[0][1] == 'O' && array[1][1] == 'O' && array[2][1] == 'O') return true;
+    else if (array[0][2] == 'O' && array[1][2] == 'O' && array[2][2] == 'O') return true;
+    else if (array[0][0] == 'O' && array[1][1] == 'O' && array[2][2] == 'O') return true;
+    else if (array[2][0] == 'O' && array[1][1] == 'O' && array[0][2] == 'O') return true;
+    else return false;
   }
 
-  
+  public static boolean partidaFinalEmpatada (char[][] array) {
+    for (int i = 0; i < array.length; i++) {
+      
+      for (int j = 0; j < array[i].length; j++) {
+        
+        if (array[i][j] != 'X' || array[i][j] != 'O') return false;
+
+      }
+
+    }
+
+    return true;
+
+  }
 
   
   
@@ -51,6 +78,7 @@ public class T3ArrEjercicio20 {
 
     char[][] tablero = new char[3][3];
     String ganador = "";
+    boolean casilaMarcada = true;
 
     // Rellenar array con -
     for (int i = 0; i < tablero.length; i++) {
@@ -82,11 +110,15 @@ public class T3ArrEjercicio20 {
           if (jug1fila < 0 || jug1fila > 2 || jug1columna < 0 || jug1columna > 2) throw new Exception("La fila o la columna no son correctas");
 
           if (estaMarcada(tablero, jug1fila, jug1columna)) throw new Exception("La casilla puesta esta ocupada ya");
-          else tablero[jug1fila][jug1columna] = 'X';
+          else {
+
+            tablero[jug1fila][jug1columna] = 'X';
+            casilaMarcada = false;
+          }
 
         } catch (Exception e) {
         
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e.getMessage());
         
         }
 
@@ -99,9 +131,11 @@ public class T3ArrEjercicio20 {
             
       }
 
+      casilaMarcada = true;
       mostrarTablero(tablero);
+      if (partidaFinalEmpatada(tablero)) break;
 
-      while (jug2fila < 0 || jug2fila > 2  || jug2columna < 0 || jug2columna > 2) {
+      while (jug2fila < 0 || jug2fila > 2  || jug2columna < 0 || jug2columna > 2 || casilaMarcada) {
         
         try {
         
@@ -114,11 +148,16 @@ public class T3ArrEjercicio20 {
           if (jug2fila < 0 || jug2fila > 2  || jug2columna < 0 || jug2columna > 2) throw new Exception("La fila o la columna no son correctas");
 
           if (estaMarcada(tablero, jug2fila, jug2columna)) throw new Exception("La casilla puesta esta ocupada ya");
-          else tablero[jug2fila][jug2columna] = 'O';
+          else {
+
+            tablero[jug2fila][jug2columna] = 'O';
+            casilaMarcada = false;
+
+          }
         
         } catch (Exception e) {
         
-            System.out.println("Error: " + e);
+            System.out.println("Error: " + e.getMessage());
         
         }
 
@@ -131,13 +170,15 @@ public class T3ArrEjercicio20 {
             
       }
 
+      casilaMarcada = true;
       mostrarTablero(tablero);
         
     } while (true);
 
     mostrarTablero(tablero);
     
-    System.out.println("El ganador del 3 en raya ha sido el jugador: " + ganador);
+    if (partidaFinalEmpatada(tablero)) System.out.println("Ha habido un empate");
+    else System.out.println("El ganador del 3 en raya ha sido el jugador: " + ganador);
 
   }
 
