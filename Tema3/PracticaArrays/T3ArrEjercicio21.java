@@ -23,9 +23,9 @@ public class T3ArrEjercicio21 {
 
   }
 
-  // Funcion que devuelve un numero random del 1 al 10
+  // Funcion que devuelve un numero random del 0 al 9
   public static int genNum () {
-    return (int) Math.ceil(Math.random() * 10);
+    return (int) Math.ceil(Math.random() * 10) - 1;
   }
   
   public static void main(String[] args) {
