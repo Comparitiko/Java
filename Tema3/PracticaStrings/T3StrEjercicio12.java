@@ -3,10 +3,37 @@
 */
 
 public class T3StrEjercicio12 {
+
+  // Devolver la mitad del string ingresado por parametro
+  public static StringBuilder devolverMitad (String cad) {
+
+    StringBuilder mitadCad = new StringBuilder();
+
+    int mitad = cad.length() / 2;
+
+    for (int i = 0; i < mitad; i++) {
+
+      mitadCad.append(cad.charAt(i));
+      
+    }
+
+    return mitadCad;
+
+  }
   
   public static void main(String[] args) {
 
+    try {
+
+      // Pedir la cadena a la que se le va a quitar la mitad y pintarla
+      System.out.println("Ingrese la cadena a  la que se le quitara la mitad:");
+      System.out.println(devolverMitad(System.console().readLine()));
     
+    } catch (Exception e) {
+    
+        System.out.println("Error: " + e);
+    
+    }
 
   }
 
