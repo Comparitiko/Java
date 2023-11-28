@@ -53,7 +53,9 @@ public class PClaseEj3 {
   }
 
   // Funcion que dada una posicion pinta los posibles movimientos de un caballo estando en esa posicion
-  public static void pintarMovimientosCaballo (int fila, int columna, String[][] tablero) {
+  public static void pintarMovimientosCaballo (int fila, int columna, String[][] tablero) throws Exception {
+
+    if (fila < 0 || fila > 7 || columna < 0 || columna > 7) throw new Exception("Los numeros de la columna y de la fila tienen que estar entre 0 y 7 para poder decirte en que coordenada de ajedrez se encuentra esa posicion");
     
     int filaMov = -1, colMov = -1, posibilidades = 0;
 
@@ -116,7 +118,7 @@ public class PClaseEj3 {
 
   public static String coordenadasAjedrez (int fila, int columna) throws Exception {
     
-    if (fila < 0 || fila > 7 || columna < 0 || fila > 7) throw new Exception("Los numeros de la columna y de la fila tienen que estar entre 0 y 7 para poder decirte en que coordenada de ajedrez se encuentra esa posicion");
+    if (fila < 0 || fila > 7 || columna < 0 || columna > 7) throw new Exception("Los numeros de la columna y de la fila tienen que estar entre 0 y 7 para poder decirte en que coordenada de ajedrez se encuentra esa posicion");
 
     StringBuilder coordenadaAjedrez = new StringBuilder();
 
@@ -186,16 +188,14 @@ public class PClaseEj3 {
       
       for (int j = 0; j < tablero[i].length; j++) {
         
-        if (i == 0 || i % 2 == 0) {
+        if (i % 2 == 0) {
 
-          if (j == 0) tablero[i][j] = "W";
-          else if (j % 2 == 0) tablero[i][j] = "W";
+          if (j % 2 == 0) tablero[i][j] = "W";
           else tablero[i][j] = "B";
 
         } else {
 
-          if (j == 0) tablero[i][j] = "B";
-          else if (j % 2 == 0) tablero[i][j] = "B";
+          if (j % 2 == 0) tablero[i][j] = "B";
           else tablero[i][j] = "W";
 
         }
