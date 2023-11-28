@@ -1,13 +1,12 @@
 /*
-  1. Realiza un programa que cree un array de 50 posiciones cargado con valores aleatorios. Los valores
-  aleatorios deberán estar entre el 1 y el 100. Una vez cargado el vector, deberá ordenarlo mediante el
-  método de la burbuja y mostrarlo ordenado por pantalla. Para el método de la burbuja deberás crear
-  una función que reciba un array de números y lo devuelva ordenado.
+  2. Mejora el método de la burbuja explicado anteriormente y utiliza una variable a modo de centinela o
+  flag, de tal manera que ésta se active cuando hay algún intercambio. En el momento que no haya
+  ningún intercambio, el algoritmo debería parar puesto que el vector ya está ordenado.
 */
 
 import java.util.Arrays;
 
-public class T3StrEjercicio15 {
+public class T3StrEjercicio16 {
 
   // Funcion para devolver un numero entre 1 y 100
   public static int genNum () {
@@ -17,7 +16,7 @@ public class T3StrEjercicio15 {
   // Funcion para ordenar los numeros por parejas hasta que esten todos ordenados
   public static void ordenarArray (int[] nums) {
 
-    int temp;
+    int temp, contador = 0;
     
     for (int i = 0; i < nums.length; i++) {
       
@@ -30,9 +29,13 @@ public class T3StrEjercicio15 {
           nums[j] = nums[j + 1];
           nums[j + 1] = temp;
 
-        }
+        } else contador++;
 
       }
+      
+      // Si contador vale nums.length - 1 rompe el bucle porque quiere decir que esta ordenado
+      if (contador == nums.length -1) break;
+      else contador = 0;
 
     }
   
