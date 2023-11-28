@@ -47,8 +47,8 @@ public class PClaseEj3 {
   // Funcion que devuelve si una casilla esta ocupada por una ficha o no
   public static boolean casillaOcupada (String[][] tablero, int fila, int columna) {
     
-    if (tablero[fila][columna].equals("IB") || tablero[fila][columna].equals("IN") || tablero[fila][columna].equals("TN") || tablero[fila][columna].equals("TB") || tablero[fila][columna].equals("XN") || tablero[fila][columna].equals("XB") || tablero[fila][columna].equals("LN") || tablero[fila][columna].equals("LB") || tablero[fila][columna].equals("+N") || tablero[fila][columna].equals("+B") || tablero[fila][columna].equals("ON") || tablero[fila][columna].equals("OB")) return true;
-    else return false;
+    if (tablero[fila][columna].equals("B") || tablero[fila][columna].equals("W")) return false;
+    else return true;
 
   }
 
@@ -105,7 +105,8 @@ public class PClaseEj3 {
       }
       
       // Si la posicion no esta fuera del tablero o la casilla no esta ocupada imprime la posible posicion para mover
-      if (!(filaMov < 0 || filaMov > 7) || !(colMov < 0 || colMov > 7) && !(casillaOcupada(tablero, filaMov, colMov))) {
+
+      if (filaMov >= 0 && filaMov < 8 && colMov >= 0 && colMov < 8 && !casillaOcupada(tablero, filaMov, columna)) {
 
         System.out.println("La posibilidad " + (posibilidades + 1) + " es: (" + filaMov + ", " + colMov + ")");
         posibilidades++;
