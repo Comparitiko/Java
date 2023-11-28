@@ -236,7 +236,7 @@ public class PClaseEj3 {
       
       }
       
-    } while (fila < 0 && fila > 7 && columna < 0 && columna > 7);
+    } while (fila < 0 || fila > 7 || columna < 0 || columna > 7);
 
     // Pedir posicion del caballo en el tablero y pasarlo a la funcion pintarMovimientosCaballo para saber los posible movimientos
     int filaCab = -1, colCab = -3;
@@ -259,7 +259,7 @@ public class PClaseEj3 {
       
       }
       
-    } while (filaCab < 0 && filaCab > 7 && colCab < 0 && colCab > 7);
+    } while (filaCab < 0 || filaCab > 7 || colCab < 0 || colCab > 7);
 
 
 
