@@ -23,12 +23,55 @@ public class T3StrEjercicio17 {
 
   }
 
+  // Funcion para ordenar los numeros por parejas hasta que esten todos ordenados
+  public static void ordenarArray (int[] nums) {
+
+    int temp, contador = 0;
+    
+    for (int i = 0; i < nums.length; i++) {
+      
+      for (int j = 0; j < nums.length - 1; j++) {
+        
+        // Si el numero de la izquierda es mayor los intercambia sino los deja igual
+        if (nums[j] > nums[j + 1]) {
+
+          temp = nums[j];
+          nums[j] = nums[j + 1];
+          nums[j + 1] = temp;
+
+        } else contador++;
+
+      }
+      
+      // Si contador vale nums.length - 1 rompe el bucle porque quiere decir que esta ordenado
+      if (contador == nums.length -1) break;
+      else contador = 0;
+
+    }
+  
+  }
+
   // Funcion que ordena dos arrays pasadas por parametros en un solo array
-  public static int[] unirOrdenadamente (int[] array1, int[] array2) {
+  public static int[] unirArraysYOrdenar (int[] array1, int[] array2) {
 
     int[] arrayUnion = new int[array1.length + array2.length];
     
-    
+    for (int i = 0; i < array1.length; i++) {
+      
+      arrayUnion[i] = array1[i];
+
+    }
+
+    int pos = array1.length;
+
+    for (int i = 0; i < array2.length; i++) {
+      
+      arrayUnion[pos] = array2[i];
+      pos++;
+
+    }
+
+    ordenarArray(arrayUnion);
 
     return arrayUnion;
     
@@ -47,7 +90,7 @@ public class T3StrEjercicio17 {
 
     System.out.println();
 
-    System.out.println("El array que junta los dos arrays es: " + Arrays.toString(unirOrdenadamente(nums1, nums2)));
+    System.out.println("El array que junta los dos arrays y los ordena es: " + Arrays.toString(unirArraysYOrdenar(nums1, nums2)));
 
   }
 
