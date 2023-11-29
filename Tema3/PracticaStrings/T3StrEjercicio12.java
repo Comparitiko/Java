@@ -7,11 +7,9 @@ public class T3StrEjercicio12 {
   // Devolver la mitad del string ingresado por parametro
   public static StringBuilder devolverMitad (String cad) {
 
-    StringBuilder mitadCad = new StringBuilder();
+    StringBuilder mitadCad = new StringBuilder(cad.length());
 
-    int mitad = cad.length() / 2;
-
-    for (int i = 0; i < mitad; i++) {
+    for (int i = 0; i < cad.length() / 2; i++) {
 
       mitadCad.append(cad.charAt(i));
       
