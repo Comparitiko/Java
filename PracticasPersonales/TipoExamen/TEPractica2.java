@@ -111,7 +111,7 @@ public class TEPractica2 {
             posicion[0] -= 1;
             break;
         }
-        System.out.println(Arrays.toString(bomba));
+        
         rellenarLaberinto(laberinto, salida, posicion);
         pintarLaberinto(laberinto);
 
