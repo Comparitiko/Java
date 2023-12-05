@@ -17,11 +17,15 @@ public class TEPractica2 {
   }
 
   // Funcion para generar la posicion de la bomba
-  public static int[] genBomba () {
+  public static int[] genBomba (int[] salida) {
     int[] bomba = new int[2];
 
-    bomba[0] = genNum(1, 18);
-    bomba[1] = genNum(1, 18);
+    do {
+      
+      bomba[0] = genNum(0, 19);
+      bomba[1] = genNum(0, 19);
+
+    } while (bomba[0] == salida[0] && bomba[1] == bomba[1] || bomba[0] == 0 && bomba[1] == 0);
 
     return bomba;
 
@@ -87,7 +91,7 @@ public class TEPractica2 {
 
     String[][] laberinto = new String[20][20];
     int pasos = 0;
-    int[] salida = genSalida() , bomba = genBomba(), posicion = {0, 0};
+    int[] salida = genSalida() , bomba = genBomba(salida), posicion = {0, 0};
 
     rellenarLaberinto(laberinto, salida, posicion);
     pintarLaberinto(laberinto);
@@ -95,7 +99,6 @@ public class TEPractica2 {
     // Bucle que mientras que no llegues a la meta o a la bomba o te salgas del tablero seguiras pudiendo jugar
     do {
       try {
-      
         int seleccion = menu();
         switch (seleccion) {
           case 1:
