@@ -77,11 +77,7 @@ public class TEPractica3 {
 
   // Funcion que pinta un menu y devuelve la seleccion
   public static int menu () throws Exception{
-    System.out.println("---- Menu ----");
-    System.out.println("1. Mover hacia la derecha");
-    System.out.println("2. Mover hacia la izquierda");
-    System.out.println("3. Mover hacia abajo");
-    System.out.println("4. Mover hacia arriba");
+    System.out.println();
     return genNum(1, 4);
   }
   

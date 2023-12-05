@@ -56,8 +56,8 @@ public class TEPractica1 {
     for (int i = 0; i < array.length; i++) {
       
       if (i == 0) res.append('[');
-      res.append(array[i] + ',');
-      if (i == 6) res.append(']');
+      res.append(array[i] + ", ");
+      if (i == array.length - 1) res.append(']');
 
     }
 
