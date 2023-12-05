@@ -54,18 +54,23 @@ public class TEPractica5 {
     StringBuilder cad1 = new StringBuilder(), cad2 = new StringBuilder();
 
     for (int i = 0; i < mensajeCifradoConRiel.length(); i++) {
-      if (i < mensajeCifradoConRiel.length()) cad1.append(mensajeCifradoConRiel.charAt(i));
-      else cad2.append(mensajeCifradoConRiel.charAt(i));
+      if (mensajeCifradoConRiel.length() % 2 == 0) {
+        if (i < mensajeCifradoConRiel.length() / 2) cad1.append(mensajeCifradoConRiel.charAt(i));
+        else cad2.append(mensajeCifradoConRiel.charAt(i));
+      } else {
+        if (i < mensajeCifradoConRiel.length() / 2 + 1) cad1.append(mensajeCifradoConRiel.charAt(i));
+        else cad2.append(mensajeCifradoConRiel.charAt(i));
+      }
     }
 
     StringBuilder res = new StringBuilder(mensajeCifrado.length());
 
-    for (int i = 0; i < res.length(); i++) {
+    for (int i = 0; i < cad1.length(); i++) {
       res.append(cad1.charAt(i));
-      res.append(cad2.charAt(i));
+      if (i <= cad2.length()) res.append(cad2.charAt(i));
     }
 
-    return mensajeCifradoConRiel.toString();
+    return res.toString();
 
   }
   
