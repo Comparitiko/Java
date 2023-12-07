@@ -6,7 +6,7 @@
   probar valores de n hasta obtener una precisión por encima del 95%. 
 */
 
-package PracticasPersonales.TipoExamen;
+
 
 public class TEPractica4 {
     

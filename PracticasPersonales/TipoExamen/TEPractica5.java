@@ -17,7 +17,7 @@
   mensaje, número par o impar de caracteres. 
 */
 
-package PracticasPersonales.TipoExamen;
+
 
 public class TEPractica5 {
 

@@ -1,4 +1,4 @@
-package PracticasPersonales.TipoExamen;
+
 
 import java.util.Arrays;
 
