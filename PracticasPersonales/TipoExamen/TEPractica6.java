@@ -1,3 +1,5 @@
+package PracticasPersonales.TipoExamen;
+
 /*
   [1.5 puntos] Ordenar matrices. Crea una matriz de enteros de dos dimensiones de 50x50
   elementos, rellénala con números aleatorios entre 1 y 500. A continuación, realiza dos

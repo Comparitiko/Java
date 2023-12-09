@@ -1,3 +1,5 @@
+package PracticasPersonales.TipoExamen;
+
 /*
   2. [1.5 puntos] Cifrado y descifrado Riel-César. Implementa las siguientes funciones y
   pruébalas:

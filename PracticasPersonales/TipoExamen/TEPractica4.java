@@ -1,3 +1,5 @@
+package PracticasPersonales.TipoExamen;
+
 /*
   1. [1.5 puntos] Función que resuelva el coseno de x. Como parámetro debe recibir el número
   n de términos que quieres probar para calcular el coseno y devolverá el número calculado
