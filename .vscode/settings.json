@@ -45,5 +45,10 @@
   ],
   "window.zoomLevel": 0,
   "terminal.integrated.env.windows": {},
-  "console-ninja.featureSet": "Community",
+"console-ninja.featureSet": "Community",
+"[javascript][typescript]": {
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    }
+},
 }
