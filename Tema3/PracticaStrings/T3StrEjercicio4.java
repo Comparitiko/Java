@@ -23,11 +23,11 @@ public class T3StrEjercicio4 {
       // Bucle que busca la cadena a buscar en la primera cadena subiendo el numero pos con la posicion en que se encuentra mas 1
       do {
 
-        pos = frase.indexOf(fraseABuscar, pos) + 1;
+        pos = frase.indexOf(fraseABuscar, pos);
         
         
         // Reemplazar la frase buscada por la frase buscada en mayus
-        frase.replace(pos - 1, pos + fraseABuscar.length() -1, frase.substring(pos - 1, pos + fraseABuscar.length() - 1).toUpperCase());
+        frase.replace(pos, pos + fraseABuscar.length(), fraseABuscar.toUpperCase());
         
       } while (frase.indexOf(fraseABuscar, pos) != -1);
 
