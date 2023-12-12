@@ -33,10 +33,10 @@ public class Ejercicio4 {
 
   // Funcion que devuelve si el barco se sale del tablero o no
   public static boolean comprobarBarco(int x, int y, String direccion, int longitudBarco, char[][] tablero) {
-    if (direccion.equals("Izquierda") && (y - longitudBarco > 0 && y - longitudBarco < tablero.length - 1)) return true;
-    else if (direccion.equals("Derecha") && (y + longitudBarco > 0 && y + longitudBarco < tablero.length - 1)) return true;
-    else if (direccion.equals("Arriba") && (x - longitudBarco > 0 && y - longitudBarco < tablero.length - 1)) return true;
-    else if (direccion.equals("Abajo") && (x + longitudBarco > 0 && y + longitudBarco < tablero.length - 1)) return true;
+    if (direccion.equals("Izquierda") && (y - longitudBarco > 0 && y - longitudBarco < tablero.length - 1) && tablero[x][y] == 'a') return true;
+    else if (direccion.equals("Derecha") && (y + longitudBarco > 0 && y + longitudBarco < tablero.length - 1) && tablero[x][y] == 'a') return true;
+    else if (direccion.equals("Arriba") && (x - longitudBarco > 0 && y - longitudBarco < tablero.length - 1) && tablero[x][y] == 'a') return true;
+    else if (direccion.equals("Abajo") && (x + longitudBarco > 0 && y + longitudBarco < tablero.length - 1) && tablero[x][y] == 'a') return true;
     else return false;
   }
 
