@@ -66,7 +66,7 @@ public class Ejercicio3 {
       // Si en la posicio i hay un espacio mete un # si no, mete el codigo morse, si i + 1 es un espacio no hace nada, si no mete un espacio
       if (arrayAConvertir[i].equals(" ")) cadConvertida.append("#");
       else cadConvertida.append(abcMorse[buscarPosAbecedario(abecedario, arrayAConvertir[i])]);
-      if (i + 1 < arrayAConvertir.length -1 &&arrayAConvertir[i + 1].equals(" ")) continue;
+      if (i + 1 < arrayAConvertir.length -1 && arrayAConvertir[i + 1].equals(" ")) continue;
       else if (!arrayAConvertir[i].equals(" ")) cadConvertida.append(" ");
       
     }

@@ -14,6 +14,7 @@
 package PrimerTrimestre.Examen;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Ejercicio1 {
 
@@ -147,12 +148,11 @@ public class Ejercicio1 {
     System.out.println("Matriz antes de intercambiar filas:");
     pintarMatriz(nums);
     
-    // Guardar los valores de la primera fila en una array temporal, y cambiar los valores de los otros arrays
-    for (int i = 0; i < nums[0].length; i++) {
-      arrayTemp[i] = nums[fila1][i];
-      nums[fila1][i] = nums[fila2][i];
-      nums[fila2][i] = arrayTemp[i];
-    }
+    // Intercambiar filas
+    arrayTemp = nums[fila1];
+    nums[fila1] = nums[fila2];
+    nums[fila2] = arrayTemp;
+
 
     System.out.println("Matriz despues de intercambiar filas");
     pintarMatriz(nums);
