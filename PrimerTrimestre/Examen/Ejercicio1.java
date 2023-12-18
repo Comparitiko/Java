@@ -14,7 +14,6 @@
 package PrimerTrimestre.Examen;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class Ejercicio1 {
 

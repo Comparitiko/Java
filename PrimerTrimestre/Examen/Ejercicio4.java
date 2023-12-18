@@ -42,7 +42,7 @@ public class Ejercicio4 {
 
   // Funcion que devuelve si al disparar le has dado a un barco o no, y si le has dado pinta una x
   public static boolean disparar (int x, int y, char[][] tablero) {
-    if (tablero[x][y] != 'a') {
+    if (tablero[x][y] != 'a' && tablero[x][y] != 'x') {
 
       tablero[x][y] = 'x';
       return true;

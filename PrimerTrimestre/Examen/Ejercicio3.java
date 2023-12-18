@@ -79,7 +79,7 @@ public class Ejercicio3 {
 
     String[] letrasAbecedario = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}, letrasEnMorse = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
 
-    String holaMundoMorse = convertirAMorse(letrasAbecedario, letrasEnMorse, "Hola Mundo".toLowerCase());
+    String holaMundoMorse = convertirAMorse(letrasAbecedario, letrasEnMorse, "Hola Mundo asd".toLowerCase());
 
     System.out.println("La palabra Hola mundo traducida a morse es: " + holaMundoMorse);
     System.out.println("En morse esto " + holaMundoMorse + " significa " + convertirDeMorse(letrasAbecedario, letrasEnMorse, holaMundoMorse));
