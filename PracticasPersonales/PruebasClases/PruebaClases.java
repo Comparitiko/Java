@@ -9,6 +9,14 @@ public class PruebaClases {
     Coche co1 = new Coche("Mercedes", "Blanco", "As");
     
     Alumno a1 = new Alumno(0, "Gabriel", "Collado");
+    Alumno a2 = new Alumno(1, "Mohamed", "asd");
+
+    System.out.println(a1.getId());
+
+    System.out.println(a2.getId());
+    a2.setId(2);
+    System.out.println(a2.getId());
+    System.out.println(a1.getId());
 
     System.out.println(a1.toString());
 
