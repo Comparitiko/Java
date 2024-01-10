@@ -10,11 +10,11 @@ package SegundoTrimestre.Tema4.Ejercicios_POO.Ejercicio1;
 */
 public class Temperatura {
     // Methods
-    double celsiusToFarenheit(double celsius) {
+    public double celsiusToFarenheit(double celsius) {
         return (1.8) * celsius + 32;
     }
 
-    double FarenheitToCelsius(double farenheit) {
+    public double FarenheitToCelsius(double farenheit) {
         return (farenheit - 32) / 1.8;
     }
 }
