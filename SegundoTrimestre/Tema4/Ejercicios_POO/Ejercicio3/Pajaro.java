@@ -11,7 +11,7 @@ package SegundoTrimestre.Tema4.Ejercicios_POO.Ejercicio3;
         private char color;
     }
 
-   Compilar va a compilar pero al tener el constructor no va a hacer nada.
+   Compilar va a compilar pero al tener el constructor las propiedas se van a inicializar por defecto
 
  */
 
