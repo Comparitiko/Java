@@ -1,4 +1,4 @@
 *.class
 .vscode
 .idea
-Code.iml
+*.iml
