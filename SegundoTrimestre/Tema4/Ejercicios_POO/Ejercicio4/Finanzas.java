@@ -13,23 +13,34 @@ package SegundoTrimestre.Tema4.Ejercicios_POO.Ejercicio4;
 
 class Finanzas {
     // Props
-    private double dolar-euro
+    private double dollarEuro;
 
     // Constructor
+
     public Finanzas() {
-        this.dolar = 1.36;
+        this.dollarEuro = 1.36;
     }
 
-    public Finanzas(double dolar) {
-        this.dolar = dolar;
+    public Finanzas(double dollarEuro) {
+        this.dollarEuro = dollarEuro;
     }
 
     // Methods
-    public double getDolar() {
-        return dolar;
+
+
+    public double getDollarEuro() {
+        return dollarEuro;
     }
 
-    public void setDolar(double dolar) {
-        this.dolar = dolar;
+    public void setDollarEuro(double dollarEuro) {
+        this.dollarEuro = dollarEuro;
+    }
+
+    public double dollarsToEuros (double dollars) {
+        return dollars * this.dollarEuro;
+    }
+
+    public double eurosToDollars (double euros) {
+        return euros / this.dollarEuro;
     }
 }
