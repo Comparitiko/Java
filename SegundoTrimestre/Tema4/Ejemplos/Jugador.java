@@ -12,6 +12,12 @@ public class Jugador {
   // Constructor
 
   public Jugador() {
+    this.nombre = "Sin nombre";
+    this.nick = "Sin nick";
+    this.email = "Sin email";
+    this.edad = 0;
+    this.ranking = 0;
+    this.juego_favorito = "Ninguno";
   }
 
   public Jugador(String nombre, String nick, String email, int edad, int ranking, String juego_favorito) {
@@ -74,4 +80,16 @@ public class Jugador {
 
   // Methods
 
+  @Override
+  public String toString() {
+    final StringBuffer sb = new StringBuffer("Jugador{");
+    sb.append("nombre='").append(nombre).append('\'');
+    sb.append(", nick='").append(nick).append('\'');
+    sb.append(", email='").append(email).append('\'');
+    sb.append(", edad=").append(edad);
+    sb.append(", ranking=").append(ranking);
+    sb.append(", juego_favorito='").append(juego_favorito).append('\'');
+    sb.append('}');
+    return sb.toString();
+  }
 }
