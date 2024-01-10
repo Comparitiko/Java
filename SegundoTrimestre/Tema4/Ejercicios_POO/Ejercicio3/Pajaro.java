@@ -11,6 +11,8 @@ package SegundoTrimestre.Tema4.Ejercicios_POO.Ejercicio3;
         private char color;
     }
 
-
+   Compilar va a compilar pero al tener el constructor no va a hacer nada.
 
  */
+
+
