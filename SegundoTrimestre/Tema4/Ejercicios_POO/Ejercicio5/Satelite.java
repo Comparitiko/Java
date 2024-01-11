@@ -60,6 +60,16 @@ public class Satelite {
     distancia_tierra = d;
   }
   public void variaAltura(double desplazamiento) {
-    setPosicion(this.meridiano, this.paralelo, desplazamiento);
+    this.distancia_tierra += desplazamiento;
+  }
+
+  public boolean enOrbita () {
+    if (distancia_tierra == 0) return false;
+    else return true;
+  }
+
+  public void variaPosicion (double variap, double variam) {
+    this.meridiano += variam;
+    this.paralelo += variap;
   }
 }
