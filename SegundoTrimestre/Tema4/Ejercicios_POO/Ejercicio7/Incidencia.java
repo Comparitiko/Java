@@ -15,6 +15,79 @@ pendientes.
  */
 
 public class Incidencia {
+    // Enums
+    public enum estadoIncidencia {
+        abierta, enProceso, resuelta;
+    }
+
+    // Props
     private int codigo;
-    private enum estado;
+    private estadoIncidencia estado;
+    private String problema;
+    private String solucion;
+    private static int pendientes;
+
+    // Constructor
+    public Incidencia(int codigo, estadoIncidencia estado, String problema) {
+        this.codigo = codigo;
+        this.estado = estado;
+        this.problema = problema;
+        pendientes++;
+    }
+
+    // Getters and Setters
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public estadoIncidencia getEstado() {
+        return estado;
+    }
+
+    public void setEstado(estadoIncidencia estado) {
+        this.estado = estado;
+        if (estado == estadoIncidencia.resuelta) {
+            pendientes--;
+        }
+    }
+
+    public String getProblema() {
+        return problema;
+    }
+
+    public void setProblema(String problema) {
+        this.problema = problema;
+    }
+
+    public String getSolucion() {
+        return solucion;
+    }
+
+    public void setSolucion(String solucion) {
+        this.solucion = solucion;
+    }
+
+    // Methods
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Incidencia{");
+        sb.append("codigo=").append(codigo);
+        sb.append(", estado=").append(estado);
+        sb.append(", problema='").append(problema).append('\'');
+        sb.append(", solucion='").append(solucion).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
+    public static void resuelve () {
+        pendientes--;
+    }
+
+    public static int getPendientes() {
+        return pendientes;
+    }
 }
