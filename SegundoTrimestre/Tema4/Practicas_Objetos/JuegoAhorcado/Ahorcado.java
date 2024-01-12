@@ -94,19 +94,60 @@ public class Ahorcado {
     return (int) Math.ceil(Math.random() * max);
   }
 
-  private String genGuiones (int longitudPalabra) {
+  private String genGuiones (int palabraLenght) {
     StringBuffer sb = new StringBuffer();
-    for (int i = 0; i < longitudPalabra; i++) {
+    for (int i = 0; i < palabraLenght; i++) {
       sb.append("-");
     }
     return sb.toString();
   }
 
   public boolean probarLetra (String letra) {
-
+    if (isLetterOnArray(letra)) return false;
+    int index = 0;
+    int tries = 0;
+    while (true) {
+      index = this.palabraAdivinar.indexOf(letra, index);
+      if (tries == 0 && index < 0) {
+        this.numFallos++;
+        break;
+      } else if (index < 0) {
+        return true;
+      } else {
+        changeLetters(index);
+      }
+      tries++;
+    }
+    addLetterToArray(letra);
+    return false;
   }
 
   public boolean probarPalabra (String palabra) {
-
+    if (this.palabraAdivinar.equals(palabra)) return true;
+    else return false;
   }
+
+  private void changeLetters (int index) {
+    StringBuffer sb = new StringBuffer(this.palabraAdivinar.length());
+    char character = this.palabraAdivinar.charAt(index);
+    for (int i = 0; i < this.palabraIntentada.length(); i++) {
+      if (i == index) sb.append(character);
+      else sb.append("-");
+    }
+    this.palabraIntentada = sb.toString();
+  }
+
+  private boolean isLetterOnArray (String letter) {
+    for (int i = 0; i < letras.length; i++) {
+      if (letras[i].equals(letter)) return true;
+    }
+    return false;
+  }
+
+  private void addLetterToArray (String letter) {
+    for (int i = 0; i < letras.length; i++) {
+      if (letras[i].equals(null)) letras[i] = letter;
+    }
+  }
+
 }
