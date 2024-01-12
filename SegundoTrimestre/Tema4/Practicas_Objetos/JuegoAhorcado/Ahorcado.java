@@ -49,7 +49,7 @@ public class Ahorcado {
           "protocolo",
           "almacenamiento",
           "sistema operativo",
-          "analisis"
+          "analisis",
   };
   private String palabraAdivinar;
   private String palabraIntentada;
@@ -116,6 +116,7 @@ public class Ahorcado {
       } else {
         changeLetters(index);
       }
+      index++;
       tries++;
     }
     addLetterToArray(letra);
@@ -132,6 +133,7 @@ public class Ahorcado {
     char character = this.palabraAdivinar.charAt(index);
     for (int i = 0; i < this.palabraIntentada.length(); i++) {
       if (i == index) sb.append(character);
+      else if (this.palabraIntentada.charAt(i) != '-') sb.append(this.palabraIntentada.charAt(i));
       else sb.append("-");
     }
     this.palabraIntentada = sb.toString();
@@ -139,14 +141,18 @@ public class Ahorcado {
 
   private boolean isLetterOnArray (String letter) {
     for (int i = 0; i < letras.length; i++) {
-      if (letras[i].equals(letter)) return true;
+      if (letras[i] == null) return false;
+      else if (letras[i].equals(letter)) return true;
     }
     return false;
   }
 
   private void addLetterToArray (String letter) {
     for (int i = 0; i < letras.length; i++) {
-      if (letras[i].equals(null)) letras[i] = letter;
+      if (letras[i] == null) {
+        letras[i] = letter;
+        break;
+      }
     }
   }
 
