@@ -3,6 +3,7 @@ package SegundoTrimestre.Tema4.Practicas_Objetos.JuegoAhorcado;
 public class Ahorcado {
   // Props
   private static String[] palabras = {
+          // Array de palabras que se usan en el juego
           "programacion",
           "desarrollo",
           "java",
@@ -91,10 +92,12 @@ public class Ahorcado {
 
   // Methods
   private int genNum (int max) {
+    // Metodo que devuelve un numero aleatorio segun el numero de palabras en el array
     return (int) Math.ceil(Math.random() * max);
   }
 
   private String genGuiones (int palabraLenght) {
+    // Metodo para generar la palabra con guiones
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < palabraLenght; i++) {
       sb.append("-");
@@ -103,6 +106,8 @@ public class Ahorcado {
   }
 
   public boolean probarLetra (String letra) {
+    // Metodo para probar la letra, si la letra esta en el array que guarda las letras puestas devuelve false
+    // Si has acertado la letra devuelve true, si no devuelve false
     if (isLetterOnArray(letra)) return false;
     int index = 0;
     int tries = 0;
@@ -124,7 +129,8 @@ public class Ahorcado {
   }
 
   public boolean probarPalabra (String palabra) {
-    if (this.palabraAdivinar.equals(palabra)) return true;
+    // Si la palabra probada es como la palabra a adivinar devuelve true si no devuelve false
+    if (this.palabraAdivinar.equalsIgnoreCase(palabra)) return true;
     else return false;
   }
 

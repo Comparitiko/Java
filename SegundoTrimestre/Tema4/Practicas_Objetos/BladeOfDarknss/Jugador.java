@@ -97,13 +97,14 @@ public class Jugador {
     return sb.toString();
   }
 
-  public void subirNivel() {
+  public void subirNivel() { // Subir nivel a no ser que ya sea nivel 10 y aumentar la vida si no es nivel 10
     this.nivel++;
     if (this.nivel > 10) this.nivel = 10;
     else this.salud += (int) (Math.pow(2.5, this.nivel));
   }
 
   public boolean equipar(Arma arma) {
+    // Equipar un arma empezando por la derecha y siguiendo por la izquierda a no ser que el arma ocupe dos manos
     if (arma.isDosManos() && this.armaIzquierda == null && this.armaDerecha == null) {
       this.armaDerecha = arma;
       this.armaIzquierda = arma;
@@ -118,11 +119,13 @@ public class Jugador {
   }
 
   public void tomarPocion (int puntosS) {
+    // Metodo para tomar una pocion de maximo 10000 puntos de salud
     this.salud += puntosS;
     if (this.salud > 10000) this.salud = 10000;
   }
 
   public boolean reducirVida (int puntosD) {
+    // Metodo para reducir la vida del jugador, devuelve true si muere y si no devulve false
     this.salud -= puntosD;
     if (this.salud < 1) {
       this.salud = 0;
@@ -131,8 +134,20 @@ public class Jugador {
   }
 
   public void golpear (Monstruo monstruo) {
-    if (this.armaDerecha.isDosManos()) {
-
+    if (this.armaDerecha != null) {
+      monstruo.reducirVida(this.armaDerecha.getPuntosD());
+      if (!this.armaDerecha.isDosManos()) {
+        if (this.armaIzquierda != null) {
+          monstruo.reducirVida(this.armaIzquierda.getPuntosD());
+        }
+      }
+    }
+    if (monstruo.reducirVida(0)) {
+      this.experiencia += 10 * monstruo.getNivel();
+    }
+    while (this.experiencia > 100) {
+      this.experiencia /= 100;
+      subirNivel();
     }
   }
 }

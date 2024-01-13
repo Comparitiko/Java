@@ -7,11 +7,11 @@ public class Arma {
   // Props
   private String nombre;
   private tipoArma arma;
-  private double puntosD;
+  private int puntosD;
   private boolean dosManos;
 
   // Constructor
-  public Arma(String nombre, tipoArma arma, double puntosD, boolean dosManos) {
+  public Arma(String nombre, tipoArma arma, int puntosD, boolean dosManos) {
     this.nombre = nombre;
     this.arma = arma;
     this.puntosD = puntosD;
@@ -35,11 +35,11 @@ public class Arma {
     this.arma = arma;
   }
 
-  public double getPuntosD() {
+  public int getPuntosD() {
     return puntosD;
   }
 
-  public void setPuntosD(double puntosD) {
+  public void setPuntosD(int puntosD) {
     this.puntosD = puntosD;
   }
 
