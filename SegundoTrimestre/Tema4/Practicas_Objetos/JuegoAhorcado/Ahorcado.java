@@ -135,6 +135,7 @@ public class Ahorcado {
   }
 
   private void changeLetters (int index) {
+    // Metodo que cambiar la palabra intentada, si ha acertado en algun momento la letra la pone si no pone un guion
     StringBuffer sb = new StringBuffer(this.palabraAdivinar.length());
     char character = this.palabraAdivinar.charAt(index);
     for (int i = 0; i < this.palabraIntentada.length(); i++) {
@@ -146,6 +147,7 @@ public class Ahorcado {
   }
 
   private boolean isLetterOnArray (String letter) {
+    // Comprueba si la letra pasada por parametro esta en el array letras
     for (int i = 0; i < letras.length; i++) {
       if (letras[i] == null) return false;
       else if (letras[i].equals(letter)) return true;
@@ -154,6 +156,7 @@ public class Ahorcado {
   }
 
   private void addLetterToArray (String letter) {
+    // Añade la letra al array
     for (int i = 0; i < letras.length; i++) {
       if (letras[i] == null) {
         letras[i] = letter;

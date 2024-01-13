@@ -76,12 +76,14 @@ public class Monstruo {
   }
 
   public void subirNivel () {
+    // Metodo para subir un nivel hasta 10 e ir subiendo la vida segun el nivel
     this.nivel++;
     if (this.nivel > 10) this.nivel = 10;
     else this.salud += (int) (Math.pow(2, this.nivel));
   }
 
   public boolean reducirVida (int puntosD) {
+    // Metodo que hace pierda vida el monstruo y devuelve true si muere, si no devuelve false
     this.salud -= puntosD;
     if (this.salud < 1) {
       this.salud = 0;
@@ -90,6 +92,7 @@ public class Monstruo {
   }
 
   public void golpear (Jugador jugador) {
+    // Metodo para golpear a un jugador
     jugador.reducirVida(this.puntosD);
   }
 }
