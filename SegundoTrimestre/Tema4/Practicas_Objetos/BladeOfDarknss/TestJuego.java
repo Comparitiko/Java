@@ -72,7 +72,8 @@ public class TestJuego {
       }
     }
 
-    j1.tomarPocion(5000);
+    j1.tomarPocion(50)
+    System.out.println("Tu salud ahora mismo despues de tomar una pocion es: " + j1.getSalud());
 
     System.out.println("El nivel actual del jugador 1 es: " + j1.getNivel());
 
@@ -93,7 +94,6 @@ public class TestJuego {
 
     j1.tomarPocion(500);
     System.out.println("Tu salud ahora mismo despues de tomar una pocion es: " + j1.getSalud());
-    System.out.println(m5.getPuntosD());
 
     // Final Boss
     System.out.println("Boss Final");
