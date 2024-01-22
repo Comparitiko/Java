@@ -134,6 +134,7 @@ public class Jugador {
   }
 
   public void golpear (Monstruo monstruo) {
+    // Metodo que hace golpear a un monstruo segun el daño de las arma.
     if (this.armaDerecha != null) {
       monstruo.reducirVida(this.armaDerecha.getPuntosD());
       if (!this.armaDerecha.isDosManos()) {
@@ -142,12 +143,16 @@ public class Jugador {
         }
       }
     }
-    if (monstruo.reducirVida(0)) {
-      this.experiencia += 10 * monstruo.getNivel();
-    }
-    while (this.experiencia > 100) {
-      this.experiencia /= 100;
-      subirNivel();
+    // Si el nivel es menor que 10 consigue experiencia y si la experiencia es mayor que 100
+    // la va dividiendo entre 100 hasta que sea menor y sube un nivvel por cada division
+    if (getNivel() < 10) {
+      if (monstruo.reducirVida(0)) {
+        this.experiencia += 10 * monstruo.getNivel();
+      }
+      while (this.experiencia > 100) {
+        this.experiencia /= 100;
+        subirNivel();
+      }
     }
   }
 }
