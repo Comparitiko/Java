@@ -11,6 +11,16 @@ public class Jugador {
 
   // Constructor
 
+  @Override
+  public boolean equals(Object obj) {
+    return super.equals(obj);
+  }
+
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+    return super.clone();
+  }
+
   public Jugador() {
     this.nombre = "Sin nombre";
     this.nick = "Sin nick";
