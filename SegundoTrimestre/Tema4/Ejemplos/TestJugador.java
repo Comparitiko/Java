@@ -8,11 +8,5 @@ public class TestJugador {
     if (j2.equals(j1)) {
       System.out.println("asd");
     }
-    try {
-      Jugador j3 = (Jugador) j1.clone();
-    } catch (CloneNotSupportedException e) {
-      System.out.println(e.getMessage());
-    }
-
   }
 }
