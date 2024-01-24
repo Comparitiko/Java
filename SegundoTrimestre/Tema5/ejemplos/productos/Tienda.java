@@ -16,7 +16,7 @@ public class Tienda {
   // Getters y Setters
 
   public ArrayList<Producto> getProductos() {
-    return productos;
+    return this.productos;
   }
 
   public void setProductos(ArrayList<Producto> productos) {
@@ -49,6 +49,7 @@ public class Tienda {
     return Objects.equals(nombre, tienda.nombre);
   }
 
+  // Add a product to the shop
   public void addProducto(Producto producto) {
     this.productos.add(producto);
   }
