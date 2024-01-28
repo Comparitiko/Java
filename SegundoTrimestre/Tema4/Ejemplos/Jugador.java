@@ -1,5 +1,7 @@
 package SegundoTrimestre.Tema4.Ejemplos;
 
+import java.util.Objects;
+
 public class Jugador {
   // Props
   private String nombre;
@@ -10,6 +12,19 @@ public class Jugador {
   private String juego_favorito;
 
   // Constructor
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Jugador jugador = (Jugador) o;
+    return edad == jugador.edad && ranking == jugador.ranking && Objects.equals(nombre, jugador.nombre) && Objects.equals(nick, jugador.nick) && Objects.equals(email, jugador.email) && Objects.equals(juego_favorito, jugador.juego_favorito);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(nombre, nick, email, edad, ranking, juego_favorito);
+  }
 
   public Jugador() {
     this.nombre = "Sin nombre";

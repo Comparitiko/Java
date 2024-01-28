@@ -144,7 +144,7 @@ public class Jugador {
       }
     }
     // Si el nivel es menor que 10 consigue experiencia y si la experiencia es mayor que 100
-    // la va dividiendo entre 100 hasta que sea menor y sube un nivvel por cada division
+    // la va dividiendo entre 100 hasta que sea menor y sube un nivel por cada division
     if (getNivel() < 10) {
       if (monstruo.reducirVida(0)) {
         this.experiencia += 10 * monstruo.getNivel();
