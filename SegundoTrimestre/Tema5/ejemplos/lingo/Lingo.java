@@ -41,7 +41,7 @@ public class Lingo {
       return 0;
     }
     int aciertos = 0;
-    for (int i = 0; i <; i++) {
+    for (int i = 0; i <5; i++) {
       if (this.palabraAcertar.toLowerCase().charAt(i) != palabra.toLowerCase().charAt(i)) {
         aciertos++;
       }
