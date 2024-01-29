@@ -13,12 +13,12 @@ public class Agenda {
 
   /**
    * Comprueba si existe un contacto con el mismo nombre.
-   * @param contacto contacto para comprobar.
+   * @param contactoAux contacto para comprobar.
    * @return true si existe el contacto, false en caso contrario
    */
-  public boolean existeContacto(Contacto contacto) {
+  public boolean existeContacto(Contacto contactoAux) {
     for (Contacto contacto : this.contactos) {
-      if (contacto.equals(contacto)) return true;
+      if (contacto.equals(contactoAux)) return true;
     }
     return false;
   }
@@ -36,11 +36,42 @@ public class Agenda {
     return false;
   }
 
+  /**
+   * Metodo para listar todos los contactos
+   * @return string con todos los contactos
+   */
   public String listarContactos() {
     StringBuffer sb = new StringBuffer();
     for (Contacto contacto : this.contactos) {
       sb.append(contacto.toString() + "\n");
     }
     return sb.toString();
+  }
+
+  /**
+   * Metodo para buscar un contacto por su nombre
+   * @param nombre nombre del contacto a buscar
+   * @return el número de telefono del contacto
+   */
+  public int buscarContacto(String nombre) {
+    for (Contacto contacto : this.contactos) {
+      if (contacto.getNombre().equals(nombre)) return contacto.getTelefono();
+    }
+    return -1;
+  }
+
+  /**
+   * Metodo para eliminar un contacto
+   * @param contactoAux contacto a eliminar
+   * @return true si se eliminó el contacto, false en caso contrario
+   */
+  public boolean eliminarContacto(Contacto contactoAux) {
+    for (Contacto contacto: this.contactos) {
+      if (contacto.equals(contactoAux)) {
+        this.contactos.remove(contacto);
+        return true;
+      }
+    }
+    return false;
   }
 }

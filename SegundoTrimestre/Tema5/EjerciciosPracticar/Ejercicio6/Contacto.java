@@ -14,6 +14,17 @@ public class Contacto {
     this.telefono = telefono;
   }
 
+  // Getters and Setters
+
+
+  public String getNombre() {
+    return nombre;
+  }
+
+  public int getTelefono() {
+    return telefono;
+  }
+
   // Methods
   @Override
   public String toString() {
