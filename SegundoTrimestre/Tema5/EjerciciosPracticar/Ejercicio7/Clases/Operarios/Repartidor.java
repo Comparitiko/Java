@@ -1,4 +1,4 @@
-package SegundoTrimestre.Tema5.EjerciciosPracticar.Ejercicio7.Clases.Operario;
+package SegundoTrimestre.Tema5.EjerciciosPracticar.Ejercicio7.Clases.Operarios;
 
 import SegundoTrimestre.Tema5.EjerciciosPracticar.Ejercicio7.Clases.Operario;
 
@@ -7,7 +7,7 @@ public class Repartidor extends Operario {
   private String zona;
 
   // Constructors
-  public Repartidor(String nombre, int edad, double salario, String zona, boolean haceHorasExtra, String zona) {
+  public Repartidor(String nombre, int edad, double salario, boolean haceHorasExtra, String zona) {
     super(nombre, edad, salario, haceHorasExtra);
     this.zona = zona;
   }
@@ -33,12 +33,14 @@ public class Repartidor extends Operario {
   }
 
   /**
-   * Metodo que comprueba si el empleado tiene menos de 25 años y trabaja en la zona 3.
+   * Metodo que comprueba si el empleado tiene menos de 25 años y trabaja en la zona 3 y si cumple con que hace horas extra aumenta el plus
    * @return true si el empleado tiene menos de 25 años y trabaja en zona 3, false en otro caso.
    */
   public boolean plus () {
     if (this.getEdad() < 25 && this.zona.equals("Zona 3")) {
-      super.
+      if (this.isHaceHorasExtra()) this.setPlus(this.getPlus() * 2);
+      return true;
     }
+    return false;
   }
 }

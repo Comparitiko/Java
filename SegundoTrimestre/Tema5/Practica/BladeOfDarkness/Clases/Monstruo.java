@@ -1,14 +1,13 @@
-package SegundoTrimestre.Tema5.Practica.BladeOfDarkness;
+package SegundoTrimestre.Tema5.Practica.BladeOfDarkness.Clases;
+
+import SegundoTrimestre.Tema5.Practica.BladeOfDarkness.Clases.Jugador;
 
 public class Monstruo {
   // Enums
   public enum claseMonstruo {GOBLIN, TROLL, SKRALL, DEMONIO, FANTASMA};
 
   // Props
-  private String nombre;
   private claseMonstruo clase;
-  private int nivel;
-  private int salud;
   private int puntosD;
 
   // Constructor

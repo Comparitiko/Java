@@ -8,4 +8,12 @@ public class Operario extends Empleado {
     super(nombre, edad, salario);
     this.haceHorasExtra = haceHorasExtra;
   }
+
+  public boolean isHaceHorasExtra() {
+    return haceHorasExtra;
+  }
+
+  public void setHaceHorasExtra(boolean haceHorasExtra) {
+    this.haceHorasExtra = haceHorasExtra;
+  }
 }

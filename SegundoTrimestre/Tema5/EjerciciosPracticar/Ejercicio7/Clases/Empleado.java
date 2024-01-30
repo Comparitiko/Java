@@ -6,7 +6,7 @@ class Empleado {
   private String nombre;
   private int edad;
   private double salario;
-  private final double plus = 300;
+  private double plus = 300;
 
   // Constructors
   protected Empleado(String nombre, int edad, double salario) {
@@ -43,6 +43,10 @@ class Empleado {
 
   public double getPlus() {
     return plus;
+  }
+
+  public void setPlus(double plus) {
+    this.plus = plus;
   }
 
   @Override

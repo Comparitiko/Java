@@ -1,4 +1,8 @@
-package SegundoTrimestre.Tema5.Practica.BladeOfDarkness;
+package SegundoTrimestre.Tema5.Practica.BladeOfDarkness.Test;
+
+import SegundoTrimestre.Tema5.Practica.BladeOfDarkness.Clases.Arma;
+import SegundoTrimestre.Tema5.Practica.BladeOfDarkness.Clases.Jugador;
+import SegundoTrimestre.Tema5.Practica.BladeOfDarkness.Clases.Monstruo;
 
 public class TestJuego {
   public static void main(String[] args) {

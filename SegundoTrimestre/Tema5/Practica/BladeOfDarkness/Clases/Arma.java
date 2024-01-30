@@ -1,4 +1,4 @@
-package SegundoTrimestre.Tema5.Practica.BladeOfDarkness;
+package SegundoTrimestre.Tema5.Practica.BladeOfDarkness.Clases;
 
 public class Arma {
   // Enums
