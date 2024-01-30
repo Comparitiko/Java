@@ -14,27 +14,27 @@ abstract class Personaje {
   }
 
   // Getters and Setters
-  protected String getNombre() {
+  public String getNombre() {
     return nombre;
   }
 
-  protected void setNombre(String nombre) {
+  public void setNombre(String nombre) {
     this.nombre = nombre;
   }
 
-  protected int getSalud() {
+  public int getSalud() {
     return salud;
   }
 
-  protected void setSalud(int salud) {
+  public void setSalud(int salud) {
     this.salud = salud;
   }
 
-  protected int getNivel() {
+  public int getNivel() {
     return nivel;
   }
 
-  protected void setNivel(int nivel) {
+  public void setNivel(int nivel) {
     this.nivel = nivel;
   }
 
@@ -53,7 +53,7 @@ abstract class Personaje {
   /**
    *  Método para subir un nivel hasta 10 e ir subiendo la vida segun el nivel
    */
-  protected void subirNivel () {
+  public void subirNivel () {
     this.nivel++;
     if (this.nivel > 10) this.nivel = 10;
     else this.salud += (int) (Math.pow(2, this.nivel));
@@ -64,7 +64,7 @@ abstract class Personaje {
    * @param puntosD puntos de daño recibidos por el personaje
    * @return true si el personaje muere y false si no muere
    */
-  protected boolean reducirVida (int puntosD) {
+  public boolean reducirVida (int puntosD) {
     this.salud -= puntosD;
     if (this.salud < 1) {
       this.salud = 0;
@@ -72,5 +72,9 @@ abstract class Personaje {
     } else return false;
   }
 
-  protected abstract void golpear ();
+  /**
+   * Método para golpear a un personaje
+   * @param personaje personaje al que se golpea
+   */
+  public abstract void golpear (Personaje personaje);
 }

@@ -59,7 +59,7 @@ public class Jugador extends Personaje {
   public String toString() {
     final StringBuffer sb = new StringBuffer("Jugador{");
     sb.append(super.toString()).append(',');
-    sb.append("clase=").append(clase);
+    sb.append(" clase=").append(clase);
     sb.append(", experiencia=").append(experiencia);
     sb.append(", armaDerecha=").append(armaDerecha);
     sb.append(", armaIzquierda=").append(armaIzquierda);
@@ -68,9 +68,9 @@ public class Jugador extends Personaje {
   }
 
   /**
-   *
-   * @param arma
-   * @return
+   *  Metodo para equipar un arma
+   * @param arma arma a equipar
+   * @return true si el arma ha sido equipado y false si no ha sido equipado
    */
   public boolean equipar(Arma arma) {
     // Equipar un arma empezando por la derecha y siguiendo por la izquierda a no ser que el arma ocupe dos manos
@@ -87,32 +87,38 @@ public class Jugador extends Personaje {
     return false;
   }
 
+  /**
+   * Metodo para que el jugador tome una pocion de salud sin pasar de 10000
+   * @param puntosS puntos de salud a restaurar
+   */
   public void tomarPocion (int puntosS) {
     // Metodo para tomar una pocion de maximo 10000 puntos de salud
     this.setSalud(this.getSalud() + puntosS);
     if (this.getSalud() > 10000) this.setSalud(10000);
   }
 
-  public void golpear (Monstruo monstruo) {
+  /**
+   * Metodo que hace golpear a un monstruo segun el daño de las armas
+   * @param personaje personaje al que se golpea
+   */
+  @Override
+  public void golpear (Personaje personaje) {
     // Metodo que hace golpear a un monstruo segun el daño de las arma.
     if (this.armaDerecha != null) {
-      monstruo.reducirVida(this.armaDerecha.getPuntosD());
+      personaje.reducirVida(this.armaDerecha.getPuntosD());
       if (!this.armaDerecha.isDosManos()) {
         if (this.armaIzquierda != null) {
-          monstruo.reducirVida(this.armaIzquierda.getPuntosD());
+          if (personaje.reducirVida(this.armaIzquierda.getPuntosD())) {
+            this.experiencia += 10 * personaje.getNivel();
+          }
         }
       }
     }
     // Si el nivel es menor que 10 consigue experiencia y si la experiencia es mayor que 100
     // la va dividiendo entre 100 hasta que sea menor y sube un nivvel por cada division
-    if (getNivel() < 10) {
-      if (monstruo.reducirVida(0)) {
-        this.experiencia += 10 * monstruo.getNivel();
-      }
-      while (this.experiencia > 100) {
-        this.experiencia /= 100;
-        subirNivel();
-      }
+    while (this.experiencia > 100) {
+      this.experiencia /= 100;
+      subirNivel();
     }
   }
 }
