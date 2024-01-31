@@ -14,7 +14,7 @@ public class Equipo {
   public Equipo(String nombre, String pais) {
     this.nombre = nombre;
     this.pais = pais;
-    this.ciclistas = new ArrayList<Ciclista>();
+    this.ciclistas = new ArrayList<>();
   }
 
   // Getters and setters
@@ -45,10 +45,8 @@ public class Equipo {
   // Methods
   @Override
   public String toString() {
-    final  StringBuffer sb = new StringBuffer("Equipo ");
-    sb.append(this.nombre);
-    sb.append("\n");
-    sb.append(", pais=").append(this.pais);
+    final  StringBuffer sb = new StringBuffer("Equipo: ");
+    sb.append(this.nombre).append(", pais=").append(this.pais).append(", Ciclistas: ");
     sb.append("\n");
     for (Ciclista ciclista : this.ciclistas) {
       sb.append(ciclista.toString());
@@ -81,12 +79,14 @@ public class Equipo {
    * @return lista de ciclistas del equipo
    */
   public String listarCiclistas() {
-    StringBuffer sb = new StringBuffer();
+    if (this.ciclistas.isEmpty()) return null;
+    StringBuffer sb = new StringBuffer("Equipo { \n");
     for (Ciclista ciclista : this.ciclistas) {
       sb.append("Tipo ciclista: ").append(ciclista.imprimirTipo());
-      sb.append(", ").append(ciclista.toString());
+      sb.append(", Nombre: ").append(ciclista.getNombre());
       sb.append("\n");
     }
+    sb.append(" }");
     return sb.toString();
   }
 

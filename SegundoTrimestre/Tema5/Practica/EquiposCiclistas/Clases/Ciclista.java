@@ -3,12 +3,12 @@ package SegundoTrimestre.Tema5.Practica.EquiposCiclistas.Clases;
 public abstract class Ciclista {
 
   // Props
-  private int identificador;
-  private String nombre;
-  private  double tiempoAcumuladoCarrera;
+  protected int identificador;
+  protected String nombre;
+  protected   double tiempoAcumuladoCarrera;
 
   // Constructors
-  public Ciclista(int identificador, String nombre) {
+  protected Ciclista(int identificador, String nombre) {
     this.identificador = identificador;
     this.nombre = nombre;
     this.tiempoAcumuladoCarrera = 0;

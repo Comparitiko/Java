@@ -22,7 +22,6 @@ public class TestCiclistas {
     System.out.println("5. Buscar ciclista");
     System.out.println("6. Salir");
     int opcionMenu = Integer.parseInt(sc.nextLine());
-    sc.close();
     if (opcionMenu < 1 || opcionMenu > 6) throw new Exception("Ingrese un numero entre 1 y 6");
     return opcionMenu;
   }
@@ -30,7 +29,7 @@ public class TestCiclistas {
   /**
    * Pide los datos del ciclista a ser añadido al equipo
    */
-  public static void aniadirCiclista() {
+  public static void aniadirCiclista(Equipo equipo) {
 
     System.out.println("Ingresa el identificador del ciclista");
     int identificadorCiclista = Integer.parseInt(TestCiclistas.sc.nextLine());
@@ -49,13 +48,26 @@ public class TestCiclistas {
 
       switch (opcionTipoCiclista) {
         case 1:
-          new Escalador(identificadorCiclista, nombreCiclista);
+          try {
+            System.out.println("Ingrese la potencia promedio del escalador");
+            float potenciaPromedio = Float.parseFloat(sc.nextLine());
+            System.out.println("Ingrese el grado de rampa soportada por el escalador");
+            float gradoRampa = Float.parseFloat(sc.nextLine());
+            equipo.aniadirCiclista(new Escalador(identificadorCiclista, nombreCiclista, potenciaPromedio, gradoRampa));
+          } catch (Exception e) {
+          System.out.println("Error, la proxima vez ingrese el dato correctamente");
+          }
           break;
         case 2:
-          new Velocista(identificadorCiclista, nombreCiclista);
+          try {
+
+          } catch (Exception e) {
+            System.out.println("Error, la proxima vez ingrese el dato correctamente");
+          }
+          equipo.aniadirCiclista(new Velocista(identificadorCiclista, nombreCiclista, 1.50, 8.6));
           break;
         case 3:
-          new Contrarrelojista(identificadorCiclista, nombreCiclista);
+          equipo.aniadirCiclista(new Contrarrelojista(identificadorCiclista, nombreCiclista, 10.4));
           break;
       }
 
@@ -97,7 +109,7 @@ public class TestCiclistas {
           break;
         case 2:
           System.out.println("Añadir un ciclista al equipo");
-          aniadirCiclista();
+          aniadirCiclista(equipo);
           break;
         case 3:
           System.out.println("Calcular el total de tiempos de los ciclistas del equipo");
@@ -105,12 +117,15 @@ public class TestCiclistas {
           break;
         case 4:
           System.out.println("Listar nombres de los ciclistas");
-          System.out.println(equipo.listarCiclistas());
+          if (equipo.listarCiclistas() == null) System.out.println("No hay ciclistas");
+          else System.out.println(equipo.listarCiclistas());
           break;
         case 5:
           System.out.println("Buscar ciclista");
           System.out.println("Ingrese el identificador del ciclista a buscar");
-          System.out.println(equipo.buscarCiclista(Integer.parseInt(sc.nextLine())));
+          int idCiclista = Integer.parseInt(sc.nextLine());
+          if (equipo.buscarCiclista(idCiclista) != null) System.out.println(equipo.buscarCiclista(idCiclista));
+          else System.out.println("El identificador del ciclista no existe");
           break;
         case 6:
           System.out.println("Saliendo...");

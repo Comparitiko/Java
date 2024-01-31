@@ -7,8 +7,10 @@ public class Velocista extends Ciclista {
   private double velocidadPromedio;
 
   // Constructors
-  public Velocista(int identificador, String nombre) {
+  public Velocista(int identificador, String nombre, double potenciaPromedio, double velocidadPromedio) {
     super(identificador, nombre);
+    this.potenciaPromedio = potenciaPromedio;
+    this.velocidadPromedio = velocidadPromedio;
   }
 
   // Getters and setters
@@ -29,6 +31,17 @@ public class Velocista extends Ciclista {
   }
 
   // Methods
+
+  @Override
+  public String toString() {
+    final StringBuffer sb = new StringBuffer("Velocista{");
+    sb.append(super.toString());
+    sb.append("potenciaPromedio=").append(potenciaPromedio);
+    sb.append(", velocidadPromedio=").append(velocidadPromedio);
+    sb.append('}');
+    return sb.toString();
+  }
+
   @Override
   public String imprimirTipo() {
     return "Velocista";
