@@ -40,5 +40,17 @@ public abstract class Ciclista {
   }
 
   // Methods
+
+
+  @Override
+  public String toString() {
+    final StringBuffer sb = new StringBuffer("Ciclista{");
+    sb.append("identificador=").append(identificador);
+    sb.append(", nombre='").append(nombre).append('\'');
+    sb.append(", tiempoAcumuladoCarrera=").append(tiempoAcumuladoCarrera);
+    sb.append('}');
+    return sb.toString();
+  }
+
   public abstract String imprimirTipo();
 }

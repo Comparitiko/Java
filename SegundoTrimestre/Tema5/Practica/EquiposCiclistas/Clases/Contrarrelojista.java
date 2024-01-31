@@ -22,6 +22,6 @@ public class Contrarrelojista extends Ciclista{
   // Methods
   @Override
   public String imprimirTipo() {
-    return null;
+    return "Contrarrelojista";
   }
 }
