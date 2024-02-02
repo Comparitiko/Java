@@ -43,4 +43,10 @@ public class Contacto {
     return Objects.equals(nombre, contacto.nombre);
   }
 
+  public String pintar() {
+    StringBuffer sb = new StringBuffer("Nombre: ").append(this.nombre);
+    sb.append(", Teléfono: ").append(this.telefono);
+    return sb.toString();
+  }
+
 }

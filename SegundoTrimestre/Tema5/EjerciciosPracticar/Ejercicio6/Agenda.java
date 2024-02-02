@@ -17,10 +17,7 @@ public class Agenda {
    * @return true si existe el contacto, false en caso contrario
    */
   public boolean existeContacto(Contacto contactoAux) {
-    for (Contacto contacto : this.contactos) {
-      if (contacto.equals(contactoAux)) return true;
-    }
-    return false;
+    return this.contactos.contains(contactoAux);
   }
 
   /**
@@ -43,7 +40,7 @@ public class Agenda {
   public String listarContactos() {
     StringBuffer sb = new StringBuffer();
     for (Contacto contacto : this.contactos) {
-      sb.append(contacto.toString() + "\n");
+      sb.append(contacto.pintar()).append("\n");
     }
     return sb.toString();
   }

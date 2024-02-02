@@ -56,7 +56,7 @@ public class Equipo {
   }
 
   /**
-   * Aniadir una ciclista al equipo.
+   * Añadir una ciclista al equipo.
    * @param ciclista ciclista a añadir al equipo
    */
   public void aniadirCiclista(Ciclista ciclista) {
@@ -91,7 +91,7 @@ public class Equipo {
   }
 
   /**
-   * Buscar una ciclista por su identificador
+   * Buscar un ciclista por su identificador
    * @param identificador identificador a buscar
    * @return cliclista o null si no se encuentra
    */

@@ -5,7 +5,7 @@ public abstract class Ciclista {
   // Props
   protected int identificador;
   protected String nombre;
-  protected   double tiempoAcumuladoCarrera;
+  protected double tiempoAcumuladoCarrera;
 
   // Constructors
   protected Ciclista(int identificador, String nombre) {

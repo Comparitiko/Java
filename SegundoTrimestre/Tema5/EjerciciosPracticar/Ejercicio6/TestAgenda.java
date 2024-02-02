@@ -30,8 +30,25 @@ public class TestAgenda {
 
           System.out.println("Ingrese el número de teléfono del contacto");
           int telefono = Integer.parseInt(sc.nextLine());
-
-          agenda.addContacto(new Contacto(nombre, telefono));
+          System.out.println("Que tipo de contacto quiere crear");
+          System.out.println("1. Empresa");
+          System.out.println("2. Personal");
+          int tipo = Integer.parseInt(sc.nextLine());
+          switch (tipo) {
+            case 1:
+              System.out.println("Ingrese el CIF");
+              String cif = sc.nextLine();
+              System.out.println("Ingrese el email");
+              String email = sc.nextLine();
+              if (agenda.addContacto(new ContactoEmpresa(nombre, telefono, cif, email))) System.out.println("El contacto se añadio correctamente");
+              else System.out.println("El contacto ya existe");
+              break;
+            case 2:
+              System.out.println("Ingrese el apodo");
+              String apodo = sc.nextLine();
+              if (agenda.addContacto(new ContactoPersona(nombre, telefono, apodo))) System.out.println("El contacto se añadio correctamente");
+              else System.out.println("El contacto ya existe");
+          }
           break;
         case 2:
           System.out.println("Los contactos son:");

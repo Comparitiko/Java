@@ -60,14 +60,23 @@ public class TestCiclistas {
           break;
         case 2:
           try {
-
+            System.out.println("Ingrese la potencia media del velocista");
+            double potenciaPromedio = Double.parseDouble(sc.nextLine());
+            System.out.println("Ingrese la velocidad media del velocista");
+            double velocidadPromedio = Double.parseDouble(sc.nextLine());
+            equipo.aniadirCiclista(new Velocista(identificadorCiclista, nombreCiclista, potenciaPromedio, velocidadPromedio));
           } catch (Exception e) {
             System.out.println("Error, la proxima vez ingrese el dato correctamente");
           }
-          equipo.aniadirCiclista(new Velocista(identificadorCiclista, nombreCiclista, 1.50, 8.6));
           break;
         case 3:
-          equipo.aniadirCiclista(new Contrarrelojista(identificadorCiclista, nombreCiclista, 10.4));
+          try {
+            System.out.println("Ingrese la velocidad maxima del relojista");
+            double velocidadMaxima = Double.parseDouble(sc.nextLine());
+            equipo.aniadirCiclista(new Contrarrelojista(identificadorCiclista, nombreCiclista, velocidadMaxima));
+          } catch (Exception e) {
+            System.out.println("Error, la proxima vez ingrese el dato correctamente");
+          }
           break;
       }
 
