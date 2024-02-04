@@ -42,11 +42,20 @@ public class Menu {
   }
 
   /**
-   * Metodo para añadir un ingrediente al menu, aumentar numeroIngredientes
-   * @param ingrediente Ingrediente a añadir en menu
+   * Metodo para añadir comida al menu, aumentar numeroIngredientes
+   * @param comida Ingrediente a añadir en menu
    */
-  public void addComida(Ingrediente ingrediente) {
-    this.listaIngredientes.add(ingrediente);
+  public void addComida(Comida comida) {
+    this.listaIngredientes.add(comida);
+    this.numeroIngredientes++;
+  }
+
+  /**
+   * Metodo para añadir comida al menu, aumentar numeroIngredientes
+   * @param bebida Ingrediente a añadir en menu
+   */
+  public void  addBebida(Bebida bebida) {
+    this.listaIngredientes.add(bebida);
     this.numeroIngredientes++;
   }
 
@@ -57,7 +66,7 @@ public class Menu {
   public double obtenerPrecioMenu () {
     double precioMenu = 0;
     for (Ingrediente ingrediente: this.listaIngredientes) {
-      ingrediente
+      ingrediente.obtenerPrecio();
     }
     return precioMenu;
   }
