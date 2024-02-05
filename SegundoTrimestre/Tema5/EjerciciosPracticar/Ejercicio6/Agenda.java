@@ -59,16 +59,10 @@ public class Agenda {
 
   /**
    * Metodo para eliminar un contacto
+   *
    * @param contactoAux contacto a eliminar
-   * @return true si se eliminó el contacto, false en caso contrario
    */
-  public boolean eliminarContacto(Contacto contactoAux) {
-    for (Contacto contacto: this.contactos) {
-      if (contacto.equals(contactoAux)) {
-        this.contactos.remove(contacto);
-        return true;
-      }
-    }
-    return false;
+  public void eliminarContacto(Contacto contactoAux) {
+    this.contactos.remove(contactoAux);
   }
 }

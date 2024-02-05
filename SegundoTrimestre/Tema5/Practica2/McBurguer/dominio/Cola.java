@@ -6,4 +6,11 @@ public class Cola extends Bebida{
   public Cola() {
     super("Cola", "Bebida");
   }
+
+  @Override
+  public String toString() {
+    final StringBuffer sb = new StringBuffer("Cola......... ");
+    sb.append(this.obtenerPrecio()).append('€');
+    return sb.toString();
+  }
 }

@@ -6,4 +6,13 @@ public class Agua extends Bebida{
   public Agua() {
     super("Agua", "Bebida");
   }
+
+  // Methods
+
+  @Override
+  public String toString() {
+    final StringBuffer sb = new StringBuffer("Agua....... ");
+    sb.append(this.obtenerPrecio()).append('€');
+    return sb.toString();
+  }
 }

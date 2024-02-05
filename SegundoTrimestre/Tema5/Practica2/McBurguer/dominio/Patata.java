@@ -24,6 +24,9 @@ public class Patata extends Comida implements Cocinable {
 
   // Methods
 
+  /**
+   * Freir patatas
+   */
   @Override
   public void freir() {
     this.estado = FRITA;
@@ -31,6 +34,9 @@ public class Patata extends Comida implements Cocinable {
     this.cocinado = true;
   }
 
+  /**
+   * Cocer patata
+   */
   @Override
   public void cocer() {
     this.estado = COCIDA;
@@ -38,6 +44,9 @@ public class Patata extends Comida implements Cocinable {
     this.cocinado = true;
   }
 
+  /**
+   * Asar patata
+   */
   @Override
   public void asar() {
     this.estado = ASADA;
@@ -45,6 +54,9 @@ public class Patata extends Comida implements Cocinable {
     this.cocinado = true;
   }
 
+  /**
+   * Obtener el precio de la patata
+   */
   @Override
   public double obtenerPrecio() {
     return switch (this.estado) {
@@ -55,4 +67,10 @@ public class Patata extends Comida implements Cocinable {
     };
   }
 
+  @Override
+  public String toString() {
+    final StringBuffer sb = new StringBuffer(this.getNombre());
+    sb.append("....... ").append(this.obtenerPrecio()).append('€');
+    return sb.toString();
+  }
 }

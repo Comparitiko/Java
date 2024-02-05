@@ -33,7 +33,7 @@ public class Menu {
   // Methods
 
   /**
-   * Metodo para impriimir el menu por pantalla
+   * Metodo para imprimir el menu por pantalla
    */
   public void imprimirMenu() {
     for (int i = 0; i < this.listaIngredientes.size(); i++) {
@@ -66,7 +66,7 @@ public class Menu {
   public double obtenerPrecioMenu () {
     double precioMenu = 0;
     for (Ingrediente ingrediente: this.listaIngredientes) {
-      ingrediente.obtenerPrecio();
+      precioMenu += ingrediente.obtenerPrecio();
     }
     return precioMenu;
   }
