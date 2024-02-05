@@ -4,6 +4,6 @@ public class Cola extends Bebida{
 
   // Constructors
   public Cola() {
-    super();
+    super("Cola", "Bebida");
   }
 }

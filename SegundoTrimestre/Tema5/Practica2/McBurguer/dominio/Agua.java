@@ -4,6 +4,6 @@ public class Agua extends Bebida{
 
   // Constructors
   public Agua() {
-    super();
+    super("Agua", "Bebida");
   }
 }

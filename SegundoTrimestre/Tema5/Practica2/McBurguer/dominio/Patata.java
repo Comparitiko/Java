@@ -9,7 +9,7 @@ public class Patata extends Comida implements Cocinable {
 
   // Constructors
   public Patata() {
-    super();
+    super("Patata.cruda", "Comida");
     this.estado = CRUDA;
   }
 
@@ -27,16 +27,22 @@ public class Patata extends Comida implements Cocinable {
   @Override
   public void freir() {
     this.estado = FRITA;
+    this.setNombre("Patatas.fritas");
+    this.cocinado = true;
   }
 
   @Override
   public void cocer() {
     this.estado = COCIDA;
+    this.setNombre("Patata.cocida");
+    this.cocinado = true;
   }
 
   @Override
   public void asar() {
     this.estado = ASADA;
+    this.setNombre("Patata.asada");
+    this.cocinado = true;
   }
 
   @Override

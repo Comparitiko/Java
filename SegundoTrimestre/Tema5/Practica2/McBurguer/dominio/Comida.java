@@ -6,10 +6,12 @@ public abstract class Comida extends Ingrediente {
   protected boolean cocinado;
 
   // Constructors
-
-
-  public Comida() {
-    super();
+  public Comida(String nombre, String tipoIngrediente) {
+    super(nombre, tipoIngrediente);
     this.cocinado = false;
   }
+
+  // Methods
+  @Override
+  public abstract double obtenerPrecio();
 }
