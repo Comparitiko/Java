@@ -54,7 +54,7 @@ public class Partida {
 
   /**
    * Metodo para saber cuantos monstruos que quedan vivos en la partida
-   * @return numero de monstruos que quedan vivos en la partida
+   * @return número de monstruos que quedan vivos en la partida
    */
   public int numeroDeMonstruos () {
     int numMonstruosDerrotados = 0;
