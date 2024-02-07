@@ -35,11 +35,14 @@ public class PrimeVideo {
   }
 
   public void ver (Multimedia m, Cliente c) {
-    if (!c.esPro()) this.ganancias += m.getPrecio()
+    if (!c.esPro()) this.ganancias += m.getPrecio();
   }
 
   public double getGanancias () {
-    return this.ganancias;
+    for (Cliente cliente : this.suscriptores) {
+      this.ganancias += cliente.getPrecioMensual() * 12;
+    }
+    return  this.ganancias;
   }
 
 

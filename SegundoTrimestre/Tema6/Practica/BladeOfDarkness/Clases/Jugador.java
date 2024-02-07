@@ -105,19 +105,22 @@ public class Jugador extends Personaje {
   public void golpear (Personaje personaje) {
     // Metodo que hace golpear a un monstruo segun el daño de las arma.
     if (this.armaDerecha != null) {
-      personaje.reducirVida(this.armaDerecha.getPuntosD());
-      if (!this.armaDerecha.isDosManos()) {
-        if (this.armaIzquierda != null) {
-          if (personaje.reducirVida(this.armaIzquierda.getPuntosD())) {
-            this.experiencia += 10 * personaje.getNivel();
+      if (personaje.reducirVida(this.armaDerecha.getPuntosD())) {
+        this.experiencia += 10 * personaje.getNivel();
+      } else {
+        if (!this.armaDerecha.isDosManos()) {
+          if (this.armaIzquierda != null) {
+            if (personaje.reducirVida(this.armaIzquierda.getPuntosD())) {
+              this.experiencia += 10 * personaje.getNivel();
+            }
           }
         }
       }
     }
     // Si el nivel es menor que 10 consigue experiencia y si la experiencia es mayor que 100
-    // la va dividiendo entre 100 hasta que sea menor y sube un nivvel por cada division
+    // la va dividiendo entre 100 hasta que sea menor y sube un nivel por cada division
     while (this.experiencia > 100) {
-      this.experiencia /= 100;
+      this.experiencia -= 100;
       subirNivel();
     }
   }
