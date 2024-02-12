@@ -21,7 +21,16 @@ public class Multimedia {
     autoIncremento++;
   }
 
-  public Multimedia (String titulo, double precio, boolean esPlus) {
+  public Multimedia (String titulo, double precio, boolean esPlus, Genero.GeneroPelicula genero) {
+    this.codigo = autoIncremento;
+    this.titulo = titulo;
+    this.plus = esPlus;
+    this.precio = precio;
+    this.genero = genero;
+    autoIncremento++;
+  }
+
+  public Multimedia(String titulo, double precio, boolean esPlus) {
     this.codigo = autoIncremento;
     this.titulo = titulo;
     this.plus = esPlus;

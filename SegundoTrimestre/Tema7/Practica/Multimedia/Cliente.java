@@ -77,6 +77,15 @@ public abstract class Cliente {
     return Objects.hash(dni);
   }
 
+  /**
+   * Funcion para saber si el cliente es pro
+   * @return true si es pro, false si no
+   */
   public abstract boolean esPro ();
+
+  /**
+   * Obtiene el precio mensual del cliente
+   * @return precio mensual del cliente
+   */
   public abstract double getPrecioMensual ();
 }
