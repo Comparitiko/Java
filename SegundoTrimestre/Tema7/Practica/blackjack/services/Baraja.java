@@ -7,11 +7,16 @@ import java.util.Collections;
 
 public abstract class Baraja {
   // Props
-  private ArrayList<Carta> baraja;
+  protected ArrayList<Carta> baraja;
 
   // Constructors
   public Baraja() {
     this.baraja = new ArrayList<>(13 * 4);
+  }
+
+  // Getters and Setters
+  public ArrayList<Carta> getBaraja() {
+    return baraja;
   }
 
   // Methods

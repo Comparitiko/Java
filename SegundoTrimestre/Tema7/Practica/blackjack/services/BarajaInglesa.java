@@ -31,17 +31,30 @@ public class BarajaInglesa extends Baraja {
    * @return Numero random
    */
   private int randomNumber (int length) {
-    return (int) Math.ceil(Math.random() * length);
+    return (int) Math.ceil(Math.random() * length) - 1;
   }
 
+  /**
+   * Repartir la primera carta de la baraja y eliminarla
+   * @return una carta
+   */
   @Override
   public Carta repartirCarta() {
-    return null;
+    Carta carta = this.baraja.getFirst();
+    this.baraja.removeFirst();
+
+    return carta;
   }
 
+  /**
+   * Repartir una carta aleatoria y eliminarla
+   * @return una carta
+   */
   @Override
   public Carta azar() {
-    return null;
+    Carta carta = this.baraja.get(randomNumber(this.baraja.size()));
+    this.baraja.remove(carta);
+    return carta;
   }
 
 }
