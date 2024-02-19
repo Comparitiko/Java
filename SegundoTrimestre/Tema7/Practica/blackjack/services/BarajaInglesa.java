@@ -1,6 +1,8 @@
 package SegundoTrimestre.Tema7.Practica.blackjack.services;
 
 import SegundoTrimestre.Tema7.Practica.blackjack.entities.Carta;
+import SegundoTrimestre.Tema7.Practica.blackjack.entities.PaloBarajaInglesa;
+import SegundoTrimestre.Tema7.Practica.blackjack.entities.ValorBarajaInglesa;
 
 public class BarajaInglesa extends Baraja {
   // Constructors
@@ -26,7 +28,7 @@ public class BarajaInglesa extends Baraja {
   }
 
   /**
-   * Generar un numero aleatorio entre 0 y valor pasado por parametro
+   * Generar un número aleatorio entre 0 y valor pasado por parametro
    * @param length int
    * @return Numero random
    */
