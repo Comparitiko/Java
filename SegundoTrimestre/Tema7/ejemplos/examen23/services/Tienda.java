@@ -1,8 +1,10 @@
 package SegundoTrimestre.Tema7.ejemplos.examen23.services;
 
 import SegundoTrimestre.Tema7.ejemplos.examen23.entities.Compra;
+import SegundoTrimestre.Tema7.ejemplos.examen23.entities.LineaCompra;
 import SegundoTrimestre.Tema7.ejemplos.examen23.entities.Producto;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Tienda {
@@ -63,6 +65,24 @@ public class Tienda {
   }
 
   /**
+   * Metodo para mostrar las compras de un mes
+   * @param mes mes a mostrar
+   * @return compras
+   * @throws Exception si el mes no esta entre 1 y 12
+   */
+  public String mostrarCompras (int mes) throws Exception{
+    if (mes < 1 || mes > 12) throw new Exception("El mes tiene que ser entre 1 y 12");
+    final StringBuffer sb = new StringBuffer();
+    for (Compra compra : this.compras) {
+      if (compra.getFecha().getMonthValue() == mes) {
+        sb.append(compra).append(", Precio = ");
+        sb.append(compra.getPrecioTotal());
+      }
+    }
+    return sb.toString();
+  }
+
+  /**
    * Metodo para añadir un producto
    * @param producto producto a añadir
    */
@@ -79,21 +99,35 @@ public class Tienda {
   }
 
   /**
-   * Metodo para añadir una compra
-   * @param compra compra a añadir
+   * Metodo para realizar una compra
+   * @param compra compra a realizar
+   * @throws Exception No hay suficiente stock
    */
-  public void addCompra (Compra compra) {
+  public void addCompra (Compra compra) throws Exception{
+    for (LineaCompra lc : compra.getLineasCompra()) {
+      int index = this.productos.indexOf(lc.getProducto());
+      Producto p = this.productos.get(index);
+      if ( p.getUnidadesStock() - lc.getCantidad() < 0) {
+        throw new Exception("No se puede realizar la compra");
+      }
+    }
+    for (LineaCompra lc : compra.getLineasCompra()) {
+      int index = this.productos.indexOf(lc.getProducto());
+      Producto p = this.productos.get(index);
+      p.setUnidadesStock(p.getUnidadesStock() - lc.getCantidad());
+    }
     this.compras.add(compra);
     this.numeroCompras++;
   }
 
-  /**
-   * Metodo para eliminar una compra
-   * @param compra compra a eliminar
-   */
-  public void delCompra (Compra compra) {
-    this.compras.remove(compra);
-    this.numeroCompras--;
+  public ArrayList<Producto> buscarProducto (String texto) {
+    ArrayList<Producto> productosEncontrados = new ArrayList<>();
+    for (Producto producto : productos) {
+      if (producto.getNombre().toLowerCase().contains(texto.toLowerCase())) {
+        productosEncontrados.add(producto);
+      }
+    }
+    return productosEncontrados;
   }
 
 

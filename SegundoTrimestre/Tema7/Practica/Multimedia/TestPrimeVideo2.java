@@ -48,6 +48,8 @@ public class TestPrimeVideo2 {
       }
     }
 
+    System.out.println(pv1.getCatalogo());
+
     // Imprimir ganancias
     System.out.println("Las ganancias son: " + pv1.getGanancias() + "€");
   }
