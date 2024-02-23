@@ -59,6 +59,7 @@ public class PrimeVideo {
    * @return ganancias
    */
   public double getGanancias () {
+    System.out.println(this.ganancias);
     for (Cliente cliente : this.suscriptores) {
       this.ganancias += cliente.getPrecioMensual() * 12;
     }

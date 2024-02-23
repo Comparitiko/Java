@@ -5,7 +5,7 @@ import SegundoTrimestre.Tema7.Practica.blackjack.services.Partida;
 
 public class Main {
 
-  public static int menu() {
+  public static void menu() {
     System.out.println("¿Que deseas hacer?");
     System.out.println("1. Pedir carta");
     System.out.println("2. Plantarte");
@@ -14,6 +14,6 @@ public class Main {
   public static void main(String[] args) {
     Partida p1 = new Partida(new JugadorBlack("Comparitiko"));
     int turnos = 0;
-    while ()
+
   }
 }

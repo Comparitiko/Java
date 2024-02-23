@@ -18,6 +18,14 @@ public class Main {
     System.out.println("6. Salir");
   }
 
+  public static Ropa crearRopa() {
+    return new Ropa("hola", "ass", 1.4, 10, Talla.XL, "Rojo", TipoRopa.Sudadera);
+  }
+
+  public static Zapatilla crearZapatilla() {
+    return new Zapatilla("zapa", "ass", 1.4, 10, Numero.N36, Categoria.Baloncesto);
+  }
+
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);
@@ -83,14 +91,41 @@ public class Main {
           break;
         case 5:
           Compra compra = new Compra();
-          int id, cantidad;
-          try {
-            System.out.println("Ingrese el id del producto");
-            id = Integer.parseInt(sc.nextLine());
-            System.out.println("Ingrese la cantidad a comprar");
-            cantidad = Integer.parseInt(sc.nextLine());
-          } catch (Exception e) {
-            System.out.println("La proxima vez ingrese una id y una cantidad correcta");
+          int id = 0, cantidad = 0;
+          while (true) {
+            try {
+              System.out.println("Ingrese el id del producto, tiene que ser un numero positivo");
+              id = Integer.parseInt(sc.nextLine());
+              System.out.println("Ingrese la cantidad a comprar, tiene que ser un numero positivo");
+              cantidad = Integer.parseInt(sc.nextLine());
+              if (cantidad < 0 || id < 0) throw new Exception();
+              break;
+            } catch (Exception e) {
+              System.out.println("La proxima vez ingrese una id y una cantidad correcta");
+            }
+            int opcionProducto = 0;
+            Producto producto = null;
+            while (opcionProducto != 1 && opcionProducto != 2) {
+              System.out.println("Que tipo de producto quieres");
+              System.out.println("1. Ropa");
+              System.out.println("2. Zapatilla");
+              System.out.println("Ingrese una opcion");
+              try {
+                opcionProducto = Integer.parseInt(sc.nextLine());
+              } catch (Exception e) {
+                System.out.println("Ingrese una opcion valida");
+              }
+              if (opcionProducto == 1) {
+                producto = crearRopa();
+                LineaCompra lineaCompra = new LineaCompra(producto, cantidad);
+                break;
+              } else if (opcionProducto == 2) {
+                producto = crearZapatilla();
+                LineaCompra lineaCompra = new LineaCompra(producto, cantidad);
+                break;
+              }
+            }
+
           }
 
           break;
