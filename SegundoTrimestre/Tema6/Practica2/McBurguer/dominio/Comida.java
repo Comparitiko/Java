@@ -10,8 +10,4 @@ public abstract class Comida extends Ingrediente {
     super(nombre, tipoIngrediente);
     this.cocinado = false;
   }
-
-  // Methods
-  @Override
-  public abstract double obtenerPrecio();
 }
