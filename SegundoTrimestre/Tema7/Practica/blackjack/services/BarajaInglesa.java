@@ -1,13 +1,20 @@
 package SegundoTrimestre.Tema7.Practica.blackjack.services;
 
 import SegundoTrimestre.Tema7.Practica.blackjack.entities.Carta;
-import SegundoTrimestre.Tema7.Practica.blackjack.entities.PaloBarajaInglesa;
-import SegundoTrimestre.Tema7.Practica.blackjack.entities.ValorBarajaInglesa;
 
 public class BarajaInglesa extends Baraja {
+
+  public static final int[] valores = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+  public static String[] palos = {"Treboles", "Diamantes", "Corazones", "Picas"};
+
   // Constructors
   public BarajaInglesa() {
     super();
+    for (int valor : valores) {
+      for (String palo : palos) {
+        this.baraja.add(new Carta(valor, palo));
+      }
+    }
   }
 
   // Methods
@@ -15,16 +22,16 @@ public class BarajaInglesa extends Baraja {
    * Mostrar los posibles valores de baraja inglesa
    * @return Array con los posibles valores de baraja inglesa
    */
-  public static ValorBarajaInglesa[] valores () {
-    return ValorBarajaInglesa.values();
+  public static int[] valores () {
+    return valores;
   }
 
   /**
    * Mostrar los posibles palos de baraja inglesa
    * @return Array con los posibles palos de baraja inglesa
    */
-  public static PaloBarajaInglesa[] palos () {
-    return PaloBarajaInglesa.values();
+  public static String[] palos () {
+    return palos;
   }
 
   /**

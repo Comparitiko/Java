@@ -1,11 +1,11 @@
-package SegundoTrimestre.Tema7.Practica.Multimedia;
+package SegundoTrimestre.Tema7.Practica.multimedia;
 
-public class ClientePrime extends Cliente{
+public class ClientePrimePro extends Cliente{
   // Props
-  private final static int precioMensual = 3;
+  private final static int precioMensual = 5;
 
   // Constructors
-  public ClientePrime(String dni, String nombre, String email) {
+  public ClientePrimePro(String dni, String nombre, String email) {
     super(dni, nombre, email);
     this.setPrecioMensual(precioMensual);
   }
@@ -13,7 +13,7 @@ public class ClientePrime extends Cliente{
   // Methods
   @Override
   public boolean esPro() {
-    return false;
+    return true;
   }
 
   @Override

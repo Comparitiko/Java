@@ -11,8 +11,8 @@ public class Partida {
   private BarajaInglesa baraja;
 
   // Constructor
-  public Partida(JugadorBlack jugador) {
-    this.jugador = jugador;
+  public Partida(String nombreJugador) {
+    this.jugador = new JugadorBlack(nombreJugador);
     this.crupier = new Crupier();
     this.baraja = new BarajaInglesa();
   }
@@ -41,8 +41,10 @@ public class Partida {
     j.nuevaCarta(baraja.azar());
   }
 
-  public void primerTurno () {
+  public void iniciarPartida () {
     baraja.barajar();
+    jugador.nuevaCarta(baraja.repartirCarta());
+    crupier.nuevaCarta(baraja.repartirCarta());
     jugador.nuevaCarta(baraja.repartirCarta());
     crupier.nuevaCarta(baraja.repartirCarta());
   }

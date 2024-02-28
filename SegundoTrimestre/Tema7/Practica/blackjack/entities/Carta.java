@@ -3,27 +3,27 @@ package SegundoTrimestre.Tema7.Practica.blackjack.entities;
 public class Carta {
 
   // Props
-  private int palo;
+  private int valor;
   private String figura;
 
   // Constructors
-  public Carta(int palo, String figura) {
-    this.palo = palo;
+  public Carta(int valor, String figura) {
+    this.valor = valor;
     this.figura = figura;
   }
 
   public Carta(Carta carta) {
-    this.palo = carta.palo;
+    this.valor = carta.valor;
     this.figura = carta.figura;
   }
 
   // Getters and Setters
-  public int getPalo() {
-    return palo;
+  public int getValor() {
+    return valor;
   }
 
-  public void setPalo(int palo) {
-    this.palo = palo;
+  public void setValor(int valor) {
+    this.valor = valor;
   }
 
   public String getFigura() {
@@ -37,7 +37,7 @@ public class Carta {
   // Methods
   @Override
   public String toString() {
-    final StringBuffer sb = new StringBuffer(this.palo);
+    final StringBuffer sb = new StringBuffer(this.valor);
     sb.append(this.figura);
     return sb.toString();
   }
@@ -47,6 +47,6 @@ public class Carta {
    * @return nombre corto de la carta
    */
   public String getNombreCortoCarta () {
-    return this.palo + this.figura;
+    return this.valor + this.figura;
   }
 }

@@ -1,4 +1,4 @@
-package SegundoTrimestre.Tema7.Practica.Multimedia;
+package SegundoTrimestre.Tema7.Practica.multimedia;
 
 public class Genero {
 
