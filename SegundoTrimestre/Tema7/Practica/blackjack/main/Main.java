@@ -30,6 +30,8 @@ public class Main {
   }
 
   public static void pedirCartaCrupier (Partida p) {
+    if (haGanadoCrupier(p)) return;
+    p.getCrupier().plantarse();
     while (!p.haPerdido(p.getCrupier()) && !p.getCrupier().isEstaPlantado()) {
       p.asignarCarta(p.getCrupier());
       p.getCrupier().plantarse();
@@ -57,7 +59,7 @@ public class Main {
         primerTurno = false;
       }
       else {
-        System.out.println(STR."Primera carta crupier: \{p.getCrupier().mostrarPrimeraCarta()}");
+        System.out.println(p.getCrupier().mostrarPrimeraCarta());
         System.out.println(STR." Cartas jugador: \{p.getJugador()}");
         try {
           opcionMenu = menu();
