@@ -43,6 +43,8 @@ public class Partida {
 
   public void iniciarPartida () {
     baraja.barajar();
+    jugador.getMano().clear();
+    crupier.getMano().clear();
     jugador.nuevaCarta(baraja.repartirCarta());
     crupier.nuevaCarta(baraja.repartirCarta());
     jugador.nuevaCarta(baraja.repartirCarta());
