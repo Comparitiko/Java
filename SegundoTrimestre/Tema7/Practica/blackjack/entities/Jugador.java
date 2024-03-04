@@ -63,14 +63,16 @@ public abstract class Jugador {
     if (this.mano.isEmpty()) return 0;
     int valor = 0;
     for (Carta carta : this.mano) {
-      if (carta.getValor() == 1) valor+= 10;
+      if (carta.getValor() == 1) valor+= 11;
+      else if (carta.getValor() <= 13 && carta.getValor() >= 10) valor += 10;
       else valor += carta.getValor();
     }
 
     if (valor > 21) {
       valor = 0;
       for (Carta carta : this.mano) {
-        valor += carta.getValor();
+        if (carta.getValor() <= 13 && carta.getValor() >= 10) valor += 10;
+        else valor += carta.getValor();
       }
     }
     return valor;

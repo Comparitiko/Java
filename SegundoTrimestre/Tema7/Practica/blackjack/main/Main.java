@@ -6,10 +6,17 @@ import SegundoTrimestre.Tema7.Practica.blackjack.services.Partida;
 
 import java.util.Scanner;
 
+import static java.lang.StringTemplate.STR;
+
 public class Main {
 
   static Scanner sc = new Scanner(System.in);
 
+  /**
+   * Imprimir menuInicial con iniciar partida o cerrar juego
+   * @return opcion ingresada
+   * @throws Exception si el valor es mayor que 2 o menor que 1
+   */
   public static int menuInicial () throws Exception {
     System.out.println("Bienvenido a Blackjack");
     System.out.println("¿Que deseas hacer?");
@@ -20,6 +27,11 @@ public class Main {
     return opcion;
   }
 
+  /**
+   * Imprimir menu para pedir carta o plantarte
+   * @return opcion seleccionada
+   * @throws Exception Si la opcion es menor que 1 o mayor que 2
+   */
   public static int menu() throws Exception {
     System.out.println("¿Que deseas hacer?");
     System.out.println("1. Pedir carta");
@@ -29,6 +41,10 @@ public class Main {
     return opcion;
   }
 
+  /**
+   * Funcion para que juegue el crupier la partida hasta que se cumplan ciertas condiciones
+   * @param p partida que se esta jugando
+   */
   public static void pedirCartaCrupier (Partida p) {
     if (haGanadoCrupier(p)) return;
     p.getCrupier().plantarse();
@@ -38,6 +54,11 @@ public class Main {
     }
   }
 
+  /**
+   * Comprobar si ha ganado el crupier
+   * @param p partida que se juega
+   * @return true si ha ganado, false si no
+   */
   public static boolean haGanadoCrupier (Partida p) {
     if (p.haPerdido(p.getCrupier())) return false;
     else if (p.getCrupier().valorMano() > p.getJugador().valorMano()) return true;
@@ -45,10 +66,19 @@ public class Main {
     else return false;
   }
 
+  /**
+   * Comprobar si la partida se ha empatado
+   * @param p partida que se ha jugado
+   * @return true si se ha empatado, false si no
+   */
   public static boolean partidaEmpatada (Partida p) {
     return p.getJugador().valorMano() == p.getCrupier().valorMano();
   }
 
+  /**
+   * Metodo para que el jugador juegue hasta que se plante o se pase de 21
+   * @param p partida que se esta jugando
+   */
   public static void pedirCartasJugador (Partida p) {
     boolean primerTurno = true;
     int opcionMenu = 0;
@@ -78,6 +108,8 @@ public class Main {
   }
 
   public static void main(String[] args) {
+    // ---- WARNING ---- En este ejercicio he usado template Strings, ha habido veces que
+    // me ha dado error por el jdk
     System.out.println("Ingresa el nombre del jugador");
     String nombreJugador = sc.nextLine();
     Partida p1 = new Partida(nombreJugador);
@@ -92,6 +124,7 @@ public class Main {
         System.out.println("Ingrese una opcion valida");
       }
       if (opcionMenuInicial == 1) {
+        if (p1.getBaraja().getBaraja().isEmpty()) p1.generarNuevaBaraja();
         pedirCartasJugador(p1);
         if (p1.haPerdido(p1.getJugador())) {
           System.out.println(STR."El jugador ha perdido con un valor de cartas de \{p1.getJugador().valorMano()}");

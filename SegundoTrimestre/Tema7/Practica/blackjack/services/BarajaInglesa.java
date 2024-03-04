@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class BarajaInglesa extends Baraja {
 
-  public static final int[] valores = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+  public static final int[] valores = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
   public static String[] palos = {"Treboles", "Diamantes", "Corazones", "Picas"};
 
   // Constructors

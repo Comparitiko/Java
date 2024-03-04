@@ -1,5 +1,7 @@
 package SegundoTrimestre.Tema7.Practica.blackjack.entities;
 
+import java.util.Objects;
+
 public class Carta {
 
   // Props
@@ -40,6 +42,19 @@ public class Carta {
     final StringBuffer sb = new StringBuffer(this.valor);
     sb.append(this.figura);
     return sb.toString();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Carta carta = (Carta) o;
+    return valor == carta.valor && Objects.equals(figura, carta.figura);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(valor, figura);
   }
 
   /**

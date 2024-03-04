@@ -53,6 +53,10 @@ public class Partida {
     crupier.nuevaCarta(baraja.repartirCarta());
   }
 
+  public void generarNuevaBaraja () {
+    this.baraja = new BarajaInglesa();
+  }
+
   /**
    * Metodo para comprobar si se ha pasado de 21 el jugador
    * @param j jugadorBlack o crupier
