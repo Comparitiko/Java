@@ -1,0 +1,8 @@
+Cómo mejorarías saber los pasajeros de un vuelo.
+Creando en la clase vuelo una arrayList de pasajeros en la que se guarden los pasajeros de ese vuelo
+
+
+Qué pasa si en lugar de 1000 vuelos creas 100000 o un millón. Dime cuánta memoria te ocupa el programa cuando te
+crea tantos vuelos.
+Con 100000: Funciona pero va muy lento, tarda sobre 1 o 2 minutos. Memoria RAM: 6.2 GB de uso, En el PC hay instalado 8GB
+Con 1000000:Funciona pero va muy lento, no se cuanto tarda. Memoria RAM: 6.2GB y la CPU al 100%
