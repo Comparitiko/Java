@@ -1,7 +1,5 @@
 package SegundoTrimestre.Tema7.Practica.blackjack.main;
 
-import SegundoTrimestre.Tema7.Practica.blackjack.entities.Crupier;
-import SegundoTrimestre.Tema7.Practica.blackjack.entities.JugadorBlack;
 import SegundoTrimestre.Tema7.Practica.blackjack.services.Partida;
 
 import java.util.Scanner;
