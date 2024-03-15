@@ -5,7 +5,7 @@ import java.util.Objects;
 public abstract class Asiento {
   // Props
   protected Long id;
-  protected Pasajero pasajero;
+  protected entities.Pasajero pasajero;
   protected Double precioBase;
   protected Integer fila;
   protected String letra;

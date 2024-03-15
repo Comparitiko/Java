@@ -1,3 +1,5 @@
+package SegundoTrimestre.examenSegundoTrimestre.src;
+
 import entities.Pasajero;
 import entities.TipoAsiento;
 import entities.TipoTarifa;
@@ -12,7 +14,7 @@ import java.util.ArrayList;
 public class Main {
   public static void main(String[] args) {
     Atrapame atrapame = new Atrapame();
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 1000; i++) {
       Vuelo vuelo = new Vuelo(("Cod" + i), ("origen " + i), ("destino " + i), LocalDate.of(2025, 05, 22),
               LocalTime.now(), (1.0 + i), (10 + i));
       atrapame.addVuelo(vuelo);
