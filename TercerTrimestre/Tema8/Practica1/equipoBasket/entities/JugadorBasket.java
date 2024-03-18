@@ -2,7 +2,7 @@ package TercerTrimestre.Tema8.Practica1.equipoBasket.entities;
 
 import java.util.Objects;
 
-public class JugadorBasket {
+public class JugadorBasket implements Comparable<JugadorBasket> {
   // Props
   private String nombre;
   private Integer dorsal;
@@ -25,6 +25,10 @@ public class JugadorBasket {
     this.taponesPorPartido = taponesPorPartido;
     this.asistenciasPorPartido = asistenciasPorPartido;
     this.robosPorPartido = robosPorPartido;
+  }
+
+  public JugadorBasket (String nombre) {
+    this.nombre = nombre;
   }
 
   // Getters and Setters
@@ -122,11 +126,16 @@ public class JugadorBasket {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     JugadorBasket that = (JugadorBasket) o;
-    return Objects.equals(dorsal, that.dorsal);
+    return Objects.equals(nombre, that.nombre);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dorsal);
+    return Objects.hash(nombre);
+  }
+
+  @Override
+  public int compareTo(JugadorBasket o) {
+    return this.nombre.compareTo(o.nombre);
   }
 }

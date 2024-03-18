@@ -77,15 +77,9 @@ public class EquipoBasket implements Comparable<EquipoBasket> {
    * @return Jugador de basket con ese nombre
    */
   public JugadorBasket buscarJugador (String nombre) {
-    List<JugadorBasket> jugadores2 = jugadores.stream().toList();
-    Collections.sort(jugadores2, new Comparator<JugadorBasket>() {
-      @Override
-      public int compare(JugadorBasket o1, JugadorBasket o2) {
-        return o1.getNombre().compareTo(o2.getNombre());
-      }
-    });
-    int index = Collections.binarySearch(jugadores2, new JugadorBasket(nombre, 0, 0d, null, 0d, 0d, 0d, 0d,
-            0d))
+    List<JugadorBasket> listaJugadoresOrdenados = new TreeSet<>(this.jugadores).stream().toList();
+    int index = Collections.binarySearch(listaJugadoresOrdenados, new JugadorBasket(nombre));
+    return listaJugadoresOrdenados.get(index);
   }
 
   /**
@@ -95,7 +89,7 @@ public class EquipoBasket implements Comparable<EquipoBasket> {
    */
   public JugadorBasket buscarJugador (Integer dorsal) {
     for (JugadorBasket jugador : this.jugadores) {
-      if (Objects.equals(jugador.getDorsal(), dorsal)) return jugador;
+      if (jugador.getDorsal() == dorsal) return jugador;
     }
     return null;
   }

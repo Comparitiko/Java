@@ -1,6 +1,7 @@
 package TercerTrimestre.Tema8.Practica1.equipoBasket.services;
 
 import TercerTrimestre.Tema8.Practica1.equipoBasket.entities.EquipoBasket;
+import TercerTrimestre.Tema8.Practica1.equipoBasket.entities.JugadorBasket;
 
 import java.util.HashMap;
 import java.util.TreeMap;
@@ -63,25 +64,59 @@ public class NBALeague {
     this.equiposOrdenados.remove(equipo.getNombre());
   }
 
+  /**
+   * Mostrar equipos sin ordenar
+   * @return String con los equipos sin ordenar
+   */
   public String mostrarEquipos () {
     StringBuffer sb = new StringBuffer();
     this.equipos.forEach((nombre, equipo) -> {
       sb.append("Equipo: ").append(nombre);
-      sb.append("Partidos ganados: ").append(equipo.getPartidosGanados());
-      sb.append("Partidos perdidos: ").append(equipo.getPartidosPerdidos());
+      sb.append(" Partidos ganados: ").append(equipo.getPartidosGanados());
+      sb.append(" Partidos perdidos: ").append(equipo.getPartidosPerdidos());
+      sb.append("\n");
     });
     return sb.toString();
   }
 
+  /**
+   * Mostrar todos los equipos de forma ordenada
+   * @return String con los equipos ordenados
+   */
   public String mostrarEquiposOrdenados () {
     StringBuffer sb = new StringBuffer();
-    this.equiposOrdenados.forEach((nombre, equipo) -> {
-      sb.append("Equipo: ").append(nombre);
-      sb.append("Partidos ganados: ").append(equipo.getPartidosGanados());
-      sb.append("Partidos perdidos: ").append(equipo.getPartidosPerdidos());
+    this.equiposOrdenados.forEach((n, e) -> {
+      sb.append("Equipo: ").append(n);
+      sb.append(" Partidos ganados: ").append(e.getPartidosGanados());
+      sb.append("  perdidos: ").append(e.getPartidosPerdidos());
+      sb.append("\n");
     });
     return sb.toString();
   }
 
+  /**
+   * Metodo para buscar el jugador mas alto de la liga
+   * @return Jugador mas alto
+   */
+  public JugadorBasket buscarJugadorMasAlto () {
+    JugadorBasket[] jugadorBasket = {null};
+    this.equiposOrdenados.forEach((_, e) -> {
+      e.getJugadores().forEach(jugador -> {
+        if (jugadorBasket[0] == null || jugadorBasket[0].getAltura() < jugador.getAltura()) jugadorBasket[0] = jugador;
+      });
+    });
+    return jugadorBasket[0];
+  }
 
+  /**
+   * Metodo para ver que equipo tiene mas victorias de la liga
+   * @return Equipo con mas victorias
+   */
+  public EquipoBasket getEquipoConMasWins () {
+    final EquipoBasket[] equipo = {null};
+    this.equiposOrdenados.forEach((_, e) -> {
+      if (equipo[0] == null || equipo[0].getPartidosGanados() < e.getPartidosGanados()) equipo[0] = e;
+    });
+    return equipo[0];
+  }
 }
