@@ -3,7 +3,7 @@ package TercerTrimestre.Tema8.Practica1.expedientesAlumnos.entities;
 import java.util.HashSet;
 import java.util.Objects;
 
-public class Expediente {
+public class Expediente implements Comparable<Expediente>{
   // Props
   private Estudiante estudiante;
   private HashSet<NotasCurso> notas;
@@ -41,11 +41,20 @@ public class Expediente {
   // Methods
   @Override
   public String toString() {
-    final StringBuffer sb = new StringBuffer("Expediente{");
-    sb.append("estudiante=").append(estudiante);
-    sb.append(", notas=").append(notas);
-    sb.append(", isActivo=").append(isActivo);
-    sb.append('}');
+    final StringBuffer sb = new StringBuffer("Expediente: ").append("\n");
+    sb.append("estudiante=").append(estudiante.getNombre()).append("\n");
+    this.notas.forEach(notaCurso -> {
+      sb.append("Nombre ciclo: ").append(notaCurso.getNombreCiclo()).append("\n");
+      sb.append("Curso: ").append(notaCurso.getCurso()).append("\n");
+      sb.append("Etapa educativa: ").append(notaCurso.getEtapaEducativa()).append("\n");
+      sb.append("Año: ").append(notaCurso.getYear()).append("\n");
+      notaCurso.getNotas().forEach((asinatura, nota) -> {
+        sb.append(asinatura).append(": ").append(nota);
+        sb.append("\n");
+      });
+    });
+    if (isActivo) sb.append("Alumno actualmente activo");
+    else sb.append("Alumno actualmente inactivo");
     return sb.toString();
   }
 
@@ -60,6 +69,11 @@ public class Expediente {
   @Override
   public int hashCode() {
     return Objects.hash(estudiante);
+  }
+
+  @Override
+  public int compareTo(Expediente o) {
+    return this.getEstudiante().getDni().compareTo(o.getEstudiante().getDni());
   }
 
   /**

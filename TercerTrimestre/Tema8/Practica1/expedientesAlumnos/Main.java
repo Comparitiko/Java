@@ -58,31 +58,37 @@ public class Main {
 
     NotasCurso notas1 = new NotasCurso(EtapaEducativa.FP_SUPERIOR, "DAW", 1, "2022");
     NotasCurso notas2 = new NotasCurso(EtapaEducativa.FP_SUPERIOR, "DAW", 2, "2022");
+    NotasCurso notas3 = new NotasCurso(EtapaEducativa.FP_SUPERIOR, "DAW", 2, "2023");
+    NotasCurso notas4 = new NotasCurso(EtapaEducativa.FP_MEDIO, "Instalaciones de telecomunicaciones", 2, "2023");
 
-    for (int i = 1; i <= 20; i++) {
-      NotasCurso notas;
-      if (i % 2 == 0) {
-        notas = notas1;
-      } else {
-        notas = notas2;
-      }
+    for (int i = 1; i <= 6; i++) {
+      notas1.addNota("Asignatura " + i, Math.random() * 10);
+      notas2.addNota("Asignatura " + i, Math.random() * 10);
+      notas3.addNota("Asignatura " + i, Math.random() * 10);
+      notas4.addNota("Asignatura " + i, Math.random() * 10);
+    }
+
+    for (int i = 1; i <= 3; i++) {
+
       Expediente exp = new Expediente(new Estudiante(generarDNI(), "Alumno" + i, "Apellido"+i, ahora.minusYears(20),
             "Calle 2 n " + i, "Cuevas del almanzora", "Alumno" + i, generarTLF()), generarBool());
-      for (int j = 1; j <= 6; j++) {
-        notas.addNota("Asignatura " + i, Math.random() * 10);
+      if (i == 1) {
+        exp.addNotas(notas1);
+        exp.addNotas(notas3);
       }
-      exp.addNotas(notas);
+      else if (i == 2) exp.addNotas(notas2);
+      else exp.addNotas(notas4);
       centro.addExpediente(exp);
     }
-    System.out.println(centro);
-    System.out.println("DNIs de los alumnos");
-    centro.getExpedientes().forEach(exp -> System.out.println(exp.getEstudiante().getDni()));
+
     String opcionMenu = "a";
     while (!opcionMenu.isEmpty()) {
+      System.out.println("DNIs de los alumnos");
+      centro.getExpedientes().forEach(exp -> System.out.println(exp.getEstudiante().getDni()));
       System.out.println("Ingresa el DNI del alumno que quieres ver el expediente, si no escribes nada se cerrara el programa");
       opcionMenu = sc.nextLine();
       if (opcionMenu.isEmpty()) break;
-      Expediente exp = centro.buscarExpediente(opcionMenu);
+      Expediente exp = centro.buscarExpediente(opcionMenu.toUpperCase());
       if (exp != null) {
         System.out.println(exp);
       } else {
