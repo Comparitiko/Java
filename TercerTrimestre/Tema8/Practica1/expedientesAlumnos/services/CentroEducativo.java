@@ -1,7 +1,9 @@
 package TercerTrimestre.Tema8.Practica1.expedientesAlumnos.services;
 
+import TercerTrimestre.Tema8.Practica1.expedientesAlumnos.entities.Estudiante;
 import TercerTrimestre.Tema8.Practica1.expedientesAlumnos.entities.Expediente;
 
+import java.util.Comparator;
 import java.util.Objects;
 import java.util.TreeSet;
 
@@ -110,10 +112,9 @@ public class CentroEducativo {
    * @return expediente si se encuentra o null
    */
   public Expediente buscarExpediente(String dni) {
-    final Expediente[] expediente = {null};
-    this.expedientes.stream()
+    return this.expedientes.stream()
             .filter(e -> e.getEstudiante().getDni().equals(dni))
-            .forEach(e -> expediente[0] = e);
-    return expediente[0];
+            .findFirst()
+            .get();
   }
 }
