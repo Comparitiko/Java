@@ -11,9 +11,9 @@ public class Expediente {
 
   // Constructor
 
-  public Expediente(Estudiante estudiante, HashSet<NotasCurso> notas, Boolean isActivo) {
+  public Expediente(Estudiante estudiante, Boolean isActivo) {
     this.estudiante = estudiante;
-    this.notas = notas;
+    this.notas = new HashSet<>();
     this.isActivo = isActivo;
   }
 

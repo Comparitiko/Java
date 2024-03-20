@@ -96,10 +96,19 @@ public class CentroEducativo {
     return Objects.hash(nombreCentro);
   }
 
+  /**
+   * Añadir un expediente
+   * @param e expediente a añadir
+   */
   public void addExpediente(Expediente e) {
     this.expedientes.add(e);
   }
 
+  /**
+   * Metodo para buscar un expediente por un dni
+   * @param dni dni a buscar
+   * @return expediente si se encuentra o null
+   */
   public Expediente buscarExpediente(String dni) {
     final Expediente[] expediente = {null};
     this.expedientes.stream()
