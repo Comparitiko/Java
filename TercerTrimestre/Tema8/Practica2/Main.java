@@ -140,7 +140,8 @@ public class Main {
     System.out.println("La media es: " +
             registros.stream()
                     .mapToDouble(Registro::getTemperatura)
-                    .average().getAsDouble()
+                    .average()
+                    .getAsDouble()
     );
   }
 }
