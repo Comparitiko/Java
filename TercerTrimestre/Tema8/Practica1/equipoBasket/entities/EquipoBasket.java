@@ -88,10 +88,10 @@ public class EquipoBasket implements Comparable<EquipoBasket> {
    * @return Jugador de basket con ese dorsal
    */
   public JugadorBasket buscarJugador (Integer dorsal) {
-    for (JugadorBasket jugador : this.jugadores) {
-      if (jugador.getDorsal() == dorsal) return jugador;
-    }
-    return null;
+    return this.jugadores.stream()
+            .filter(jugador -> jugador.getDorsal() == (dorsal))
+            .findFirst()
+            .get();
   }
 
   /**

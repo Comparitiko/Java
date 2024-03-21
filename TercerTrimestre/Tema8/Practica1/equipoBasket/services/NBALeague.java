@@ -3,6 +3,7 @@ package TercerTrimestre.Tema8.Practica1.equipoBasket.services;
 import TercerTrimestre.Tema8.Practica1.equipoBasket.entities.EquipoBasket;
 import TercerTrimestre.Tema8.Practica1.equipoBasket.entities.JugadorBasket;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -99,13 +100,11 @@ public class NBALeague {
    * @return Jugador mas alto
    */
   public JugadorBasket buscarJugadorMasAlto () {
-    JugadorBasket[] jugadorBasket = {null};
-    this.equiposOrdenados.forEach((_, e) -> {
-      e.getJugadores().forEach(jugador -> {
-        if (jugadorBasket[0] == null || jugadorBasket[0].getAltura() < jugador.getAltura()) jugadorBasket[0] = jugador;
-      });
-    });
-    return jugadorBasket[0];
+    ArrayList<EquipoBasket> equipos = new ArrayList<>(this.equiposOrdenados.values());
+    return equipos.stream()
+            .flatMap(equipo -> equipo.getJugadores().stream())
+            .max((j1, j2) -> j1.getAltura().compareTo(j2.getAltura()))
+            .get();
   }
 
   /**
@@ -113,10 +112,9 @@ public class NBALeague {
    * @return Equipo con mas victorias
    */
   public EquipoBasket getEquipoConMasWins () {
-    final EquipoBasket[] equipo = {null};
-    this.equiposOrdenados.forEach((_, e) -> {
-      if (equipo[0] == null || equipo[0].getPartidosGanados() < e.getPartidosGanados()) equipo[0] = e;
-    });
-    return equipo[0];
+    ArrayList<EquipoBasket> equipos = new ArrayList<>(this.equiposOrdenados.values());
+    return equipos.stream()
+          .max((eq1, eq2) -> eq1.getPartidosGanados().compareTo(eq2.getPartidosGanados()))
+          .get();
   }
 }

@@ -82,10 +82,10 @@ public class Main {
     }
 
     String opcionMenu = "a";
-    while (!opcionMenu.isEmpty()) {
+    while (true) {
       System.out.println("DNIs de los alumnos");
       centro.getExpedientes().forEach(exp -> System.out.println(exp.getEstudiante().getDni()));
-      System.out.println("Ingresa el DNI del alumno que quieres ver el expediente, si no escribes nada se cerrara el programa");
+      System.out.println("Ingresa el DNI del alumno que quieres ver el expediente, para cerrar pulse enter");
       opcionMenu = sc.nextLine();
       if (opcionMenu.isEmpty()) break;
       Expediente exp = centro.buscarExpediente(opcionMenu.toUpperCase());
